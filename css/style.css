@@ -959,10 +959,6 @@ p.capitalize:first-letter {
   position: relative;
   float: left;
   margin: 0 20px 0 0;
-  >img {
-    display: block;
-    position: relative;
-  }
 }
 
 .team-info {
