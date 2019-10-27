@@ -1,6 +1,6 @@
 (function($) {
 
-  $('#opcion').parent().append('<ul class="list-item" id="newopcion" name="opcion" name= "opcion1" name= "opcion"></ul>');
+  $('#opcion').parent().append('<ul class="list-item" id="newopcion" name="opcion"></ul>');
   $('#opcion option').each(function(){
       $('#newopcion').append('<li value="' + $(this).val() + '">'+$(this).text()+'</li>');
   });
@@ -16,6 +16,26 @@
       allOptions.removeClass('selected');
       $(this).addClass('selected');
       $("#opcion").children('.init').html($(this).html());
+      allOptions.toggle();
+  });
+
+  //aqui viene la segunda opcion
+  $('#opcion1').parent().append('<ul class="list-item" id="newopcion" name="opcion1"></ul>');
+  $('#opcion1 option').each(function(){
+      $('#newopcion').append('<li value="' + $(this).val() + '">'+$(this).text()+'</li>');
+  });
+  $('#opcion1').remove();
+  $('#newopcion').attr('id', 'opcion1');
+  $('#opcion1 li').first().addClass('init');
+  $("#opcion1").on("click", ".init", function() {
+      $(this).closest("#opcion1").children('li:not(.init)').toggle();
+  });
+  
+  var allOptions = $("#opcion1").children('li:not(.init)');
+  $("#opcion1").on("click", "li:not(.init)", function() {
+      allOptions.removeClass('selected');
+      $(this).addClass('selected');
+      $("#opcion1").children('.init').html($(this).html());
       allOptions.toggle();
   });
 
