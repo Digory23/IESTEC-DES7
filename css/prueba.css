@@ -11,7 +11,6 @@ select, option{
     font-family: 'Poppins';
     width: 90%;
 }
-
 option {
     font-weight: normal;
     display: block;
@@ -21,7 +20,7 @@ option {
 }
 
 select {
-    -webkit-writing-mode: horizontal-tb !important;
+    
     text-rendering: auto;
     color: black;
     letter-spacing: normal;
@@ -35,3 +34,9 @@ select {
     cursor: default;
     font: 400 13.3333px Arial;
 }   
+
+.select-list {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 47px; }
