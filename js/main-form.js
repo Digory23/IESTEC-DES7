@@ -39,6 +39,26 @@
       allOptions.toggle();
   });
 
+  //aqui viene la tercera opcion
+  $('#opcion2').parent().append('<ul class="list-item" id="newopcion" name="opcion2"></ul>');
+  $('#opcion2 option').each(function(){
+      $('#newopcion').append('<li value="' + $(this).val() + '">'+$(this).text()+'</li>');
+  });
+  $('#opcion2').remove();
+  $('#newopcion').attr('id', 'opcion2');
+  $('#opcion2 li').first().addClass('init');
+  $("#opcion2").on("click", ".init", function() {
+      $(this).closest("#opcion2").children('li:not(.init)').toggle();
+  });
+  
+  var allOptions = $("#opcion2").children('li:not(.init)');
+  $("#opcion2").on("click", "li:not(.init)", function() {
+      allOptions.removeClass('selected');
+      $(this).addClass('selected');
+      $("#opcion2").children('.init').html($(this).html());
+      allOptions.toggle();
+  });
+
   var marginSlider = document.getElementById('slider-margin');
   if (marginSlider != undefined) {
       noUiSlider.create(marginSlider, {
