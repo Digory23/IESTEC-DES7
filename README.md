@@ -1,3 +1,2 @@
-# IESTEC-
-hola buenas chabales
-probando el git :v
+# IESTEC-Proyecto Final Des7
+
