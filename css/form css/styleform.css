@@ -225,7 +225,8 @@ body {
   width: 385px;
   background-attachment: fixed;
   background-position: 0 50%; 
-  background-image: url(ptyy.jpg); }
+  background-image: url(ptyy.jpg); 
+  margin-bottom: -8px; }
 
 .signup-form {
   width: 1015px;
