@@ -62,6 +62,9 @@
         },
         phone_number : {
             required: true,
+        },
+        ID: {
+            required: true,
         }
     },
     onfocusout: function(element) {
@@ -143,6 +146,9 @@
           },
           phone_number : {
               required: true,
+          },
+          ID: {
+              required: true,
           }
       },
       onfocusout: function(element) {
@@ -223,6 +229,9 @@
               email : true
           },
           phone_number : {
+              required: true,
+          },
+          ID: {
               required: true,
           }
       },
