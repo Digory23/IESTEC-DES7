@@ -10,58 +10,58 @@
 /* Links */
 
 a {
-  color: #3498db;
+  color: #a734db;
 }
 
 .si i {
-  color: #3498db;
+  color: #a734db;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
   color: #ffffff;
-  background-color: #3498db;
+  background-color: #a734db;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-  color: #3498db;
+  color: #a734db;
 }
 
 .btn-theme {
-  background-color: #3498db;
+  background-color: #a734db;
 }
 
 .tabbable .nav-stacked>li:active, li:focus, li.active h4 {
-  color: #3498db;
+  color: #a734db;
 }
 
 #cta-bar:hover {
-  background: #3498db;
+  background: #a734db;
 }
 
 p.capitalize:first-letter {
-  background: #3498db;
+  background: #a734db;
 }
 
 .team-info {
-  background: #3498db;
+  background: #a734db;
 }
 
 #black i {
-  color: #3498db;
+  color: #a734db;
 }
 
 .progress-bar-theme {
-  background-color: #3498db;
+  background: #a734db;
 }
 
 .team-stat i {
-  color: #3498db;
+  color: #a734db;
 }
 
 .pricing-table-plan {
-  border-top: 4px solid #3498db;
+  border-top: 4px solid #a734db;
 }
 
 .blog-post blockquote {
-  border-left: 4px solid #3498db;
+  border-left: 4px solid #a734db;
 }

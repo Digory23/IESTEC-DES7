@@ -343,7 +343,7 @@ p.capitalize:first-letter {
 
 #headerwrap h1 {
   margin-top: 20px;
-  color: white;
+  color:#e6e34b;
   font-size: 50px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -353,6 +353,8 @@ p.capitalize:first-letter {
 
 #headerwrap h2 {
   color: white;
+  font-size: 30px;
+  text-shadow: .8rem .8rem .8rem black;
   visibility: hidden;
 }
 
