@@ -180,30 +180,34 @@ figure {
   margin: 0; }
 
 p {
-  margin: 0px;
   font-weight: 600;
-  color: rgb(0, 0, 0); }
+  color: rgb(0, 0, 0); 
+  margin-bottom: 20px;
+  margin-left: 25px; }
+
+h1{
+    margin-left: 20px;
+  }
 
 h2 {
   line-height: 1.2;
-  margin: 0;
   padding: 0;
   font-weight: 900;
   color: rgb(0, 0, 0);
-  font-family: 'Poppins';
+  font-family: 'Open Sans', sans-serif;
   font-size: 26px;
-  text-transform: uppercase;
-  margin-bottom: 10px; }
+  margin-bottom: 10px; 
+  margin-left: 20px;}
 
 .clear {
   clear: both; }
 
 body {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.8;
   color: #222;
   font-weight: 500;
-  font-family: 'Poppins';
+  font-family: 'Open Sans', sans-serif;
   margin: 0px;
   background: #282828;
    }
@@ -212,13 +216,16 @@ body {
   position: relative; }
 
 .container {
-  width: 1400px;
+  width: auto;
   margin: 0 auto;
   background: #fff; }
 
 .signup-img {
   position: relative;
   width: 385px;
+  background-attachment: fixed;
+  background-position: 0 50%; 
+  background-image: url(ptyy.jpg); 
   margin-bottom: -8px; }
 
 .signup-form {
@@ -239,7 +246,7 @@ color: rgb(0, 0, 0);  }
   width: 100%; }
 
 .register-form {
-  padding: 93px 115px 90px 80px;
+  padding: 9px 110px 90px 80px;
   margin-bottom: -8px; }
 
 .form-row {
@@ -249,7 +256,7 @@ color: rgb(0, 0, 0);  }
     padding: 0 30px; }
 
 .form-input, .form-select{
-  margin-bottom: 23px; }
+  margin-bottom: 20px; }
 
 label, input {
   display: block;
@@ -258,7 +265,7 @@ label, input {
 label {
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 7px; }
+  margin-bottom: 5px; }
 
 label.required {
   position: relative; }
@@ -277,7 +284,7 @@ input {
   -o-border-radius: 5px;
   -ms-border-radius: 5px;
   font-size: 14px;
-  font-family: 'Poppins'; }
+  font-family: 'Open Sans', sans-serif; }
   input:focus {
     border: 1px solid #329e5e; }
 
@@ -442,7 +449,7 @@ li.init {
   width: 150px;
   height: 50px;
   display: inline-block;
-  font-family: 'Poppins';
+  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   font-size: 14px;
   padding: 10px;
