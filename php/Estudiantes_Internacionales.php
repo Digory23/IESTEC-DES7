@@ -21,7 +21,7 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img src="../img/form-img.jpg" alt="">
+                     <!--<img src="../img/form-img.jpg" alt="">-->
                     <div class="signup-img-content">
                     </div>
                 </div>
