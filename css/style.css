@@ -1428,6 +1428,10 @@ p>tag {
   #wv {
     height: 350px;
   }
+
+  .col-lg-5.col-lg-offset-4{
+    margin-left: 0%;
+  }
 }
 
 @media (max-width: 900px) {
