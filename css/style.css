@@ -18,10 +18,13 @@ body {
 
 /* Titles */
 
+
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
   color: #333;
+
 }
 
 /* Paragraph & Typographic */
@@ -93,11 +96,15 @@ hr {
 /* margin top & Bottom */
 
 .mt {
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 50px;
 }
 
 /* Special Margin for Wrap sections */
+
+.col-lg-5 .col-lg-offset-4{
+  margin-left: 30% !important;
+}
 
 .mts {
   padding: 20px 0;
@@ -323,6 +330,22 @@ p.capitalize:first-letter {
 
 /* ================== MAIN WRAP SECTIONS ================== */
 
+.card {
+  box-shadow: 0px 10px 10px black;
+  height: 100%;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
 #headerwrap {
   background: url(../img/panama2.jpg) no-repeat center top;
   margin-top: -20px;
@@ -362,6 +385,31 @@ p.capitalize:first-letter {
   margin: 0 auto;
 }
 
+.imgg-responsive{
+  max-width: 100%;
+  height: auto;
+}
+
+.capa{
+  background-color: rgba(62, 62, 62, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center center;
+  min-height: 500px;
+  width: 100%;
+  background-size: cover;
+  margin-top: 50px;
+}
+
+.capa2{
+  background-size: cover;
+  background-position: center center;
+  background-color: rgba(62, 62, 62, 0.27);
+  min-height: 350px;
+  width: 100%;
+  margin-top: -350px;
+}
 /* Headerwrap 2 Wrap */
 
 #headerwrap-2 {
@@ -703,7 +751,7 @@ p.capitalize:first-letter {
 /* ================== CALL TO ACTION WRAP SECTIONS & HELPERS ================== */
 
 #cta01 {
-  background: url(../img/cta/cta01.jpg) no-repeat center top;
+  background: url(../img/panama3.jpg) no-repeat center top;
   margin-top: 0px;
   padding-top: 100px;
   text-align: center;
@@ -726,6 +774,7 @@ p.capitalize:first-letter {
   font-weight: 700;
   margin-bottom: 25px;
   font-size: 60px;
+  text-shadow: .8rem .8rem .8rem black;
 }
 
 #cta01 h2 {
