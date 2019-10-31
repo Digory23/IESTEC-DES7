@@ -121,9 +121,11 @@ button {
   overflow: visible;
 }
 button,
+
 select {
   text-transform: none;
 }
+
 button,
 html input[type="button"],
 input[type="reset"],
