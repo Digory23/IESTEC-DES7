@@ -102,7 +102,7 @@ hr {
 
 /* Special Margin for Wrap sections */
 
-.col-lg-5 .col-lg-offset-4{
+.col-lg-5.col-lg-offset-4{
   margin-left: 30% !important;
 }
 
@@ -411,6 +411,20 @@ p.capitalize:first-letter {
   margin-top: -350px;
 }
 /* Headerwrap 2 Wrap */
+
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 #headerwrap-2 {
   background: url(../img/hwrap2.jpg) no-repeat center top;
