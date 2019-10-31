@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <title>Tablas de Datos</title>
     <!-- Favicon icon -->
     <link rel="icon" type="../img/png" sizes="16x16" href="../img/favicon.png">
     <!-- Custom Stylesheet -->
@@ -41,7 +41,7 @@
         ***********************************-->
         <div class="nav-header">
             <div class="brand-logo">
-                <a href="Estadisticas.html">
+                <a href="Estadisticas.php">
                     <b class="logo-abbr"><h5 style="color:white">I</h5><!--<img src="../img/logo.png" alt="">--> </b>
                     <span class="logo-compact"><h5 style="color:white">I</h5><!--<img src="../img/logo-compact.png" alt="">--></span>
                     <span class="brand-title">
@@ -110,7 +110,7 @@
                                 <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                             </a>
                             <ul aria-expanded="false">
-                                <li><a href="./Estadisticas.html">Estadísticas</a></li>
+                                <li><a href="./Estadisticas.php">Estadísticas</a></li>
                                 <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                             </ul>
                         </li>
@@ -120,7 +120,7 @@
                                 <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
                             </a>
                             <ul aria-expanded="false">
-                                <li><a href="./table-datatable.html" aria-expanded="false">Tabla de Datos</a></li>
+                                <li><a href="./table-datatable.php" aria-expanded="false">Tabla de Datos</a></li>
                             </ul>
                         </li>
                         
