@@ -13,23 +13,26 @@
     <!-- Main css -->
     <link rel="stylesheet" href="../css/form css/styleform.css">
     <link rel="stylesheet" href="../css/prueba.css">
+    
+
 </head>
 
-<body>
 
+<body>
     <div class="main">
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <!--<img src="../img/form-img.jpg" alt="">-->
                     <div class="signup-img-content">
                     </div>
                 </div>
             
                 <div class="signup-form">
-                <h1>Inscripción y pago</h1>
+                    <h1>Inscripción y pago</h1>
                     <h2>Estudiantes Nacionales de Postgrado</h2>
                     <p>Asegúrese de verificar que su información sea correcta y que TODOS LOS CAMPOS sean válidos.</p>
+                    
+
                     <form method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
@@ -77,14 +80,15 @@
                                     </div>
                                     <div class="select-list">
                                         <select name="opcion1" id="opcion1">
-                                        <option disabled selected hidden value="Selecc">Seleccionar</option>
+                                            <option disabled selected hidden value="Selecc">Seleccionar</option>
                                             <option value="Miempro_Estudiantil">Miembro Estudiantil</option>
                                             <option value="Miembro_Profesional">Miembro Profesional</option>
                                             <option value="Sociedad_Afiliada">Sociedad Afiliada</option>
                                         </select>
                                     </div>
                                 </div>
-                               
+
+
                                 <div class="form-input">
                                         <label for="provincia">Provincia</label>
                                         <input type="text" name="provincia" id="provincia" />
@@ -104,7 +108,14 @@
                                 </div>
                             </div>
                         </div>
-                       
+                        <!--<div class="donate-us">
+                            <label>Donate us</label>
+                            <div class="price_slider ui-slider ui-slider-horizontal">
+                                <div id="slider-margin"></div>
+                                <span class="donate-value" id="value-lower"></span>
+                            </div>
+                        </div>-->
+
                         <div class="form-submit">
                             <input type="submit" value="Cena y Pago" class="submit" id="submit" name="submit" />
                             <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
