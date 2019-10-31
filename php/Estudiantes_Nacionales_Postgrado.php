@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="../css/prueba.css">
     
 
-    
 </head>
+
 
 <body>
     <div class="main">
@@ -87,29 +87,8 @@
                                         </select>
                                     </div>
                                 </div>
-                               <!-- <div class="form-radio">
-                                    <div class="label-flex">
-                                        <label for="payment">Payment Mode</label>
-                                        <a href="#" class="form-link">Payment Detail</a>
-                                    </div>
-                                    <div class="form-radio-group">            
-                                        <div class="form-radio-item">
-                                            <input type="radio" name="payment" id="cash" checked>
-                                            <label for="cash">Cash</label>
-                                            <span class="check"></span>
-                                        </div>
-                                        <div class="form-radio-item">
-                                            <input type="radio" name="payment" id="cheque">
-                                            <label for="cheque">Cheque</label>
-                                            <span class="check"></span>
-                                        </div>
-                                        <div class="form-radio-item">
-                                            <input type="radio" name="payment" id="demand">
-                                            <label for="demand">Demand Draf</label>
-                                            <span class="check"></span>
-                                        </div>
-                                    </div>
-                                </div>-->
+
+
                                 <div class="form-input">
                                         <label for="provincia">Provincia</label>
                                         <input type="text" name="provincia" id="provincia" />
@@ -136,6 +115,7 @@
                                 <span class="donate-value" id="value-lower"></span>
                             </div>
                         </div>-->
+
                         <div class="form-submit">
                             <input type="submit" value="Cena y Pago" class="submit" id="submit" name="submit" />
                             <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
