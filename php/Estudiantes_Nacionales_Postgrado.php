@@ -13,8 +13,36 @@
     <!-- Main css -->
     <link rel="stylesheet" href="../css/form css/styleform.css">
     <link rel="stylesheet" href="../css/prueba.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/nav.css">
+
 </head>
+
 <body>
+     <!-- NavBar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">IESTEC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Info</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Registro</a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
 
     <div class="main">
         <div class="container">
@@ -84,29 +112,8 @@
                                         </select>
                                     </div>
                                 </div>
-                               <!-- <div class="form-radio">
-                                    <div class="label-flex">
-                                        <label for="payment">Payment Mode</label>
-                                        <a href="#" class="form-link">Payment Detail</a>
-                                    </div>
-                                    <div class="form-radio-group">            
-                                        <div class="form-radio-item">
-                                            <input type="radio" name="payment" id="cash" checked>
-                                            <label for="cash">Cash</label>
-                                            <span class="check"></span>
-                                        </div>
-                                        <div class="form-radio-item">
-                                            <input type="radio" name="payment" id="cheque">
-                                            <label for="cheque">Cheque</label>
-                                            <span class="check"></span>
-                                        </div>
-                                        <div class="form-radio-item">
-                                            <input type="radio" name="payment" id="demand">
-                                            <label for="demand">Demand Draf</label>
-                                            <span class="check"></span>
-                                        </div>
-                                    </div>
-                                </div>-->
+
+
                                 <div class="form-input">
                                         <label for="provincia">Provincia</label>
                                         <input type="text" name="provincia" id="provincia" />
@@ -133,6 +140,7 @@
                                 <span class="donate-value" id="value-lower"></span>
                             </div>
                         </div>-->
+
                         <div class="form-submit">
                             <input type="submit" value="Cena y Pago" class="submit" id="submit" name="submit" />
                             <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
