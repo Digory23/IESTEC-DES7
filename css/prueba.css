@@ -41,5 +41,13 @@ select {
     width: 100%;
     margin-bottom: 47px; }
 
+label, input{
+    display: flex !important;
+    width: auto !important;
+}
+
+.form-submit .submit{
+    display: block !important;
+}
 
 

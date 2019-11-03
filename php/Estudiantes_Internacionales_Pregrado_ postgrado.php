@@ -53,7 +53,7 @@
                             </div>
 
                  <div class="probando">
-                            <h1>Áreas de intéres</h1>
+                            <h1>Áreas de interes</h1>
                         <div Class= "CHKB">   
                         <label><input type="checkbox" value="Agroindustria">Agroindustria</label>
                         </div>
@@ -104,6 +104,8 @@
                         <label><input type="checkbox" value="PayPal" >PayPal</label>
                         </div>
                         
+
+                    
              </div>
                        
                         <div class="form-submit">
