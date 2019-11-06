@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Estudiantes Nacionales Postgrado</title>
 
+    <link href="img/utp.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
     <!-- Font Icon -->
     <link rel="stylesheet" href="../css/form css/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../js/vendor/nouislider/nouislider.min.css">
@@ -19,6 +21,7 @@
 
 
 <body>
+    
     <div class="main">
         <div class="container">
             <div class="signup-content">

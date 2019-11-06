@@ -264,6 +264,13 @@ label, input {
   display: block;
   width: 100%; }
 
+.CHKB label {
+    width: 100%; }
+
+    .CHKB input {
+      display: inline-flex;
+      width: 100%; }
+
 label {
   font-weight: bold;
   text-transform: uppercase;

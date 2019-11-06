@@ -65,8 +65,7 @@
                  <div class="probando">
                             <h1>Áreas de interes</h1>
                         <div Class= "CHKB">   
-                        <input type="checkbox" value="Agroindustria">
-                        <label>Agroindustria</label>
+                        <label><input type="checkbox" value="Agroindustria">Agroindustria</label>
                         </div>
                         <div Class= "CHKB">
                         <label><input type="checkbox" value="Ciencias_Basicas">Ciencias Básicas</label>
