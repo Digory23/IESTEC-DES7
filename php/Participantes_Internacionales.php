@@ -33,8 +33,8 @@
                     <h1>Inscripción y pago</h1>
                     <h2>Participantes Internacionales</h2>
                     <p>Asegúrese de verificar que su información sea Correcta y que TODOS LOS CAMPOS sean válidos</p>
-                    <p>____________________________________________________________________________________</p>
-                    <form method="POST" class="register-form" id="register-form">
+                    
+                    <form action="Internacionales.php" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">

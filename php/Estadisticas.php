@@ -126,16 +126,35 @@
                             <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                         </ul>
                     </li>
+<<<<<<< HEAD
                     <li class="nav-label">Table</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
+=======
+                    <li class="nav-label">Tabla</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-menu menu-icon"></i><span class="nav-text">Tabla</span>
+>>>>>>> origin/Daniel_dev
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="./table-datatable.php" aria-expanded="false">Tabla de Datos</a></li>
                         </ul>
                     </li>
+<<<<<<< HEAD
                     
+=======
+                    <li class="nav-label">Regresar</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-menu menu-icon"></i><span class="nav-text">Inicio</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="../index.html" aria-expanded="false">Regresar al inicio</a></li>
+                        </ul>
+                    </li>
+>>>>>>> origin/Daniel_dev
                 </ul>
             </div>
         </div>
