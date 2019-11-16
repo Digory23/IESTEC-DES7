@@ -24,7 +24,7 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img src="../img/form-img.jpg" alt="">
+                     <!--<img src="../img/form-img.jpg" alt="">-->
                     <div class="signup-img-content">
                     </div>
                 </div>
@@ -33,8 +33,8 @@
                     <h1>Inscripción y pago</h1>
                     <h2>Profesionales Nacionales</h2>
                     <p>Asegúrese de verificar que su información sea Correcta y que TODOS LOS CAMPOS sean válidos</p>
-                    <p>____________________________________________________________________________________</p>
-                    <form method="POST" class="register-form" id="register-form">
+                    
+                    <form action="Cenas.php" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">

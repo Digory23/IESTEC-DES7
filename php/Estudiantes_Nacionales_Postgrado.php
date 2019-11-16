@@ -13,6 +13,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="../css/form css/styleform.css">
     <link rel="stylesheet" href="../css/prueba.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/nav.css">
 
@@ -44,6 +45,8 @@
     </div>
   </nav>
 
+
+<body>
     <div class="main">
         <div class="container">
             <div class="signup-content">
@@ -58,7 +61,7 @@
                     <p>Asegúrese de verificar que su información sea correcta y que TODOS LOS CAMPOS sean válidos.</p>
                     
 
-                    <form method="POST" class="register-form" id="register-form">
+                    <form action="Cenas.php" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">

@@ -27,67 +27,6 @@
   });
 
 
-  var marginSlider = document.getElementById('slider-margin');
-  if (marginSlider != undefined) {
-      noUiSlider.create(marginSlider, {
-            start: [500],
-            step: 10,
-            connect: [true, false],
-            tooltips: [true],
-            range: {
-                'min': 0,
-                'max': 1000
-            },
-            format: wNumb({
-                decimals: 0,
-                thousand: ',',
-                prefix: '$ ',
-            })
-    });
-  }
-  $('#reset').on('click', function(){
-      $('#register-form').reset();
-  });
-
-  $('#register-form').validate({
-    rules : {
-        first_name : {
-            required: true,
-        },
-        last_name : {
-            required: true,
-        },
-        company : {
-            required: true
-        },
-        email : {
-            required: true,
-            email : true
-        },
-        phone_number : {
-            required: true,
-        },
-        ID: {
-            required: true,
-        }
-    },
-    onfocusout: function(element) {
-        $(element).valid();
-    },
-});
-
-    jQuery.extend(jQuery.validator.messages, {
-        required: "",
-        remote: "",
-        email: "",
-        url: "",
-        date: "",
-        dateISO: "",
-        number: "",
-        digits: "",
-        creditcard: "",
-        equalTo: ""
-    });
 })(jQuery);
 
 (function($) {
@@ -111,68 +50,9 @@
         allOptions.toggle();
     });
   
-    var marginSlider = document.getElementById('slider-margin');
-    if (marginSlider != undefined) {
-        noUiSlider.create(marginSlider, {
-              start: [500],
-              step: 10,
-              connect: [true, false],
-              tooltips: [true],
-              range: {
-                  'min': 0,
-                  'max': 1000
-              },
-              format: wNumb({
-                  decimals: 0,
-                  thousand: ',',
-                  prefix: '$ ',
-              })
-      });
-    }
-    $('#reset').on('click', function(){
-        $('#register-form').reset();
-    });
-  
-    $('#register-form').validate({
-      rules : {
-          first_name : {
-              required: true,
-          },
-          last_name : {
-              required: true,
-          },
-          company : {
-              required: true
-          },
-          email : {
-              required: true,
-              email : true
-          },
-          phone_number : {
-              required: true,
-          },
-          ID: {
-              required: true,
-          }
-      },
-      onfocusout: function(element) {
-          $(element).valid();
-      },
-  });
-  
-      jQuery.extend(jQuery.validator.messages, {
-          required: "",
-          remote: "",
-          email: "",
-          url: "",
-          date: "",
-          dateISO: "",
-          number: "",
-          digits: "",
-          creditcard: "",
-          equalTo: ""
-      });
   })(jQuery);
+
+
 
   (function($) {
 
@@ -195,68 +75,8 @@
         allOptions.toggle();
     });
   
-    var marginSlider = document.getElementById('slider-margin');
-    if (marginSlider != undefined) {
-        noUiSlider.create(marginSlider, {
-              start: [500],
-              step: 10,
-              connect: [true, false],
-              tooltips: [true],
-              range: {
-                  'min': 0,
-                  'max': 1000
-              },
-              format: wNumb({
-                  decimals: 0,
-                  thousand: ',',
-                  prefix: '$ ',
-              })
-      });
-    }
-    $('#reset').on('click', function(){
-        $('#register-form').reset();
-    });
-  
-    $('#register-form').validate({
-      rules : {
-          first_name : {
-              required: true,
-          },
-          last_name : {
-              required: true,
-          },
-          company : {
-              required: true
-          },
-          email : {
-              required: true,
-              email : true
-          },
-          phone_number : {
-              required: true,
-          },
-          ID: {
-              required: true,
-          }
-      },
-      onfocusout: function(element) {
-          $(element).valid();
-      },
-  });
-  
-      jQuery.extend(jQuery.validator.messages, {
-          required: "",
-          remote: "",
-          email: "",
-          url: "",
-          date: "",
-          dateISO: "",
-          number: "",
-          digits: "",
-          creditcard: "",
-          equalTo: ""
-      });
   })(jQuery);
+
 
   (function($) {
 
@@ -279,6 +99,12 @@
         allOptions.toggle();
     });
   
+  })(jQuery);
+
+  
+
+(function($) {
+
     var marginSlider = document.getElementById('slider-margin');
     if (marginSlider != undefined) {
         noUiSlider.create(marginSlider, {
@@ -341,6 +167,103 @@
           equalTo: ""
       });
   })(jQuery);
+
+
+  (function($) {
+
+
+    $('#opcion4').parent().append('<ul class="list-item" id="newopcion4" name="opcion4" ></ul>');
+  
+    $('#opcion4 option').each(function(){
+        $('#newopcion4').append('<li value="' + $(this).val() + '">'+$(this).text()+'</li>');
+    });
+<<<<<<< HEAD
+    $('#opcion3').remove();
+    $('#newopcion3').attr('id', 'opcion3');
+    $('#opcion3 li').first().addClass('init');
+    $("#opcion3").on("click", ".init", function() {
+        $(this).closest("#opcion3").children('li:not(.init)').toggle();
+=======
+    $('#opcion4').remove();
+    $('#newopcion4').attr('id', 'opcion4');
+    $('#opcion4 li').first().addClass('init');
+    $("#opcion4").on("click", ".init", function() {
+        $(this).closest("#opcion4").children('li:not(.init)').toggle();
+>>>>>>> origin/Daniel_dev
+    });
+    
+    var allOptions = $("#opcion4").children('li:not(.init)');
+    $("#opcion4").on("click", "li:not(.init)", function() {
+        allOptions.removeClass('selected');
+        $(this).addClass('selected');
+        $("#opcion4").children('.init').html($(this).html());
+        allOptions.toggle();
+    });
+  
+  
+    var marginSlider = document.getElementById('slider-margin');
+    if (marginSlider != undefined) {
+        noUiSlider.create(marginSlider, {
+              start: [500],
+              step: 10,
+              connect: [true, false],
+              tooltips: [true],
+              range: {
+                  'min': 0,
+                  'max': 1000
+              },
+              format: wNumb({
+                  decimals: 0,
+                  thousand: ',',
+                  prefix: '$ ',
+              })
+      });
+    }
+    $('#reset').on('click', function(){
+        $('#register-form').reset();
+    });
+  
+    $('#register-form').validate({
+      rules : {
+          first_name : {
+              required: true,
+          },
+          last_name : {
+              required: true,
+          },
+          company : {
+              required: true
+          },
+          email : {
+              required: true,
+              email : true
+          },
+          phone_number : {
+              required: true,
+          },
+          ID: {
+              required: true,
+          }
+      },
+      onfocusout: function(element) {
+          $(element).valid();
+      },
+  });
+  
+      jQuery.extend(jQuery.validator.messages, {
+          required: "",
+          remote: "",
+          email: "",
+          url: "",
+          date: "",
+          dateISO: "",
+          number: "",
+          digits: "",
+          creditcard: "",
+          equalTo: ""
+      });
+  })(jQuery);
+<<<<<<< HEAD
 
 
   (function($) {
@@ -429,5 +352,6 @@
           equalTo: ""
       });
   })(jQuery);
+
   
   
