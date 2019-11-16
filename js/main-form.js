@@ -177,19 +177,19 @@
     $('#opcion4 option').each(function(){
         $('#newopcion4').append('<li value="' + $(this).val() + '">'+$(this).text()+'</li>');
     });
-<<<<<<< HEAD
+
     $('#opcion3').remove();
     $('#newopcion3').attr('id', 'opcion3');
     $('#opcion3 li').first().addClass('init');
     $("#opcion3").on("click", ".init", function() {
         $(this).closest("#opcion3").children('li:not(.init)').toggle();
-=======
+
     $('#opcion4').remove();
     $('#newopcion4').attr('id', 'opcion4');
     $('#opcion4 li').first().addClass('init');
     $("#opcion4").on("click", ".init", function() {
         $(this).closest("#opcion4").children('li:not(.init)').toggle();
->>>>>>> origin/Daniel_dev
+
     });
     
     var allOptions = $("#opcion4").children('li:not(.init)');
@@ -263,7 +263,7 @@
           equalTo: ""
       });
   })(jQuery);
-<<<<<<< HEAD
+
 
 
   (function($) {
@@ -353,5 +353,3 @@
       });
   })(jQuery);
 
-  
-  
