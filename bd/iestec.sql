@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2019 a las 20:33:02
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 17-11-2019 a las 19:07:13
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `iestec2.0`
+-- Base de datos: `iestec`
 --
 
 -- --------------------------------------------------------
@@ -146,7 +146,7 @@ CREATE TABLE `sala` (
 
 CREATE TABLE `tipo_part` (
   `ID_TipoPart` varchar(30) NOT NULL,
-  `Descrip` text DEFAULT NULL
+  `Descrip` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -157,8 +157,16 @@ CREATE TABLE `tipo_part` (
 
 CREATE TABLE `tipo_usuario` (
   `ID_TipoUsuario` varchar(30) NOT NULL,
-  `Descrip` text DEFAULT NULL
+  `Descrip` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tipo_usuario`
+--
+
+INSERT INTO `tipo_usuario` (`ID_TipoUsuario`, `Descrip`) VALUES
+('est', 'Estudiante'),
+('pro', 'Profesional');
 
 -- --------------------------------------------------------
 
@@ -176,6 +184,14 @@ CREATE TABLE `usuario` (
   `Tipo_Ussuario` varchar(30) DEFAULT NULL,
   `Cedula` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Telefono`, `Tipo_Ussuario`, `Cedula`) VALUES
+(1, 'Daniel', 'Diaz', NULL, 'danyd2339@gmail.com', '123-7654', 'est', '8-928-1643'),
+(2, 'Jotaro', 'Joestar', NULL, 'oraoraora@gmail.com', '123-5739', 'est', '200-928-5432');
 
 --
 -- Índices para tablas volcadas
@@ -282,11 +298,17 @@ ALTER TABLE `eventos`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `administrador`
+--
+ALTER TABLE `administrador`
+  ADD CONSTRAINT `fk_Cedula_Admin` FOREIGN KEY (`ID_Cedula`) REFERENCES `usuario` (`Cedula`);
 
 --
 -- Filtros para la tabla `eventos`
@@ -299,6 +321,7 @@ ALTER TABLE `eventos`
 --
 ALTER TABLE `participantes`
   ADD CONSTRAINT `fk_Articulos` FOREIGN KEY (`ID_Cedula`) REFERENCES `participante_articulo` (`ID_Cedula`),
+  ADD CONSTRAINT `fk_Cedula_Part` FOREIGN KEY (`ID_Cedula`) REFERENCES `usuario` (`Cedula`),
   ADD CONSTRAINT `fk_ParticipanteInteres` FOREIGN KEY (`ID_Cedula`) REFERENCES `participante_interes` (`ID_Cedula`),
   ADD CONSTRAINT `fk_TipoPart` FOREIGN KEY (`Tipo_Participante`) REFERENCES `tipo_part` (`ID_TipoPart`);
 
@@ -319,15 +342,13 @@ ALTER TABLE `participante_interes`
 --
 ALTER TABLE `programas`
   ADD CONSTRAINT `fk_Evento` FOREIGN KEY (`ID_Evento`) REFERENCES `eventos` (`ID_Eventos`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_Programa` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`ID_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_Sala` FOREIGN KEY (`ID_Sala`) REFERENCES `sala` (`ID_Sala`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_Partic` FOREIGN KEY (`Cedula`) REFERENCES `participantes` (`ID_Cedula`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_Programa` FOREIGN KEY (`ID_Usuario`) REFERENCES `programas` (`ID_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_admin` FOREIGN KEY (`Cedula`) REFERENCES `administrador` (`ID_Cedula`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_tipousu` FOREIGN KEY (`Tipo_Ussuario`) REFERENCES `tipo_usuario` (`ID_TipoUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
