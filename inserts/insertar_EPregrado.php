@@ -11,9 +11,9 @@ $email = $_POST['email'];
 $telefono = $_POST['phone_number'];
 
 //insercion en la tabla
-$sql = "INSERT INTO usuario (nombre, apellido, email, Cedula) VALUES (?, ?, ?, ?)";
+$sql = "INSERT INTO usuario (nombre, apellido, email, telefono, Cedula) VALUES (?, ?, ?, ?, ?)";
         $stmt = $dbh->prepare($sql);
-        $stmt->execute([$nombre, $apellido, $email, $cedula]);
+        $stmt->execute([$nombre, $apellido, $email, $telefono, $cedula]);
 
         if($stmt->rowCount() > 0)
         {
