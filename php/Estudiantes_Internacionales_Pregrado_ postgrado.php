@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="../css/form css/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../js/vendor/nouislider/nouislider.min.css">
 
-    <!-- Main css 
-    <link rel="stylesheet" href="../css/form css/styleform.css">-->
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="../css/form css/styleform.css">
     <link rel="stylesheet" href="../css/prueba.css">
 </head>
 <body>
