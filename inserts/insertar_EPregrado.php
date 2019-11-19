@@ -17,7 +17,6 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Email, Telefono,Tipo_Ussuario, Ce
 
         if($stmt->rowCount() > 0)
         {
-           
             echo "Registro exitoso";
             header('Location: ../index.php');
         }

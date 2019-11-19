@@ -1,3 +1,19 @@
+<?php 
+
+//variables del metodo POST
+$select_user = $_POST['select_part'];
+
+     /*   if($stmt->rowCount() > 0)
+        {
+            echo "Registro exitoso";
+            header('Location: ../index.php');
+        }
+        else{
+            echo "Error";
+            
+        }*/
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +44,7 @@
             
                 <div class="signup-form">
                     <h1>Inscripción y pago</h1>
-                    <h2>Estudiantes nacionales postgrado</h2>
+                    <h2><?php echo $select_user ?></h2>
                     <p>Asegúrese de verificar que su información sea Correcta y que TODOS LOS CAMPOS sean válidos</p>
                     
                     <form action="../inserts/insertar_EPregrado.php" method="POST" class="register-form" id="register-form">
