@@ -19,7 +19,7 @@
 	<div class="container-login100" style="background-image: url('../img/bg.jpg');">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
 
-			<form action="../php/Estudiante_Nacional_Pregrado.php" class="login100-form validate-form" method="POST" class="register-form" id="register-form">
+			<form action="control_formulario.php" class="login100-form validate-form" method="POST" class="register-form" id="register-form">
 				<span class="login100-form-title p-b-37">
 					Seleccione el tipo de participante
 				</span>
@@ -27,13 +27,13 @@
 						<div class="custom-select">
 							<select name="select_part" ><!--OJO-->
 								<option selected="selected" disabled hidden >Seleccionar</option>
-								<option value="Estudiante Nacional Pregrado">Estudiante Nacional Pregrado</option>
-								<option value="Estudiante Nacional Postgrado">Estudiante Nacional Postgrado</option>
-								<option value="Estudiantes Internacionales">Estudiante Internacional</option>
-								<option value="Estudiantes con Artículo">Estudiante con Artículo</option>
-								<option value="Profesionales con Artículo">Profesional con Artículo</option>
-								<option value="Profesionales Nacionales">Profesional Nacional</option>
-								<option value="Participantes Internacionales">Participante Internacional</option>
+								<option value="Est_NPre">Estudiante Nacional Pregrado</option>
+								<option value="Est_NPost">Estudiante Nacional Postgrado</option>
+								<option value="Est_Int">Estudiante Internacional</option>
+								<option value="Est_Art">Estudiante con Artículo</option>
+								<option value="Pro_Art">Profesional con Artículo</option>
+								<option value="Pro_Nac">Profesional Nacional</option>
+								<option value="Par_Int">Participante Internacional</option>
 							</select>
 				</div>
 
