@@ -103,6 +103,18 @@
                                     <label for="ciudad">Ciudad</label>
                                     <input type="text" name="ciudad" id="ciudad" />
                                 </div>
+
+                                <div class="form-select">
+                                        <div class="label-flex">
+                                            <label for="Ocupacion">Ocupación</label>
+                                        </div>
+                                        <div class="select-list">
+                                            <select name="opcion2" id="opcion2" disabled !important><!--OJO-->
+                                            <option value="estudiante" disabled selected>Estudiante</option>
+                                            </select>
+                                        </div>
+                                </div>
+
                                 <div class="form-input">
                                     <label for="institucion">Institución/Entidad/Universidad</label>
                                     <input type="text" name="institucion" id="institucion" />
