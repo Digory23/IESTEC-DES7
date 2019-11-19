@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2019 a las 19:07:13
+-- Tiempo de generación: 19-11-2019 a las 19:28:23
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.14
 
@@ -41,8 +41,7 @@ CREATE TABLE `administrador` (
 
 CREATE TABLE `area_interes` (
   `ID_CodArea` int(15) NOT NULL,
-  `Descripcion` varchar(50) DEFAULT NULL,
-  `ID_Eventos` int(11) NOT NULL
+  `Descripcion` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -52,9 +51,8 @@ CREATE TABLE `area_interes` (
 --
 
 CREATE TABLE `articulos` (
-  `ID_Cedula` varchar(15) NOT NULL,
   `Tipo_Part` varchar(25) DEFAULT NULL,
-  `Cod_Articulo` varchar(50) DEFAULT NULL
+  `Cod_Articulo` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -67,9 +65,8 @@ CREATE TABLE `eventos` (
   `ID_Eventos` int(11) NOT NULL,
   `Nombre_Evento` varchar(30) NOT NULL,
   `Hora` varchar(15) NOT NULL,
-  `Area` varchar(20) NOT NULL,
   `ID_Sala` int(10) NOT NULL,
-  `Expositor` varchar(20) NOT NULL
+  `ID_area` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -88,18 +85,19 @@ CREATE TABLE `participantes` (
   `Provincia` varchar(30) DEFAULT NULL,
   `Miembro_IEEE` varchar(15) DEFAULT NULL,
   `Tipo_Participante` varchar(30) DEFAULT NULL,
-  `Area_Interes` varchar(25) DEFAULT NULL
+  `Area_Interes` varchar(25) DEFAULT NULL,
+  `email_facultad` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `participante_articulo`
+-- Estructura de tabla para la tabla `participantes_articulo`
 --
 
-CREATE TABLE `participante_articulo` (
-  `ID_Cedula` varchar(15) NOT NULL,
-  `ID_CedulaArt` varchar(15) NOT NULL
+CREATE TABLE `participantes_articulo` (
+  `ID_cedula` varchar(15) NOT NULL,
+  `ID_cod_articulo` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -123,7 +121,8 @@ CREATE TABLE `programas` (
   `ID_Evento` int(11) NOT NULL,
   `ID_Sala` int(10) NOT NULL,
   `Fecha` date NOT NULL,
-  `ID_Usuario` int(11) NOT NULL
+  `ID_Usuario` int(11) NOT NULL,
+  `ID_programa` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -207,35 +206,35 @@ ALTER TABLE `administrador`
 -- Indices de la tabla `area_interes`
 --
 ALTER TABLE `area_interes`
-  ADD PRIMARY KEY (`ID_CodArea`),
-  ADD KEY `ID_Eventos` (`ID_Eventos`);
+  ADD PRIMARY KEY (`ID_CodArea`);
 
 --
 -- Indices de la tabla `articulos`
 --
 ALTER TABLE `articulos`
-  ADD PRIMARY KEY (`ID_Cedula`);
+  ADD PRIMARY KEY (`Cod_Articulo`);
 
 --
 -- Indices de la tabla `eventos`
 --
 ALTER TABLE `eventos`
   ADD PRIMARY KEY (`ID_Eventos`),
-  ADD KEY `ID_Sala` (`ID_Sala`);
+  ADD KEY `ID_Sala` (`ID_Sala`),
+  ADD KEY `fk_AreaInteres` (`ID_area`);
 
 --
 -- Indices de la tabla `participantes`
 --
 ALTER TABLE `participantes`
   ADD PRIMARY KEY (`ID_Cedula`),
-  ADD KEY `Tipo_Participante` (`Tipo_Participante`);
+  ADD KEY `fk_TipoPart` (`Tipo_Participante`);
 
 --
--- Indices de la tabla `participante_articulo`
+-- Indices de la tabla `participantes_articulo`
 --
-ALTER TABLE `participante_articulo`
-  ADD UNIQUE KEY `ID_Cedula` (`ID_Cedula`,`ID_CedulaArt`),
-  ADD KEY `fk_Articulo` (`ID_CedulaArt`);
+ALTER TABLE `participantes_articulo`
+  ADD KEY `fk_Participante` (`ID_cedula`),
+  ADD KEY `ID_cod_articulo` (`ID_cod_articulo`);
 
 --
 -- Indices de la tabla `participante_interes`
@@ -248,7 +247,8 @@ ALTER TABLE `participante_interes`
 -- Indices de la tabla `programas`
 --
 ALTER TABLE `programas`
-  ADD PRIMARY KEY (`ID_Evento`),
+  ADD PRIMARY KEY (`ID_programa`),
+  ADD UNIQUE KEY `ID_Evento` (`ID_Evento`),
   ADD KEY `ID_Sala` (`ID_Sala`),
   ADD KEY `ID_Usuario` (`ID_Usuario`);
 
@@ -295,6 +295,12 @@ ALTER TABLE `eventos`
   MODIFY `ID_Eventos` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `programas`
+--
+ALTER TABLE `programas`
+  MODIFY `ID_programa` int(15) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -308,34 +314,34 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  ADD CONSTRAINT `fk_Cedula_Admin` FOREIGN KEY (`ID_Cedula`) REFERENCES `usuario` (`Cedula`);
+  ADD CONSTRAINT `fk_Cedula_Admin` FOREIGN KEY (`ID_Cedula`) REFERENCES `usuario` (`Cedula`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  ADD CONSTRAINT `fk_eventos` FOREIGN KEY (`ID_Eventos`) REFERENCES `area_interes` (`ID_Eventos`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_AreaInteres` FOREIGN KEY (`ID_area`) REFERENCES `area_interes` (`ID_CodArea`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `participantes`
 --
 ALTER TABLE `participantes`
-  ADD CONSTRAINT `fk_Articulos` FOREIGN KEY (`ID_Cedula`) REFERENCES `participante_articulo` (`ID_Cedula`),
-  ADD CONSTRAINT `fk_Cedula_Part` FOREIGN KEY (`ID_Cedula`) REFERENCES `usuario` (`Cedula`),
-  ADD CONSTRAINT `fk_ParticipanteInteres` FOREIGN KEY (`ID_Cedula`) REFERENCES `participante_interes` (`ID_Cedula`),
-  ADD CONSTRAINT `fk_TipoPart` FOREIGN KEY (`Tipo_Participante`) REFERENCES `tipo_part` (`ID_TipoPart`);
+  ADD CONSTRAINT `fk_Cedula_Part` FOREIGN KEY (`ID_Cedula`) REFERENCES `usuario` (`Cedula`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_TipoPart` FOREIGN KEY (`Tipo_Participante`) REFERENCES `tipo_part` (`ID_TipoPart`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `participante_articulo`
+-- Filtros para la tabla `participantes_articulo`
 --
-ALTER TABLE `participante_articulo`
-  ADD CONSTRAINT `fk_Articulo` FOREIGN KEY (`ID_CedulaArt`) REFERENCES `articulos` (`ID_Cedula`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `participantes_articulo`
+  ADD CONSTRAINT `fk_Participante` FOREIGN KEY (`ID_cedula`) REFERENCES `participantes` (`ID_Cedula`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `participantes_articulo_ibfk_1` FOREIGN KEY (`ID_cod_articulo`) REFERENCES `articulos` (`Cod_Articulo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `participante_interes`
 --
 ALTER TABLE `participante_interes`
-  ADD CONSTRAINT `fk_Area` FOREIGN KEY (`Cod_Area`) REFERENCES `area_interes` (`ID_CodArea`);
+  ADD CONSTRAINT `fk_Area` FOREIGN KEY (`Cod_Area`) REFERENCES `area_interes` (`ID_CodArea`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_Participantes_Interes` FOREIGN KEY (`ID_Cedula`) REFERENCES `participantes` (`ID_Cedula`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `programas`
