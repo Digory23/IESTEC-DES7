@@ -1,17 +1,6 @@
 <?php 
-
-//variables del metodo POST
-$select_user = $_POST['select_part'];
-
-     /*   if($stmt->rowCount() > 0)
-        {
-            echo "Registro exitoso";
-            header('Location: ../index.php');
-        }
-        else{
-            echo "Error";
-            
-        }*/
+    $titulo= $_GET['titulo'];
+    $lugar= $_GET['lugar'];
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +9,7 @@ $select_user = $_POST['select_part'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Estudiantes Nacionales Postgrado</title>
+    <title><?php echo $titulo ?></title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="../css/form css/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -29,11 +18,14 @@ $select_user = $_POST['select_part'];
     <!-- Main css -->
     <link rel="stylesheet" href="../css/form css/styleform.css">
     <link rel="stylesheet" href="../css/prueba.css">
-</head>
 
+    
+
+</head>
 <body>
 
     <div class="main">
+
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
@@ -44,10 +36,10 @@ $select_user = $_POST['select_part'];
             
                 <div class="signup-form">
                     <h1>Inscripción y pago</h1>
-                    <h2><?php echo $select_user ?></h2>
+                    <h2><?php echo $titulo ?></h2>
                     <p>Asegúrese de verificar que su información sea Correcta y que TODOS LOS CAMPOS sean válidos</p>
                     
-                    <form action="../inserts/insertar_EPregrado.php" method="POST" class="register-form" id="register-form">
+                    <form action="Cenas.php" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
@@ -58,10 +50,23 @@ $select_user = $_POST['select_part'];
                                     <label for="last_name" class="required">Apellido(s)</label>
                                     <input type="text" name="last_name" id="last_name" />
                                 </div>
-                                <div class="form-input">
-                                    <label for="id" class="required">Cedula/Identificacion</label>
-                                    <input type="text" name="ID" id="ID" />
-                                </div>
+                                
+                                <!--Comparacion para saber si es internacional o no con el lugar
+                                    Dependiendo de si es o no internacional, pedirá cedula o pasaporte.-->
+                                <?php
+                                if($lugar=='Provincia'){
+                                    echo '  <div class="form-input">
+                                            <label for="id" class="required">Identificación (Cédula)</label>
+                                            <input type="text" name="ID" id="ID" />
+                                            </div> ';
+                                        }
+                                else {
+                                    echo '  <div class="form-input">
+                                            <label for="id" class="required">Identificación (Cédula/Pasaporte)</label>
+                                            <input type="text" name="ID" id="ID" />
+                                            </div> ';
+                                    }
+                                ?>
 
                                 <div class="form-select">
                                         <div class="label-flex">
@@ -69,7 +74,7 @@ $select_user = $_POST['select_part'];
                                         </div>
                                         <div class="select-list">
                                             <select name="opcion" id="opcion"><!--OJO-->
-                                                <option value="Masculino">Masculino</option>
+                                                <option disabled selected hidden value="selecsex" >Seleccionar sexo</option>
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
                                                 <option value="Otro">Otro</option>
@@ -94,18 +99,44 @@ $select_user = $_POST['select_part'];
                                     </div>
                                     <div class="select-list">
                                         <select name="opcion1" id="opcion1">
-                                            <option value="Miempro_Estudiantil">Miembro Estudiantil</option>
+                                            <option disabled selected hidden value="Selecc">Seleccionar</option>
                                             <option value="Miempro_Estudiantil">Miembro Estudiantil</option>
                                             <option value="Miembro_Profesional">Miembro Profesional</option>
                                             <option value="Sociedad_Afiliada">Sociedad Afiliada</option>
                                         </select>
                                     </div>
                                 </div>
-                               
-                                <div class="form-input">
+
+                                <div class="form-select">
+                                        <div class="label-flex">
+                                            <label for="Ocupacion">Ocupación</label>
+                                        </div>
+                                        <div class="select-list">
+                                            <select name="opcion2" id="opcion2"><!--OJO-->
+                                                <option disabled selected hidden value="Selecc">Seleccionar</option>
+                                                <option value="intestigador">Investigador</option>
+                                                <option value="profesor">Profesor</option>
+                                                <option value="ingeniero">Ingeniero</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                            
+                            <!--Comparacion para saber si es internacional o no con el lugar-->
+                              <?php
+                              if($lugar=='Provincia'){
+                                echo '  <div class="form-input">
                                         <label for="provincia">Provincia</label>
                                         <input type="text" name="provincia" id="provincia" />
-                                    </div>
+                                        </div> ';
+                                    }
+                                else {
+                                    echo '  <div class="form-input">
+                                    <label for="provincia">País</label>
+                                    <input type="text" name="provincia" id="provincia" />
+                                    </div> ';
+
+                                    }
+                                ?>
 
                                 <div class="form-input">
                                     <label for="ciudad">Ciudad</label>
@@ -121,12 +152,13 @@ $select_user = $_POST['select_part'];
                                 </div>
                             </div>
                         </div>
-                       
+                        
                         <div class="form-submit">
                             <input type="submit" value="Cena y Pago" class="submit" id="submit" name="submit" />
                             <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

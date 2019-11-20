@@ -478,16 +478,16 @@ li.init {
   color: #999;
   border: 2px solid #ebebeb; }
   #reset:hover {
-    border: 2px solid #329e5e;
-    background: #329e5e;
+    border: 2px solid #752599;
+    background: #752599;
     color: #fff; }
 
 #submit {
-  background: #329e5e;
+  background: #a734db;
   color: #fff;
   margin-right: 25px; }
   #submit:hover {
-    background-color: #267747; }
+    background-color: #752599; }
 
 .form-input {
   position: relative; }

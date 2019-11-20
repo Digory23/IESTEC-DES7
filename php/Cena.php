@@ -1,10 +1,14 @@
+<?php 
+//aqui declararia una variable si supiera que hacer con ella jaja salu2
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Estudiantes Internacionales de Pregado y Postgrado</title>
+    <title>Cena y Pago</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="../css/form css/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -26,26 +30,29 @@
             
                 <div class="signup-form">
                     <h1>Inscripción y pago</h1>
-
-                   
-
-                      
-                    <h2>Estudiantes Nacionales de Postgrado</h2>
-                      
+                    <h2>Aqui va el titulo que se recibe del frm anterior</h2>
+                    
 
                     <form method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                             <div class="form-radio">
 
-                        <h1>Giras Tencnicas</h1>
-                         <label>____________________________________________________________________</label>
-                        <div Class= "CHKB">
-                        <label><input type="checkbox" value="PayPal" >Empresa de Reciclaje </label>
-                        </div>
+                            
+                            <?php/*
+                            AAAAAAAAAAAAAqui la idea es comparar el value que se recibe de la seleccion de tipo
+                            de usuario, estos dos son los unicos internacionales, asi que algo asi seria el if
+                            peeero no se como pasar los valores esos aun, tengo sueño
 
-                            <h1>Cena de clausura</h1>
+                                if($select_user=='Est_Int') or ($select_user=='Par_Int'){
+                                    echo '  <h1>Giras Técnicas</h1><br>
+                                            <div Class= "CHKB">
+                                            <label><input type="checkbox" value="PayPal" >Empresa de Reciclaje </label>
+                                            </div> ';
+                                    }*/
+                                ?>
 
+                            <h1>Cena de Clausura</h1>
                                     <div class="form-select">
                                         <div class="label-flex">
                                             <label for="Cena">Cena</label>
@@ -63,7 +70,7 @@
                             </div>
 
                  <div class="probando">
-                            <h1>Áreas de interes</h1>
+                            <h1>Áreas de intéres</h1>
                         <div Class= "CHKB">   
                         <label><input type="checkbox" value="Agroindustria">Agroindustria</label>
                         </div>
@@ -114,8 +121,6 @@
                         <label><input type="checkbox" value="PayPal" >PayPal</label>
                         </div>
                         
-
-                    
              </div>
                        
                         <div class="form-submit">

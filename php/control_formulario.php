@@ -1,39 +1,34 @@
 <?php 
 $select_user = $_POST['select_part'];
-$titulo_form;
-
-
 
 switch ($select_user) 
 {
     case 'Est_NPre':{
-        
-        header('Location: Estudiantes_Nacionales_Postgrado.php?titulo=Estudiante Nacional Pregrado');
+        header('Location: Frm_EN.php?titulo=Estudiante Nacional Pregrado');
     break;
     }
     case 'Est_NPost':{
-        
-        header('Location: Estudiantes_Nacionales_Postgrado.php?titulo=Estudiante Nacional Postgrado');
+        header('Location: Frm_EN.php?titulo=Estudiante Nacional Postgrado');
     break;
     }
     case 'Est_Int':{
-        $titulo_form = 'Estudiante Internacional';
+        header('Location: Frm_EI.php?titulo=Estudiante Internacional');
     break;
     }
     case 'Est_Art':{
-        $titulo_form = 'Estudiante con Articulo';
+        header('Location: Frm_AR.php?titulo=Estudiante de Pregrado con Artículo&tipo=Estudiante');
     break;
     }
     case 'Pro_Art':{
-        $titulo_form = 'Profesional con Articulo';
+        header('Location: Frm_AR.php?titulo=Profesional con Artículo&tipo=Profesional');
     break;
     }
     case 'Pro_Nac':{
-        header('Location: Profesionales_Nacionales.php?titulo=Ente maligno Nacional Postgrado');
+        header('Location: Frm_PI.php?titulo=Profesionales Nacionales&lugar=Provincia');
     break;
     }
     case 'Par_Int':{
-        $titulo_form = 'Participante Internacional';
+        header('Location: Frm_PI.php?titulo=Participante Internacional&lugar=País');
     break;
     }
 }
