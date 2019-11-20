@@ -1,5 +1,5 @@
 <?php 
-//aqui declararia una variable si supiera que hacer con ella jaja salu2
+//include ('../controllers/Frm_EN_controller.php');
 
 
 ?>
@@ -46,7 +46,7 @@
                             de usuario, estos dos son los unicos internacionales, asi que algo asi seria el if
                             peeero no se como pasar los valores esos aun, tengo sueño
 
-                                if($select_user=='Est_Int') or ($select_user=='Par_Int'){
+                                if($tipo_par=='Int') {
                                     echo '  <h1>Giras Técnicas</h1><br>
                                             <div Class= "CHKB">
                                             <label><input type="checkbox" value="PayPal" >Empresa de Reciclaje </label>

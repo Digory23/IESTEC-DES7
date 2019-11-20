@@ -11,5 +11,7 @@ $provincia = $_POST['provincia'];
 $ciudad = $_POST['ciudad'];
 $institucion = $_POST['institucion'];
 $departamento = $_POST['departamento'];
+$tipo_par = 'Nac';
 
+header('Location: ../php/Cena.php');
 ?>
