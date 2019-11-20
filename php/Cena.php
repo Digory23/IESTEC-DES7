@@ -1,5 +1,7 @@
 <?php 
 //aqui declararia una variable si supiera que hacer con ella jaja salu2
+
+
 ?>
 
 <!DOCTYPE html>
