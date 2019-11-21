@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2019 a las 19:28:23
+-- Tiempo de generación: 21-11-2019 a las 19:10:39
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.14
 
@@ -58,6 +58,18 @@ CREATE TABLE `articulos` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `entrada`
+--
+
+CREATE TABLE `entrada` (
+  `cod_entrada` int(6) NOT NULL,
+  `cod_qr` varchar(30) NOT NULL,
+  `ID_Usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `eventos`
 --
 
@@ -78,12 +90,6 @@ CREATE TABLE `eventos` (
 CREATE TABLE `participantes` (
   `ID_Cedula` varchar(15) NOT NULL,
   `Cena` varchar(10) DEFAULT NULL,
-  `Institucion` varchar(20) DEFAULT NULL,
-  `Unidad` varchar(25) DEFAULT NULL,
-  `Pais` varchar(20) DEFAULT NULL,
-  `Ciudad` varchar(25) DEFAULT NULL,
-  `Provincia` varchar(30) DEFAULT NULL,
-  `Miembro_IEEE` varchar(15) DEFAULT NULL,
   `Tipo_Participante` varchar(30) DEFAULT NULL,
   `Area_Interes` varchar(25) DEFAULT NULL,
   `email_facultad` varchar(25) NOT NULL
@@ -109,6 +115,23 @@ CREATE TABLE `participantes_articulo` (
 CREATE TABLE `participante_interes` (
   `ID_Cedula` varchar(15) NOT NULL,
   `Cod_Area` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `precios`
+--
+
+CREATE TABLE `precios` (
+  `autores_est_art_acep` int(11) NOT NULL,
+  `autores_prof_art_acep` int(11) NOT NULL,
+  `est_pregrado` int(11) NOT NULL,
+  `est_postgrado` int(11) NOT NULL,
+  `prof_nacionales` int(11) NOT NULL,
+  `est_inter_pre_post` int(11) NOT NULL,
+  `otros_internacionales` int(11) NOT NULL,
+  `ID_TipoPart` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -164,8 +187,8 @@ CREATE TABLE `tipo_usuario` (
 --
 
 INSERT INTO `tipo_usuario` (`ID_TipoUsuario`, `Descrip`) VALUES
-('est', 'Estudiante'),
-('pro', 'Profesional');
+('adm', 'Administrador '),
+('par', 'Participante');
 
 -- --------------------------------------------------------
 
@@ -177,20 +200,27 @@ CREATE TABLE `usuario` (
   `ID_Usuario` int(11) NOT NULL,
   `Nombre` varchar(20) DEFAULT NULL,
   `Apellido` varchar(20) DEFAULT NULL,
-  `Sexo` char(1) DEFAULT NULL,
+  `Sexo` varchar(20) DEFAULT NULL,
   `Email` varchar(20) DEFAULT NULL,
   `Telefono` varchar(15) DEFAULT NULL,
+  `Miembro_IEEE` varchar(25) NOT NULL,
   `Tipo_Ussuario` varchar(30) DEFAULT NULL,
-  `Cedula` varchar(15) NOT NULL
+  `Cedula` varchar(15) NOT NULL,
+  `Institucion` varchar(20) NOT NULL,
+  `Unidad` varchar(25) NOT NULL,
+  `Pais` varchar(20) NOT NULL,
+  `Ciudad` varchar(25) NOT NULL,
+  `Provincia` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Telefono`, `Tipo_Ussuario`, `Cedula`) VALUES
-(1, 'Daniel', 'Diaz', NULL, 'danyd2339@gmail.com', '123-7654', 'est', '8-928-1643'),
-(2, 'Jotaro', 'Joestar', NULL, 'oraoraora@gmail.com', '123-5739', 'est', '200-928-5432');
+INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Telefono`, `Miembro_IEEE`, `Tipo_Ussuario`, `Cedula`, `Institucion`, `Unidad`, `Pais`, `Ciudad`, `Provincia`) VALUES
+(3, 'Daniel', 'Diaz', '', 'Masculino', '123-4556', '', 'par', '8-234-5432', 'Utp', 'FISC', '', 'Panama', 'Panama'),
+(6, 'Daniel', 'Diaz', NULL, 'danyd2339@gmail.com', '7863602816', '', 'par', '8-928-1643', 'UTP', 'FISC', '', 'Panama', 'PanamÃ¡'),
+(7, 'JOSEPH', 'JOESTAR', NULL, 'OHMYGOD@gmail.com', '346-45664', '', 'par', '7-777-7777', 'UTP', 'FISC', '', 'Panama', 'PanamÃ¡');
 
 --
 -- Índices para tablas volcadas
@@ -213,6 +243,13 @@ ALTER TABLE `area_interes`
 --
 ALTER TABLE `articulos`
   ADD PRIMARY KEY (`Cod_Articulo`);
+
+--
+-- Indices de la tabla `entrada`
+--
+ALTER TABLE `entrada`
+  ADD PRIMARY KEY (`cod_entrada`),
+  ADD UNIQUE KEY `ID_Usuario` (`ID_Usuario`);
 
 --
 -- Indices de la tabla `eventos`
@@ -242,6 +279,12 @@ ALTER TABLE `participantes_articulo`
 ALTER TABLE `participante_interes`
   ADD PRIMARY KEY (`ID_Cedula`),
   ADD KEY `fk_Area` (`Cod_Area`);
+
+--
+-- Indices de la tabla `precios`
+--
+ALTER TABLE `precios`
+  ADD KEY `ID_TipoPart` (`ID_TipoPart`);
 
 --
 -- Indices de la tabla `programas`
@@ -304,7 +347,7 @@ ALTER TABLE `programas`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
@@ -315,6 +358,12 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `administrador`
   ADD CONSTRAINT `fk_Cedula_Admin` FOREIGN KEY (`ID_Cedula`) REFERENCES `usuario` (`Cedula`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `entrada`
+--
+ALTER TABLE `entrada`
+  ADD CONSTRAINT `fk_entradas` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`ID_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `eventos`
@@ -342,6 +391,12 @@ ALTER TABLE `participantes_articulo`
 ALTER TABLE `participante_interes`
   ADD CONSTRAINT `fk_Area` FOREIGN KEY (`Cod_Area`) REFERENCES `area_interes` (`ID_CodArea`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_Participantes_Interes` FOREIGN KEY (`ID_Cedula`) REFERENCES `participantes` (`ID_Cedula`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `precios`
+--
+ALTER TABLE `precios`
+  ADD CONSTRAINT `fk_TipoParticipante` FOREIGN KEY (`ID_TipoPart`) REFERENCES `tipo_part` (`ID_TipoPart`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `programas`
