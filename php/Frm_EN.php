@@ -56,7 +56,7 @@
                                     <input type="text" name="ID" id="ID" />
                                 </div>
 
-                                <div class="form-select">
+                                <!--<div class="form-select">
                                         <div class="label-flex">
                                             <label for="sexo">Sexo</label>
                                         </div>
@@ -68,13 +68,18 @@
                                                 <option value="Otro">Otro</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div>-->
 
+                                    <div class="form-select">
+                                    <div class="label-flex">
+                                            <label for="sexo">Sexo</label>
+                                        </div>
                                     <select name="sexo" id="sexo">
                                         <option value="Masculino">Masculino</option>
                                         <option value="Femenino">Femenino</option>
                                         <option value="Otro">Otro</option>
                                     </select>
+                                    </div>
 
                                 <div class="form-input">
                                     <label for="email" class="required">Email</label>
@@ -94,13 +99,14 @@
                                     <div class="select-list">
                                         <select name="opcion1" id="opcion1">
                                             <option disabled selected hidden value="Selecc">Seleccionar</option>
-                                            <option value="Miempro_Estudiantil">Miembro Estudiantil</option>
-                                            <option value="Miembro_Profesional">Miembro Profesional</option>
-                                            <option value="Sociedad_Afiliada">Sociedad Afiliada</option>
+                                            <option value="Miembro Estudiantil">Miembro Estudiantil</option>
+                                            <option value="Miembro Profesional">Miembro Profesional</option>
+                                            <option value="Sociedad Afiliada">Sociedad Afiliada</option>
                                         </select>
                                     </div>
                                 </div>
 
+                                
 
                                 <div class="form-input">
                                         <label for="provincia">Provincia</label>
