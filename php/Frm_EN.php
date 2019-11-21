@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $titulo ?></title>
 
-    <link href="img/utp.png" rel="icon">
+    <link href="../img/utp.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
     <!-- Font Icon -->
     <link rel="stylesheet" href="../css/form css/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -40,7 +40,7 @@
                     <p>Asegúrese de verificar que su información sea correcta y que TODOS LOS CAMPOS sean válidos.</p>
                     
 
-                    <form action="../controllers/Frm_EN_controller.php" method="POST" class="register-form" id="register-form">
+                    <form action="../inserts/Frm_EN_controller.php" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
@@ -61,7 +61,7 @@
                                             <label for="sexo">Sexo</label>
                                         </div>
                                         <div class="select-list">
-                                            <select name="opcion" id="opcion"><!--OJO-->
+                                            <select name="opcion" id="opcion">
                                                 <option disabled selected hidden value="selecsex" >Seleccionar sexo</option>
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
@@ -114,24 +114,74 @@
                                     <input type="text" name="departamento" id="departamento" />
                                 </div>
                             </div>
-                        </div>
-                        <!--<div class="donate-us">
-                            <label>Donate us</label>
-                            <div class="price_slider ui-slider ui-slider-horizontal">
-                                <div id="slider-margin"></div>
-                                <span class="donate-value" id="value-lower"></span>
-                            </div>
-                        </div>-->
+                        </div> 
 
+                        <h1>Cena de Clausura</h1>
+                            <div class="form-select">
+                                <div class="label-flex">
+                                            <label for="Cena">Cena</label>
+                                </div>
+                                    <div class="select-list">
+                                        <select name="opcion4" id="opcion4"><!--OJO-->
+                                            <option disabled selected hidden value="selecena" >Seleccionar opción</option>
+                                            <option value="Solo">Si, asistiré a la cena de clausura solo. (+10.00 USD)</option>
+                                            <option value="Duo">Si, asistiré a la cena de clausura con un acompañante. (+60.00 USD)</option>
+                                            <option value="No">No asistiré a la cena de clausura.</option>
+                                        </select>
+                                    </div>
+                                </div>
+                        <h1>Áreas de intéres</h1>
+                        <div class= "CHKB">   
+                        <label><input type="checkbox" name="interes_selec[]" value="Agroindustria">Agroindustria</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="Ciencias_Basicas">Ciencias Básicas</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="Economía_Sociedad" >Economía y Sociedad</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="Educación_Ingeniería" >Educación en Ingeniería</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="Energía_Ambiente" >Energía y Ambiente</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="Gestión_Empresarial" >Gestión Empresarial</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="Infraestrucutra" >Infraestrucutra</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="Logística_Transporte" >Logística y Transporte</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="Robótica" >Robótica</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="TIC" >TIC</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="Tecnologías_Emergentes" >Tecnologías Emergentes</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="interes_selec[]" value="Otros" >Otros</label>
+                        </div><br>
+
+                        <h1>Opciones de pago</h1>
+                        <div class= "RBTN">
+                        <label><input type="radio" name="pago" value="PayPal" ><img class="img-responsive" src="../img/paypal.png" alt="paypal" width="200" height="400"></label>
+                        </div>
+                        
                         <div class="form-submit">
-                            <input type="submit" value="Cena y Pago" class="submit" id="submit" name="submit" />
-                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                            <input type="submit" value="Inscribirme y Pagar" class="submit" id="submit" name="submit" />
+                            <input type="submit" value="Volver" class="submit" id="reset" name="reset" />
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- JS -->

@@ -178,6 +178,11 @@ img {
   max-width: 100%;
   height: auto; }
 
+.RBTN img{
+  display: inline;
+  vertical-align: middle;
+}
+
 figure {
   margin: 0; }
 
@@ -267,9 +272,17 @@ label, input {
 .CHKB label {
     width: 100%; }
 
-    .CHKB input {
-      display: inline-flex;
-      width: 100%; }
+.CHKB input {
+      display: inline;
+      vertical-align: middle;
+}
+
+.RBTN label {
+    width: 100%; }
+
+.RBTN input {
+    display: inline-flex;
+    width: 100%; }
 
 label {
   font-weight: bold;
@@ -320,9 +333,6 @@ input {
     left: 0;
     bottom: 12px; }
 
-input[type=radio] {
-  position: absolute;
-  visibility: hidden; }
   input[type=radio]:checked ~ .check {
     border: 1px solid #329e5e; }
   input[type=radio]:checked ~ .check::before {
