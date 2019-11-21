@@ -3,8 +3,6 @@
 (function($) {
 
 
-  $('#opcion').parent().append('<ul class="list-item" id="newopcion" name="opcion" ></ul>');
-
 
   $('#opcion').parent().append('<ul class="list-item" id="newopcion" name="opcion" ></ul>');
 
