@@ -40,7 +40,7 @@
                     <p>Asegúrese de verificar que su información sea correcta y que TODOS LOS CAMPOS sean válidos.</p>
                     
 
-                    <form action="../inserts/Frm_EN_controller.php" method="POST" class="register-form" id="register-form">
+                    <form action="../inserts/insertar_EPregrado.php" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
@@ -69,6 +69,12 @@
                                             </select>
                                         </div>
                                     </div>
+
+                                    <select name="sexo" id="sexo">
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
 
                                 <div class="form-input">
                                     <label for="email" class="required">Email</label>

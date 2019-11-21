@@ -1,4 +1,4 @@
-<?php 
+<?php/* 
 include "conexion.php";
 
 $nombre = $_POST['first_name'];
@@ -35,4 +35,4 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Email, Telefono,Tipo_Ussuario, Ce
             
         }
 
-?>
+*/?>

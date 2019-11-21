@@ -5,9 +5,6 @@
 
   $('#opcion').parent().append('<ul class="list-item" id="newopcion" name="opcion" ></ul>');
 
-
-  $('#opcion').parent().append('<ul class="list-item" id="newopcion" name="opcion" ></ul>');
-
   $('#opcion option').each(function(){
       $('#newopcion').append('<li value="' + $(this).val() + '">'+$(this).text()+'</li>');
   });
