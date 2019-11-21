@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2019 a las 17:17:13
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 21-11-2019 a las 19:10:39
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `iestec3.0`
+-- Base de datos: `iestec`
 --
 
 -- --------------------------------------------------------
@@ -90,7 +90,6 @@ CREATE TABLE `eventos` (
 CREATE TABLE `participantes` (
   `ID_Cedula` varchar(15) NOT NULL,
   `Cena` varchar(10) DEFAULT NULL,
-  `Miembro_IEEE` varchar(15) DEFAULT NULL,
   `Tipo_Participante` varchar(30) DEFAULT NULL,
   `Area_Interes` varchar(25) DEFAULT NULL,
   `email_facultad` varchar(25) NOT NULL
@@ -169,7 +168,7 @@ CREATE TABLE `sala` (
 
 CREATE TABLE `tipo_part` (
   `ID_TipoPart` varchar(30) NOT NULL,
-  `Descrip` text DEFAULT NULL
+  `Descrip` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -180,7 +179,7 @@ CREATE TABLE `tipo_part` (
 
 CREATE TABLE `tipo_usuario` (
   `ID_TipoUsuario` varchar(30) NOT NULL,
-  `Descrip` text DEFAULT NULL
+  `Descrip` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -188,8 +187,8 @@ CREATE TABLE `tipo_usuario` (
 --
 
 INSERT INTO `tipo_usuario` (`ID_TipoUsuario`, `Descrip`) VALUES
-('est', 'Estudiante'),
-('pro', 'Profesional');
+('adm', 'Administrador '),
+('par', 'Participante');
 
 -- --------------------------------------------------------
 
@@ -201,9 +200,10 @@ CREATE TABLE `usuario` (
   `ID_Usuario` int(11) NOT NULL,
   `Nombre` varchar(20) DEFAULT NULL,
   `Apellido` varchar(20) DEFAULT NULL,
-  `Sexo` char(1) DEFAULT NULL,
+  `Sexo` varchar(20) DEFAULT NULL,
   `Email` varchar(20) DEFAULT NULL,
   `Telefono` varchar(15) DEFAULT NULL,
+  `Miembro_IEEE` varchar(25) NOT NULL,
   `Tipo_Ussuario` varchar(30) DEFAULT NULL,
   `Cedula` varchar(15) NOT NULL,
   `Institucion` varchar(20) NOT NULL,
@@ -217,9 +217,10 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Telefono`, `Tipo_Ussuario`, `Cedula`, `Institucion`, `Unidad`, `Pais`, `Ciudad`, `Provincia`) VALUES
-(1, 'Daniel', 'Diaz', NULL, 'danyd2339@gmail.com', '123-7654', 'est', '8-928-1643', '', '', '', '', ''),
-(2, 'Jotaro', 'Joestar', NULL, 'oraoraora@gmail.com', '123-5739', 'est', '200-928-5432', '', '', '', '', '');
+INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Telefono`, `Miembro_IEEE`, `Tipo_Ussuario`, `Cedula`, `Institucion`, `Unidad`, `Pais`, `Ciudad`, `Provincia`) VALUES
+(3, 'Daniel', 'Diaz', '', 'Masculino', '123-4556', '', 'par', '8-234-5432', 'Utp', 'FISC', '', 'Panama', 'Panama'),
+(6, 'Daniel', 'Diaz', NULL, 'danyd2339@gmail.com', '7863602816', '', 'par', '8-928-1643', 'UTP', 'FISC', '', 'Panama', 'PanamÃ¡'),
+(7, 'JOSEPH', 'JOESTAR', NULL, 'OHMYGOD@gmail.com', '346-45664', '', 'par', '7-777-7777', 'UTP', 'FISC', '', 'Panama', 'PanamÃ¡');
 
 --
 -- Índices para tablas volcadas
@@ -346,7 +347,7 @@ ALTER TABLE `programas`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
