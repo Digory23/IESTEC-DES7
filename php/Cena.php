@@ -35,7 +35,7 @@
                     <h2>Aqui va el titulo que se recibe del frm anterior</h2>
                     
 
-                    <form method="POST" class="register-form" id="register-form">
+                    <form method="POST" class="register-form" id="register-form" action= "../inserts/insertar_EN.php">
                         <div class="form-row">
                             <div class="form-group">
                             <div class="form-radio">
