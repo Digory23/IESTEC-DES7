@@ -1,9 +1,9 @@
 <?php 
 include "conexion.php";
-//include "../inserts/insertar_EN.php";
+include "../inserts/insertar_EN.php";
 
-//variables del metodo POST
-/*$nombre = $_POST['first_name'];
+
+$nombre = $_POST['first_name'];
 $apellido = $_POST['last_name'];
 $cedula = $_POST['ID'];
 $sexo = $_POST['opcion'];
