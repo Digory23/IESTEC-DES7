@@ -144,13 +144,13 @@
                                 </div>
                         <h1>Áreas de intéres</h1>
                         <div class= "CHKB">   
-                        <label><input type="checkbox" name="interes_selec[]" value="Agroindustria">Agroindustria</label>
+                        <label><input type="checkbox" name="ar1" value="Agroind">Agroindustria</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="Ciencias_Basicas">Ciencias Básicas</label>
+                        <label><input type="checkbox" name="ar2" value="Cien_Bas">Ciencias Básicas</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="Economía_Sociedad" >Economía y Sociedad</label>
+                        <label><input type="checkbox" name="ar3" value="Econ_Soc" >Economía y Sociedad</label>
                         </div>
                         <div class= "CHKB">
                         <label><input type="checkbox" name="interes_selec[]" value="Educación_Ingeniería" >Educación en Ingeniería</label>
