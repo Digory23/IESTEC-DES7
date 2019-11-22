@@ -1,5 +1,6 @@
 //darle una revision
 
+<<<<<<< HEAD
 (function($) {
 
 
@@ -102,6 +103,10 @@
     })(jQuery);
   
     
+=======
+
+  (function($) {
+>>>>>>> 68f8998e3c585ed45636f83d358208f3d7d6d30a
   
   (function($) {
   

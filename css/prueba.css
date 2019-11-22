@@ -1,4 +1,4 @@
-select, option{
+select option{
     box-sizing: border-box;
     border: 1px solid #ebebeb;
     padding: 14px 20px;
@@ -11,7 +11,7 @@ select, option{
     font-family: 'Poppins';
     width: 90%;
 }
-option {
+select option {
     font-weight: normal;
     display: block;
     white-space: pre;
@@ -19,7 +19,7 @@ option {
     padding: 0px 2px 1px;
 }
 
-select {
+.select-list select {
     
     text-rendering: auto;
     color: black;
@@ -31,8 +31,7 @@ select {
     text-align: start;
     white-space: pre;
     -webkit-rtl-ordering: logical;
-    cursor: default;
-    font: 400 13.3333px Arial;
+     font: 400 13.3333px Arial;
 }   
 
 .select-list {
@@ -42,12 +41,11 @@ select {
     margin-bottom: 47px; }
 
 label, input{
-    display: flex !important;
+    
     width: auto !important;
 }
 
-.form-submit .submit{
-    display: block !important;
-}
+
+
 
 

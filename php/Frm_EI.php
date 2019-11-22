@@ -1,10 +1,14 @@
+<?php 
+    $titulo= $_GET['titulo'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profesional con Articulo</title>
+    <title><?php echo $titulo ?></title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="../css/form css/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -28,10 +32,10 @@
             
                 <div class="signup-form">
                     <h1>Inscripción y pago</h1>
-                    <h2>Profesional con Articulo Aceptado</h2>
+                    <h2><?php echo $titulo ?></h2>
                     <p>Asegúrese de verificar que su información sea Correcta y que TODOS LOS CAMPOS sean válidos</p>
                     
-                    <form action="Cenas.php" method="POST" class="register-form" id="register-form">
+                    <form action="Cena_Inter.php" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
@@ -43,7 +47,7 @@
                                     <input type="text" name="last_name" id="last_name" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="id" class="required">Cedula/Identificacion</label>
+                                    <label for="id" class="required">Identificación (Cédula)</label>
                                     <input type="text" name="ID" id="ID" />
                                 </div>
 
@@ -53,7 +57,7 @@
                                         </div>
                                         <div class="select-list">
                                             <select name="opcion" id="opcion"><!--OJO-->
-                                                <option value="Masculino">Masculino</option>
+                                                <option disabled selected hidden value="selecsex" >Seleccionar sexo</option>
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
                                                 <option value="Otro">Otro</option>
@@ -62,17 +66,18 @@
                                     </div>
 
                                 <div class="form-input">
-                                    <label for="email" class="required">Email</label>
+                                    <label for="email" class="required">Email del Estudiante</label>
                                     <input type="text" name="email" id="email" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="phone_number" class="required">Teléfono</label>
-                                    <input type="text" name="phone_number" id="phone_number" />
                                 </div>
 
                                 <div class="form-input">
-                                    <label for="cod_paper">Codigo paper aprobado</label>
-                                    <input type="text" name="codigo_paper" id="codigo_paper" />
+                                    <label for="email2" class="required">Email de la Facultad</label>
+                                    <input type="text" name="email2" id="email2" />
+                                </div>
+
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Teléfono</label>
+                                    <input type="text" name="phone_number" id="phone_number" />
                                 </div>
                                
                             </div>
@@ -83,38 +88,23 @@
                                     </div>
                                     <div class="select-list">
                                         <select name="opcion1" id="opcion1">
-                                            <option value="Miempro_Estudiantil">Miembro Estudiantil</option>
+                                            <option disabled selected hidden value="Selecc">Seleccionar</option>
                                             <option value="Miempro_Estudiantil">Miembro Estudiantil</option>
                                             <option value="Miembro_Profesional">Miembro Profesional</option>
                                             <option value="Sociedad_Afiliada">Sociedad Afiliada</option>
                                         </select>
                                     </div>
                                 </div>
-
-                                
                                
                                 <div class="form-input">
-                                        <label for="provincia">Provincia</label>
-                                        <input type="text" name="provincia" id="provincia" />
+                                        <label for="provincia">Pais</label>
+                                        <input type="text" name="pais" id="pais" />
                                     </div>
 
                                 <div class="form-input">
                                     <label for="ciudad">Ciudad</label>
                                     <input type="text" name="ciudad" id="ciudad" />
                                 </div>
-
-                                <div class="form-select">
-                                        <div class="label-flex">
-                                            <label for="Ocupacion">Ocupacion</label>
-                                        </div>
-                                        <div class="select-list">
-                                            <select name="opcion2" id="opcion2"><!--OJO-->
-                                                <option value="intestigador">Investigador</option>
-                                                <option value="profesor">Profesor</option>
-                                                <option value="ingeniero">Ingeniero</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                 <div class="form-input">
                                     <label for="institucion">Institución/Entidad/Universidad</label>
                                     <input type="text" name="institucion" id="institucion" />
@@ -123,17 +113,9 @@
                                     <label for="departamento">Unidad/Departamento/Facultad</label>
                                     <input type="text" name="departamento" id="departamento" />
                                 </div>
-                                
-                                <div class="form-select">
-                                    <div class="label-flex">
-                                        <label for="Segundo paper">Segundo paper aprobado</label>
-                                    </div>
-                                    <div class="select-list">
-                                        <select name="opcion3" id="opcion3">
-                                            <option value="opcion"></option>
-                                            
-                                        </select>
-                                    </div>
+                                <div class="form-input">
+                                    <label for="idest" >Número de Identificación del estudiante</label>
+                                    <input type="text" name="IDest" id="IDest" />
                                 </div>
                             </div>
                         </div>

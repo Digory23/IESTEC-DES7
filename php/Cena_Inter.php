@@ -27,15 +27,21 @@
             
                 <div class="signup-form">
                     <h1>Inscripción y pago</h1>
-                    <h2>Estudiantes Nacionales de Postgrado</h2>
-                    
+                    <h2>Internacionales</h2>
+                      
 
                     <form method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                             <div class="form-radio">
-                            <h1>Cena de clausura</h1>
 
+                            <h1>Giras Tencnicas</h1>
+                            <label>____________________________________________________________________</label>
+                            <div Class= "CHKB">
+                            <label><input type="checkbox" value="PayPal" >Empresa de Reciclaje </label>
+                            </div>
+
+                            <h1>Cena de clausura</h1>
 
                                     <div class="form-select">
                                         <div class="label-flex">

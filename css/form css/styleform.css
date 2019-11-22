@@ -178,6 +178,11 @@ img {
   max-width: 100%;
   height: auto; }
 
+.RBTN img{
+  display: inline;
+  vertical-align: middle;
+}
+
 figure {
   margin: 0; }
 
@@ -264,6 +269,21 @@ label, input {
   display: block;
   width: 100%; }
 
+.CHKB label {
+    width: 100%; }
+
+.CHKB input {
+      display: inline;
+      vertical-align: middle;
+}
+
+.RBTN label {
+    width: 100%; }
+
+.RBTN input {
+    display: inline-flex;
+    width: 100%; }
+
 label {
   font-weight: bold;
   text-transform: uppercase;
@@ -313,9 +333,6 @@ input {
     left: 0;
     bottom: 12px; }
 
-input[type=radio] {
-  position: absolute;
-  visibility: hidden; }
   input[type=radio]:checked ~ .check {
     border: 1px solid #329e5e; }
   input[type=radio]:checked ~ .check::before {
@@ -471,16 +488,16 @@ li.init {
   color: #999;
   border: 2px solid #ebebeb; }
   #reset:hover {
-    border: 2px solid #329e5e;
-    background: #329e5e;
+    border: 2px solid #752599;
+    background: #752599;
     color: #fff; }
 
 #submit {
-  background: #329e5e;
+  background: #a734db;
   color: #fff;
   margin-right: 25px; }
   #submit:hover {
-    background-color: #267747; }
+    background-color: #752599; }
 
 .form-input {
   position: relative; }

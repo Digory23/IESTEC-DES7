@@ -1,10 +1,15 @@
+<?php 
+    $titulo= $_GET['titulo'];
+    $lugar= $_GET['lugar'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
+    <title><?php echo $titulo ?></title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="../css/form css/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -31,7 +36,7 @@
             
                 <div class="signup-form">
                     <h1>Inscripción y pago</h1>
-                    <h2>Profesionales Nacionales</h2>
+                    <h2><?php echo $titulo ?></h2>
                     <p>Asegúrese de verificar que su información sea Correcta y que TODOS LOS CAMPOS sean válidos</p>
                     
                     <form action="Cenas.php" method="POST" class="register-form" id="register-form">
@@ -45,10 +50,23 @@
                                     <label for="last_name" class="required">Apellido(s)</label>
                                     <input type="text" name="last_name" id="last_name" />
                                 </div>
-                                <div class="form-input">
-                                    <label for="id" class="required">Cedula/Identificacion</label>
-                                    <input type="text" name="ID" id="ID" />
-                                </div>
+                                
+                                <!--Comparacion para saber si es internacional o no con el lugar
+                                    Dependiendo de si es o no internacional, pedirá cedula o pasaporte.-->
+                                <?php
+                                if($lugar=='Provincia'){
+                                    echo '  <div class="form-input">
+                                            <label for="id" class="required">Identificación (Cédula)</label>
+                                            <input type="text" name="ID" id="ID" />
+                                            </div> ';
+                                        }
+                                else {
+                                    echo '  <div class="form-input">
+                                            <label for="id" class="required">Identificación (Cédula/Pasaporte)</label>
+                                            <input type="text" name="ID" id="ID" />
+                                            </div> ';
+                                    }
+                                ?>
 
                                 <div class="form-select">
                                         <div class="label-flex">
@@ -56,7 +74,7 @@
                                         </div>
                                         <div class="select-list">
                                             <select name="opcion" id="opcion"><!--OJO-->
-                                                <option value="Masculino">Masculino</option>
+                                                <option disabled selected hidden value="selecsex" >Seleccionar sexo</option>
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
                                                 <option value="Otro">Otro</option>
@@ -81,7 +99,8 @@
                                     </div>
                                     <div class="select-list">
                                         <select name="opcion1" id="opcion1">
-                                            <option value="Miempro_Estudiantil">Miembro Estudientil</option>
+                                            <option disabled selected hidden value="Selecc">Seleccionar</option>
+                                            <option value="Miempro_Estudiantil">Miembro Estudiantil</option>
                                             <option value="Miembro_Profesional">Miembro Profesional</option>
                                             <option value="Sociedad_Afiliada">Sociedad Afiliada</option>
                                         </select>
@@ -90,21 +109,34 @@
 
                                 <div class="form-select">
                                         <div class="label-flex">
-                                            <label for="Ocupacion">Ocupacion</label>
+                                            <label for="Ocupacion">Ocupación</label>
                                         </div>
                                         <div class="select-list">
                                             <select name="opcion2" id="opcion2"><!--OJO-->
+                                                <option disabled selected hidden value="Selecc">Seleccionar</option>
                                                 <option value="intestigador">Investigador</option>
                                                 <option value="profesor">Profesor</option>
                                                 <option value="ingeniero">Ingeniero</option>
                                             </select>
                                         </div>
                                     </div>
-                              
-                                <div class="form-input">
+                            
+                            <!--Comparacion para saber si es internacional o no con el lugar-->
+                              <?php
+                              if($lugar=='Provincia'){
+                                echo '  <div class="form-input">
                                         <label for="provincia">Provincia</label>
                                         <input type="text" name="provincia" id="provincia" />
-                                    </div>
+                                        </div> ';
+                                    }
+                                else {
+                                    echo '  <div class="form-input">
+                                    <label for="provincia">País</label>
+                                    <input type="text" name="provincia" id="provincia" />
+                                    </div> ';
+
+                                    }
+                                ?>
 
                                 <div class="form-input">
                                     <label for="ciudad">Ciudad</label>
@@ -126,6 +158,7 @@
                             <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
