@@ -3,6 +3,7 @@ require '../fpdf/fpdf.php';
 require '../inserts/conexion.php';
 
 
+
 $pdf= new FPDF();
 $pdf->Addpage();
 
