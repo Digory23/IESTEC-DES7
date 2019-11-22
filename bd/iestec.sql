@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2019 a las 19:10:39
+-- Tiempo de generación: 22-11-2019 a las 20:28:35
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.14
 
@@ -40,9 +40,20 @@ CREATE TABLE `administrador` (
 --
 
 CREATE TABLE `area_interes` (
-  `ID_CodArea` int(15) NOT NULL,
+  `ID_CodArea` varchar(12) NOT NULL,
   `Descripcion` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `area_interes`
+--
+
+INSERT INTO `area_interes` (`ID_CodArea`, `Descripcion`) VALUES
+('Agroind', 'Agroindustria'),
+('Cien_Bas', 'Ciencias Basicas'),
+('Econ_Soc', 'Economia y Sociedad'),
+('Edu_Ing', 'Educación en Ingeniería'),
+('Ener_Amb', 'Energía y Ambiente');
 
 -- --------------------------------------------------------
 
@@ -78,7 +89,7 @@ CREATE TABLE `eventos` (
   `Nombre_Evento` varchar(30) NOT NULL,
   `Hora` varchar(15) NOT NULL,
   `ID_Sala` int(10) NOT NULL,
-  `ID_area` int(15) NOT NULL
+  `ID_area` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -91,9 +102,15 @@ CREATE TABLE `participantes` (
   `ID_Cedula` varchar(15) NOT NULL,
   `Cena` varchar(10) DEFAULT NULL,
   `Tipo_Participante` varchar(30) DEFAULT NULL,
-  `Area_Interes` varchar(25) DEFAULT NULL,
-  `email_facultad` varchar(25) NOT NULL
+  `email_facultad` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `participantes`
+--
+
+INSERT INTO `participantes` (`ID_Cedula`, `Cena`, `Tipo_Participante`, `email_facultad`) VALUES
+('8-928-1643', 'Duo', 'est_nac', NULL);
 
 -- --------------------------------------------------------
 
@@ -114,8 +131,17 @@ CREATE TABLE `participantes_articulo` (
 
 CREATE TABLE `participante_interes` (
   `ID_Cedula` varchar(15) NOT NULL,
-  `Cod_Area` int(11) DEFAULT NULL
+  `Cod_Area` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `participante_interes`
+--
+
+INSERT INTO `participante_interes` (`ID_Cedula`, `Cod_Area`) VALUES
+('8-928-1643', 'Agroind'),
+('8-928-1643', 'Econ_Soc'),
+('8-928-1643', 'Ener_Amb');
 
 -- --------------------------------------------------------
 
@@ -171,6 +197,13 @@ CREATE TABLE `tipo_part` (
   `Descrip` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `tipo_part`
+--
+
+INSERT INTO `tipo_part` (`ID_TipoPart`, `Descrip`) VALUES
+('est_nac', 'Estudiante Nacional tanto de Pregrado y Postgrado');
+
 -- --------------------------------------------------------
 
 --
@@ -206,11 +239,11 @@ CREATE TABLE `usuario` (
   `Miembro_IEEE` varchar(25) NOT NULL,
   `Tipo_Ussuario` varchar(30) DEFAULT NULL,
   `Cedula` varchar(15) NOT NULL,
-  `Institucion` varchar(20) NOT NULL,
-  `Unidad` varchar(25) NOT NULL,
-  `Pais` varchar(20) NOT NULL,
-  `Ciudad` varchar(25) NOT NULL,
-  `Provincia` varchar(30) NOT NULL
+  `Institucion` varchar(20) DEFAULT NULL,
+  `Unidad` varchar(25) DEFAULT NULL,
+  `Pais` varchar(20) DEFAULT NULL,
+  `Ciudad` varchar(25) DEFAULT NULL,
+  `Provincia` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -218,9 +251,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Telefono`, `Miembro_IEEE`, `Tipo_Ussuario`, `Cedula`, `Institucion`, `Unidad`, `Pais`, `Ciudad`, `Provincia`) VALUES
-(3, 'Daniel', 'Diaz', '', 'Masculino', '123-4556', '', 'par', '8-234-5432', 'Utp', 'FISC', '', 'Panama', 'Panama'),
-(6, 'Daniel', 'Diaz', NULL, 'danyd2339@gmail.com', '7863602816', '', 'par', '8-928-1643', 'UTP', 'FISC', '', 'Panama', 'PanamÃ¡'),
-(7, 'JOSEPH', 'JOESTAR', NULL, 'OHMYGOD@gmail.com', '346-45664', '', 'par', '7-777-7777', 'UTP', 'FISC', '', 'Panama', 'PanamÃ¡');
+(27, 'Daniel', 'Diaz', 'Masculino', 'danyd2339@gmail.com', '445-2345', 'Sociedad Afiliada', 'par', '8-928-1643', 'UTP', 'FISC', NULL, 'Panama', 'Panama');
 
 --
 -- Índices para tablas volcadas
@@ -277,8 +308,8 @@ ALTER TABLE `participantes_articulo`
 -- Indices de la tabla `participante_interes`
 --
 ALTER TABLE `participante_interes`
-  ADD PRIMARY KEY (`ID_Cedula`),
-  ADD KEY `fk_Area` (`Cod_Area`);
+  ADD KEY `fk_Area` (`Cod_Area`),
+  ADD KEY `Fk_Part_Cedu` (`ID_Cedula`);
 
 --
 -- Indices de la tabla `precios`
@@ -326,12 +357,6 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `area_interes`
---
-ALTER TABLE `area_interes`
-  MODIFY `ID_CodArea` int(15) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
@@ -347,7 +372,7 @@ ALTER TABLE `programas`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Restricciones para tablas volcadas
@@ -389,8 +414,8 @@ ALTER TABLE `participantes_articulo`
 -- Filtros para la tabla `participante_interes`
 --
 ALTER TABLE `participante_interes`
-  ADD CONSTRAINT `fk_Area` FOREIGN KEY (`Cod_Area`) REFERENCES `area_interes` (`ID_CodArea`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_Participantes_Interes` FOREIGN KEY (`ID_Cedula`) REFERENCES `participantes` (`ID_Cedula`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `Fk_Part_Cedu` FOREIGN KEY (`ID_Cedula`) REFERENCES `participantes` (`ID_Cedula`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_Area` FOREIGN KEY (`Cod_Area`) REFERENCES `area_interes` (`ID_CodArea`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `precios`
