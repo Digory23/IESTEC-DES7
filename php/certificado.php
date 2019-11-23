@@ -21,8 +21,8 @@ $pdf->SetXY(55,60);
 $pdf->Cell(140, 60, $row['Nombre'],20,0,'C');
 $pdf->Cell(-50, 60, $row['Apellido'],20,20,'C');
 
-header('Location: RegistroExitoso.php');
-$pdf->output();
 
+$pdf->output("F","../certificados/$cedula.pdf);
+header('Location: RegistroExitoso.php');
 
 ?>
