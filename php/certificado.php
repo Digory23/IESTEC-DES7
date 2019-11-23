@@ -14,7 +14,6 @@ require '../inserts/conexion.php';
 
 $pdf= new FPDF('L','mm','A4');
 $pdf->Addpage();
-//$pdf->Set_paper('letter','landscape');
 $pdf->SetFont('times','B','20');
 $pdf->Image('../img/certificado.png',15,10,-190);
 
