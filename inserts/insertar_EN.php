@@ -29,7 +29,8 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
        if($stmt->rowCount() > 0)
         {
             echo "Registro exitoso";
-            header('Location: ../php/RegistroExitoso.php');
+            //header('Location: ../php/RegistroExitoso.php');
+            header("Location: ../php/certificado.php?cedula=$cedula");
         }
         else{
             echo "Error";
@@ -141,4 +142,6 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
             $stmt = $dbh->prepare($sql);
             $stmt->execute([$cedula, $area]);
         }
+
+        
 ?>
