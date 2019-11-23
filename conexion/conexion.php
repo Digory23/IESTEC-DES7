@@ -1,7 +1,7 @@
 <?php
 
 //Definicion de variables de conexion
-define("bdNom", "iestec");
+define("bdNom", "iestec3.0");
 define("bdUser", "root");
 define("bdPass", "");
 define("bdHost", "localhost");
