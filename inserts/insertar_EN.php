@@ -1,5 +1,5 @@
 <?php 
-include "conexion.php";
+include "../conexion/conexion.php";
 
 //variables de usuario
 $nombre = $_POST['first_name'];
