@@ -1,3 +1,6 @@
+<?php 
+include "../controllers/validar.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -141,7 +144,7 @@
                             <i class="icon-menu menu-icon"></i><span class="nav-text">Inicio</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="../index.html" aria-expanded="false">Regresar al inicio</a></li>
+                            <li><a href="../controllers/salir.php" aria-expanded="false">Regresar al inicio</a></li>
                         </ul>
                     </li>
                 </ul>
