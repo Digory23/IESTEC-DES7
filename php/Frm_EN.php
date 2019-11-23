@@ -134,7 +134,7 @@
                                             <label for="Cena">Cena</label>
                                 </div>
                                     <div class="select-list">
-                                        <select name="opcion4" id="opcion4"><!--OJO-->
+                                        <select name="cena" id="opcion4"><!--OJO-->
                                             <option disabled selected hidden value="selecena" >Seleccionar opción</option>
                                             <option value="Solo">Si, asistiré a la cena de clausura solo. (+10.00 USD)</option>
                                             <option value="Duo">Si, asistiré a la cena de clausura con un acompañante. (+60.00 USD)</option>
@@ -153,31 +153,31 @@
                         <label><input type="checkbox" name="ar3" value="Econ_Soc" >Economía y Sociedad</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="Educación_Ingeniería" >Educación en Ingeniería</label>
+                        <label><input type="checkbox" name="ar4" value="Edu_Ing" >Educación en Ingeniería</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="Energía_Ambiente" >Energía y Ambiente</label>
+                        <label><input type="checkbox" name="ar5" value="Ener_Amb" >Energía y Ambiente</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="Gestión_Empresarial" >Gestión Empresarial</label>
+                        <label><input type="checkbox" name="ar6" value="Gestión_Empresarial" >Gestión Empresarial</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="Infraestrucutra" >Infraestrucutra</label>
+                        <label><input type="checkbox" name="ar7" value="Infraestrucutra" >Infraestrucutra</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="Logística_Transporte" >Logística y Transporte</label>
+                        <label><input type="checkbox" name="ar8" value="Logística_Transporte" >Logística y Transporte</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="Robótica" >Robótica</label>
+                        <label><input type="checkbox" name="ar9" value="Robótica" >Robótica</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="TIC" >TIC</label>
+                        <label><input type="checkbox" name="ar10" value="TIC" >TIC</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="Tecnologías_Emergentes" >Tecnologías Emergentes</label>
+                        <label><input type="checkbox" name="ar11" value="Tecnologías_Emergentes" >Tecnologías Emergentes</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="interes_selec[]" value="Otros" >Otros</label>
+                        <label><input type="checkbox" name="ar12" value="Otros" >Otros</label>
                         </div><br>
 
                         <h1>Opciones de pago</h1>

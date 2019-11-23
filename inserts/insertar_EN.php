@@ -1,5 +1,5 @@
 <?php 
-include "conexion.php";
+include "../conexion/conexion.php";
 
 //variables de usuario
 $nombre = $_POST['first_name'];
@@ -16,7 +16,7 @@ $institucion = $_POST['institucion'];
 $departamento = $_POST['departamento'];
 
 //variables de participante
-$cena = 'si';
+$cena = $_POST['cena'];
 $tipo_participante = 'est_nac';
 
 
@@ -33,11 +33,20 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
         }
         else{
             echo "Error";
-            echo "$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $ciudad, $provincia";
+            //echo "$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $ciudad, $provincia";
             
         }
 
-        if(isset($_POST['ar1'])){
+        //sql de insercion a participante
+        $sql = "INSERT INTO participantes (ID_Cedula, Cena, Tipo_Participante) VALUES (?, ?, ?)";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute([$cedula, $cena, $tipo_participante]);
+
+
+
+
+        //aqui proceden los inserts de los checkbox
+        if(isset($_POST['ar1'])){//isser verifica que este seleccionado
                 $area = $_POST['ar1'];
             
                 $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
@@ -51,13 +60,85 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
             $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
             $stmt = $dbh->prepare($sql);
             $stmt->execute([$cedula, $area]);
-            }
+        }
 
-            if(isset($_POST['ar3'])){
-                $area = $_POST['ar3'];
+        if(isset($_POST['ar3'])){
+            $area = $_POST['ar3'];
             
-                $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
-                $stmt = $dbh->prepare($sql);
-                $stmt->execute([$cedula, $area]);
-                }
+            $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$cedula, $area]);
+        }   
+
+        if(isset($_POST['ar4'])){
+            $area = $_POST['ar4'];
+                
+            $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$cedula, $area]);
+        }
+
+        if(isset($_POST['ar5'])){
+            $area = $_POST['ar5'];
+                    
+            $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$cedula, $area]);
+        }
+
+        if(isset($_POST['ar6'])){
+            $area = $_POST['ar6'];
+        
+            $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$cedula, $area]);
+        }
+
+        if(isset($_POST['ar7'])){
+            $area = $_POST['ar7'];
+        
+            $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$cedula, $area]);
+        }
+
+        if(isset($_POST['ar8'])){
+            $area = $_POST['ar8'];
+        
+            $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$cedula, $area]);
+        }
+
+        if(isset($_POST['ar9'])){
+            $area = $_POST['ar9'];
+        
+            $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$cedula, $area]);
+        }
+
+        if(isset($_POST['ar10'])){
+            $area = $_POST['ar10'];
+        
+            $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$cedula, $area]);
+        }
+
+        if(isset($_POST['ar11'])){
+            $area = $_POST['ar11'];
+        
+            $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$cedula, $area]);
+        }
+
+        if(isset($_POST['ar12'])){
+            $area = $_POST['ar12'];
+        
+            $sql = "INSERT INTO participante_interes (ID_Cedula, Cod_Area) VALUES (?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$cedula, $area]);
+        }
 ?>
