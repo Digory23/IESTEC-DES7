@@ -2,6 +2,8 @@
 require '../fpdf/fpdf.php';
 require '../conexion/conexion.php';
 $cedula= $_GET['cedula'];
+$para = $_GET['email'];
+//$para = 'user1@iestec.local';
 
   $stmt2 = $dbh->prepare("SELECT Nombre, Apellido FROM usuario WHERE Cedula=:cedu");
   $stmt2->bindParam(':cedu', $cedula);
@@ -21,15 +23,13 @@ $pdf->SetXY(55,60);
 $pdf->Cell(140, 60, $row['Nombre'],20,0,'C');
 $pdf->Cell(-50, 60, $row['Apellido'],20,20,'C');
 
-
+//header('Location: RegistroExitoso.php');
 $pdf->output("F","../certificados/$cedula.pdf");
 header('Location: RegistroExitoso.php');
 
 
-
 //enviando correo con la función Mail
 
-$para      = $_GET['email'];
 $titulo    = 'CERTIFICADO DE PARTICIPACION';
 $mensaje   = 'GRACIAS POR PARTICIPAR';
 
