@@ -32,11 +32,16 @@ header('Location: RegistroExitoso.php');
 
 $titulo    = 'CERTIFICADO DE PARTICIPACION';
 $mensaje   = 'GRACIAS POR PARTICIPAR';
+$filename = "$cedula.pdf";
+$ruta = "../certificados/";
 
 //configuracion de Header HTML
 $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
 $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $cabeceras .= 'From: congreso@iestec.local';
+$cabeceras .= "Content-Type: application/pdf; name=\"".$ruta."\"\r\n"; 
+$cabeceras .= "Content-Transfer-Encoding: base64\r\n";
+$cabeceras .= "Content-Disposition: attachment; filename=\"".$filename."\"\r\n";
 
 //Mensaje en HTML
  $mensajeContenido='<html>
