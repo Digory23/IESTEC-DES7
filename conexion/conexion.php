@@ -2,8 +2,8 @@
 
 //Definicion de variables de conexion
 define("bdNom", "iestec");
-define("bdUser", "root");
-define("bdPass", "");
+define("bdUser", "dany");
+define("bdPass", "12345");
 define("bdHost", "localhost");
 
 //Conexion a la base de datos
