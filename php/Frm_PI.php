@@ -39,7 +39,7 @@
                     <h2><?php echo $titulo ?></h2>
                     <p>Asegúrese de verificar que su información sea Correcta y que TODOS LOS CAMPOS sean válidos</p>
                     
-                    <form action="Cenas.php" method="POST" class="register-form" id="register-form">
+                    <form action="../inserts/insertar_PI.php" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
@@ -72,14 +72,12 @@
                                         <div class="label-flex">
                                             <label for="sexo">Sexo</label>
                                         </div>
-                                        <div class="select-list">
                                             <select name="opcion" id="opcion"><!--OJO-->
                                                 <option disabled selected hidden value="selecsex" >Seleccionar sexo</option>
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
                                                 <option value="Otro">Otro</option>
                                             </select>
-                                        </div>
                                     </div>
 
                                 <div class="form-input">
@@ -153,6 +151,64 @@
                             </div>
                         </div>
                         
+                        <h1>Cena de Clausura</h1>
+                            <div class="form-select">
+                                <div class="label-flex">
+                                            <label for="Cena">Cena</label>
+                                </div>
+                                    <div class="select-list">
+                                        <select name="cena" id="opcion4"><!--OJO-->
+                                            <option disabled selected hidden value="selecena" >Seleccionar opción</option>
+                                            <option value="Solo">Si, asistiré a la cena de clausura solo. (+10.00 USD)</option>
+                                            <option value="Duo">Si, asistiré a la cena de clausura con un acompañante. (+60.00 USD)</option>
+                                            <option value="No">No asistiré a la cena de clausura.</option>
+                                        </select>
+                                    </div>
+                                </div>
+                        
+                        <h1>Áreas de intéres</h1>
+                        <div class= "CHKB">   
+                        <label><input type="checkbox" name="ar1" value="Agroind">Agroindustria</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar2" value="Cien_Bas">Ciencias Básicas</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar3" value="Econ_Soc" >Economía y Sociedad</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar4" value="Edu_Ing" >Educación en Ingeniería</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar5" value="Ener_Amb" >Energía y Ambiente</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar6" value="Gest_Empre" >Gestión Empresarial</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar7" value="Infraes" >Infraestrucutra</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar8" value="Log_Trans" >Logística y Transporte</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar9" value="Robot" >Robótica</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar10" value="TIC" >TIC</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar11" value="Tec_Emerg" >Tecnologías Emergentes</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar12" value="Otros" >Otros</label>
+                        </div><br>
+
+                        <h1>Opciones de pago</h1>
+                        <div class= "RBTN">
+                        <label><input type="radio" name="pago" value="PayPal" ><img class="img-responsive" src="../img/paypal.png" alt="paypal" width="200" height="400"></label>
+                        </div>
+
                         <div class="form-submit">
                             <input type="submit" value="Cena y Pago" class="submit" id="submit" name="submit" />
                             <input type="submit" value="Reset" class="submit" id="reset" name="reset" />

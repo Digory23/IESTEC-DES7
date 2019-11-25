@@ -1,5 +1,5 @@
 <?php 
-//include ('../controllers/Frm_EN_controller.php');
+include ('../controllers/control_formulario.php');
 
 
 ?>
@@ -52,7 +52,7 @@
                                             <label><input type="checkbox" value="PayPal" >Empresa de Reciclaje </label>
                                             </div> ';
                                     }*/
-                                ?>
+                            ?>
 
                             <h1>Cena de Clausura</h1>
                                     <div class="form-select">
