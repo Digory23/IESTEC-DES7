@@ -31,6 +31,7 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
             echo "Registro exitoso";
             //header('Location: ../php/RegistroExitoso.php');
             header("Location: ../php/certificado.php?cedula=$cedula");
+            header("Location: ../php/QR.php?cedula=$cedula");
         }
         else{
             echo "Error";

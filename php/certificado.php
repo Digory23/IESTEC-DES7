@@ -22,7 +22,7 @@ $pdf->Cell(140, 60, $row['Nombre'],20,0,'C');
 $pdf->Cell(-50, 60, $row['Apellido'],20,20,'C');
 
 
-$pdf->output("F","../certificados/$cedula.pdf);
+$pdf->output("F","../certificados/$cedula.pdf");
 header('Location: RegistroExitoso.php');
 
 ?>
