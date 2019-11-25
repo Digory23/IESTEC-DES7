@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../css/form css/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../js/vendor/nouislider/nouislider.min.css">
 
-
     <!-- Main css -->
     <link rel="stylesheet" href="../css/form css/styleform.css">
     <link rel="stylesheet" href="../css/prueba.css">
@@ -27,7 +26,11 @@
             
                 <div class="signup-form">
                     <h1>Inscripción y pago</h1>
-                    <h2>Internacionales</h2>
+
+                   
+
+                      
+                    <h2>Estudiantes Nacionales de Postgrado</h2>
                       
 
                     <form method="POST" class="register-form" id="register-form">
@@ -35,11 +38,11 @@
                             <div class="form-group">
                             <div class="form-radio">
 
-                            <h1>Giras Tencnicas</h1>
-                            <label>____________________________________________________________________</label>
-                            <div Class= "CHKB">
-                            <label><input type="checkbox" value="PayPal" >Empresa de Reciclaje </label>
-                            </div>
+                        <h1>Giras Tencnicas</h1>
+                         <label>____________________________________________________________________</label>
+                        <div Class= "CHKB">
+                        <label><input type="checkbox" value="PayPal" >Empresa de Reciclaje </label>
+                        </div>
 
                             <h1>Cena de clausura</h1>
 
@@ -62,7 +65,12 @@
                  <div class="probando">
                             <h1>Áreas de interes</h1>
                         <div Class= "CHKB">   
+
                         <label><input type="checkbox" value="Agroindustria">Agroindustria</label>
+
+                        <input type="checkbox" value="Agroindustria">
+                        <label>Agroindustria</label>
+
                         </div>
                         <div Class= "CHKB">
                         <label><input type="checkbox" value="Ciencias_Basicas">Ciencias Básicas</label>
