@@ -46,10 +46,16 @@
     QRcode::png($contenido, $filename, $level, $tamaño, $framSize); 
     header("Location: certificado.php?cedula=$cedula");
 
-    //enviando correo con la función Mail
-/*
+
+    //insercion del codigo tiquete
+    $sql = "INSERT INTO entrada (cod_entrada, ID_Cedula) VALUES (?, ?)";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute([$d, $cedula]);
+
+        
+//enviando correo con la función Mail
 $titulo    = 'CERTIFICADO DE PARTICIPACION';
-$mensaje   = 'GRACIAS POR PARTICIPAR';
+$mensaje   = "Hola $Nombre $Apellido gracias por inscribirte aqui esta su tiquete de entrada: $d , debera mostrarlo el dia del evento";
 $filename = "$cedula.pdf";
 $ruta = "../certificados/";
 
