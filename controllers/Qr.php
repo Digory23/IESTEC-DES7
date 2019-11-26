@@ -8,6 +8,7 @@
 
     $cedula= $_GET['cedula'];
     $para = $_GET['email'];
+    
     $stmt2 = $dbh->prepare("SELECT Nombre, Apellido, Cedula FROM usuario WHERE Cedula=:cedu");
     $stmt2->bindParam(':cedu', $cedula);
       $stmt2->setFetchMode(PDO::FETCH_ASSOC);

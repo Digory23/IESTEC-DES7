@@ -31,7 +31,7 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
             echo "Registro exitoso";
             //header('Location: ../php/RegistroExitoso.php');
             //header("Location: ../controllers/certificado.php?cedula=$cedula");
-            header("Location: ../controllers/Qr.php?cedula=$cedula?email=$email");
+            header("Location: ../controllers/Qr.php?cedula=$cedula&email=$email");
         }
         else{
             echo "Error";
@@ -44,8 +44,7 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
         $stmt = $dbh->prepare($sql);
         $stmt->execute([$cedula, $cena, $tipo_participante]);
 
-        if($stmt->rowCount() > 0)
-        {
+        
             
             //aqui proceden los inserts de los checkbox
         if(isset($_POST['ar1'])){//isset verifica que este seleccionado
@@ -144,11 +143,6 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
             $stmt->execute([$cedula, $area]);
         }
 
-        }
-        else{
-            echo "Error";
-            //echo "$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $ciudad, $provincia";
-            
-        }
+        
 
 ?>
