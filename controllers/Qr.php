@@ -44,5 +44,5 @@
 	
         //Enviamos los parametros a la Función para generar código QR 
     QRcode::png($contenido, $filename, $level, $tamaño, $framSize); 
-    header('Location: RegistroExitoso.php');
+    header('Location: ../php/RegistroExitoso.php');
 ?>
