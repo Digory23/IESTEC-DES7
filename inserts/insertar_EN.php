@@ -30,7 +30,7 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
         {
             echo "Registro exitoso";
             //header('Location: ../php/RegistroExitoso.php');
-            header("Location: ../controllers/certificado.php?cedula=$cedula");
+            //header("Location: ../controllers/certificado.php?cedula=$cedula");
             header("Location: ../controllers/QR.php?cedula=$cedula");
         }
         else{
