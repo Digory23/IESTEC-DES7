@@ -81,14 +81,14 @@
                                     <div class="label-flex">
                                             <label for="sexo">Sexo</label>
                                         </div>
-                                        <div class="ayuda">
+                                        <div class="selecc">
                                     <select name="sexo" id="sexo">
                                         <option disabled selected hidden value="selectsex" >Seleccionar sexo</option>
                                         <option value="Masculino">Masculino</option>
                                         <option value="Femenino">Femenino</option>
                                         <option value="Otro">Otro</option>
                                     </select>
-</div>
+                                    </div>
                                     </div>
 
                                 <div class="form-input">
@@ -107,12 +107,14 @@
                                         <label for="Miembro">¿Miembro IEEE? 15% Descuento</label>
                                     </div>
                                     <div class="select-list">
+                                        <div class="selecc">
                                         <select name="opcion1" id="opcion1">
                                             <option selected value="No aplica">Seleccionar</option>
                                             <option value="Miembro Estudiantil">Miembro Estudiantil</option>
                                             <option value="Miembro Profesional">Miembro Profesional</option>
                                             <option value="Sociedad Afiliada">Sociedad Afiliada</option>
                                         </select>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -145,12 +147,14 @@
                                             <label for="Cena">Cena</label>
                                 </div>
                                     <div class="select-list">
+                                        <div class="selecc">
                                         <select name="cena" id="opcion4"><!--OJO-->
                                             <option disabled selected hidden value="No" >Seleccionar opción</option>
                                             <option value="Solo">Si, asistiré a la cena de clausura solo. (+10.00 USD)</option>
                                             <option value="Duo">Si, asistiré a la cena de clausura con un acompañante. (+60.00 USD)</option>
                                             <option value="No">No asistiré a la cena de clausura.</option>
                                         </select>
+                                        </div>
                                     </div>
                                 </div>
                         <h1>Áreas de intéres</h1>
