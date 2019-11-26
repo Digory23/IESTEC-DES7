@@ -133,7 +133,32 @@ input, select, textarea {
   -moz-appearance: unset !important;
   -webkit-appearance: unset !important;
   -o-appearance: unset !important;
-  -ms-appearance: unset !important; }
+  -ms-appearance: unset !important; 
+  box-sizing: border-box;
+  border: 1px solid #ebebeb;
+  padding: 14px 20px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  width: auto !important;}
+
+  select::after{
+    content: "";
+    position: absolute;
+    width: 1.8em;
+    height: 2em;
+    right: 0.5em;
+    top: 50%;
+    margin-top: -.8em;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/9674/chevron-down.svg');
+    background-size: 100% auto;
+    z-index: 2;
+    pointer-events: none;
+  }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   appearance: none !important;

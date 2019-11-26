@@ -1,5 +1,6 @@
 <?php 
     $titulo= $_GET['titulo'];
+    $tipo= $_GET['tipo'];
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +20,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="../css/form css/styleform.css">
     <link rel="stylesheet" href="../css/prueba.css">
+    
     
 
 </head>
@@ -75,6 +77,7 @@
                                             <label for="sexo">Sexo</label>
                                         </div>
                                     <select name="sexo" id="sexo">
+                                        <option disabled selected hidden value="selecsexo" >Seleccionar sexo</option>
                                         <option value="Masculino">Masculino</option>
                                         <option value="Femenino">Femenino</option>
                                         <option value="Otro">Otro</option>
@@ -159,22 +162,22 @@
                         <label><input type="checkbox" name="ar5" value="Ener_Amb" >Energía y Ambiente</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="ar6" value="Gestión_Empresarial" >Gestión Empresarial</label>
+                        <label><input type="checkbox" name="ar6" value="Gest_Empre" >Gestión Empresarial</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="ar7" value="Infraestrucutra" >Infraestrucutra</label>
+                        <label><input type="checkbox" name="ar7" value="Infraes" >Infraestrucutra</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="ar8" value="Logística_Transporte" >Logística y Transporte</label>
+                        <label><input type="checkbox" name="ar8" value="Log_Trans" >Logística y Transporte</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="ar9" value="Robótica" >Robótica</label>
+                        <label><input type="checkbox" name="ar9" value="Robot" >Robótica</label>
                         </div>
                         <div class= "CHKB">
                         <label><input type="checkbox" name="ar10" value="TIC" >TIC</label>
                         </div>
                         <div class= "CHKB">
-                        <label><input type="checkbox" name="ar11" value="Tecnologías_Emergentes" >Tecnologías Emergentes</label>
+                        <label><input type="checkbox" name="ar11" value="Tec_Emerg" >Tecnologías Emergentes</label>
                         </div>
                         <div class= "CHKB">
                         <label><input type="checkbox" name="ar12" value="Otros" >Otros</label>
