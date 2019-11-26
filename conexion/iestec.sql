@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2019 a las 20:28:35
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.2.14
- 
+-- Servidor: localhost:3306
+-- Tiempo de generación: 23-11-2019 a las 23:37:36
+-- Versión del servidor: 10.3.17-MariaDB-0+deb10u1
+-- Versión de PHP: 7.3.11-1~deb10u1
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -33,6 +31,13 @@ CREATE TABLE `administrador` (
   `Pass` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`ID_Cedula`, `Pass`) VALUES
+('8-928-1643', '12345');
+
 -- --------------------------------------------------------
 
 --
@@ -53,7 +58,13 @@ INSERT INTO `area_interes` (`ID_CodArea`, `Descripcion`) VALUES
 ('Cien_Bas', 'Ciencias Basicas'),
 ('Econ_Soc', 'Economia y Sociedad'),
 ('Edu_Ing', 'Educación en Ingeniería'),
-('Ener_Amb', 'Energía y Ambiente');
+('Ener_Amb', 'Energía y Ambiente'),
+('Gest_Empre', 'Gestión Empresarial'),
+('Infraes', 'Infraestructura'),
+('Log_Trans', 'Logística y Transporte'),
+('Otros', 'Otros'),
+('Robot', 'Robótica'),
+('TIC', 'Tec_Emerg');
 
 -- --------------------------------------------------------
 
@@ -74,9 +85,16 @@ CREATE TABLE `articulos` (
 
 CREATE TABLE `entrada` (
   `cod_entrada` int(6) NOT NULL,
-  `cod_qr` varchar(30) NOT NULL,
-  `ID_Usuario` int(11) NOT NULL
+  `ID_Cedula` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `entrada`
+--
+
+INSERT INTO `entrada` (`cod_entrada`, `ID_Cedula`) VALUES
+(765488, '555-5555'),
+(324567, '8-888-8888');
 
 -- --------------------------------------------------------
 
@@ -110,7 +128,9 @@ CREATE TABLE `participantes` (
 --
 
 INSERT INTO `participantes` (`ID_Cedula`, `Cena`, `Tipo_Participante`, `email_facultad`) VALUES
-('8-928-1643', 'Duo', 'est_nac', NULL);
+('555-5555', 'Solo', 'est_nac', NULL),
+('8-888-8888', 'Duo', 'est_nac', NULL),
+('mono-chino', 'No', 'est_nac', NULL);
 
 -- --------------------------------------------------------
 
@@ -139,9 +159,12 @@ CREATE TABLE `participante_interes` (
 --
 
 INSERT INTO `participante_interes` (`ID_Cedula`, `Cod_Area`) VALUES
-('8-928-1643', 'Agroind'),
-('8-928-1643', 'Econ_Soc'),
-('8-928-1643', 'Ener_Amb');
+('mono-chino', 'Cien_Bas'),
+('mono-chino', 'Econ_Soc'),
+('8-888-8888', 'Cien_Bas'),
+('8-888-8888', 'Econ_Soc'),
+('555-5555', 'Agroind'),
+('555-5555', 'Cien_Bas');
 
 -- --------------------------------------------------------
 
@@ -194,7 +217,7 @@ CREATE TABLE `sala` (
 
 CREATE TABLE `tipo_part` (
   `ID_TipoPart` varchar(30) NOT NULL,
-  `Descrip` text
+  `Descrip` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -212,7 +235,7 @@ INSERT INTO `tipo_part` (`ID_TipoPart`, `Descrip`) VALUES
 
 CREATE TABLE `tipo_usuario` (
   `ID_TipoUsuario` varchar(30) NOT NULL,
-  `Descrip` text
+  `Descrip` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -251,7 +274,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Telefono`, `Miembro_IEEE`, `Tipo_Ussuario`, `Cedula`, `Institucion`, `Unidad`, `Pais`, `Ciudad`, `Provincia`) VALUES
-(27, 'Daniel', 'Diaz', 'Masculino', 'danyd2339@gmail.com', '445-2345', 'Sociedad Afiliada', 'par', '8-928-1643', 'UTP', 'FISC', NULL, 'Panama', 'Panama');
+(27, 'Daniel', 'Diaz', 'Masculino', 'danyd2339@gmail.com', '445-2345', 'Sociedad Afiliada', 'adm', '8-928-1643', 'UTP', 'FISC', NULL, 'Panama', 'Panama'),
+(44, 'Izuku', 'Midoriya', 'Masculino', 'user1@iestec.local', '754332', 'Miembro Estudiantil', 'par', 'mono-chino', 'UA', 'Departamento de heroes', NULL, 'Japon', 'Japon'),
+(46, 'Nathalie', 'Acevedo', 'Femenino', 'user2@iestec.local', '536478', 'Miembro Profesional', 'par', '8-888-8888', 'UTP', 'FISC', NULL, 'Narnia', 'Panama'),
+(59, 'Diana', 'Garcia', 'Femenino', 'user1@iestec.local', '45374567', 'Miembro Profesional', 'par', '555-5555', 'UTP', 'FISC', NULL, 'Panamá', 'Panamá');
 
 --
 -- Índices para tablas volcadas
@@ -280,7 +306,7 @@ ALTER TABLE `articulos`
 --
 ALTER TABLE `entrada`
   ADD PRIMARY KEY (`cod_entrada`),
-  ADD UNIQUE KEY `ID_Usuario` (`ID_Usuario`);
+  ADD UNIQUE KEY `ID_Usuario` (`ID_Cedula`);
 
 --
 -- Indices de la tabla `eventos`
@@ -361,19 +387,16 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `eventos`
   MODIFY `ID_Eventos` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `programas`
 --
 ALTER TABLE `programas`
   MODIFY `ID_programa` int(15) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 --
 -- Restricciones para tablas volcadas
 --
@@ -388,7 +411,7 @@ ALTER TABLE `administrador`
 -- Filtros para la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  ADD CONSTRAINT `fk_entradas` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`ID_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_qr_Ced` FOREIGN KEY (`ID_Cedula`) REFERENCES `usuario` (`Cedula`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `eventos`
@@ -436,7 +459,6 @@ ALTER TABLE `programas`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `fk_tipousu` FOREIGN KEY (`Tipo_Ussuario`) REFERENCES `tipo_usuario` (`ID_TipoUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
