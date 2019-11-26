@@ -19,7 +19,7 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="../css/form css/styleform.css">
-    <link rel="stylesheet" href="../css/prueba.css">
+    <link rel="stylesheet" href="../css/selectstyle.css">
     
     
 
@@ -32,15 +32,20 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
+                <img class="form-img2" src="../img/prueba.png" alt="">
+                <img class="form-img" src="../img/logo.png" alt="">
+                
                     <div class="signup-img-content">
+                        
                     </div>
                 </div>
             
                 <div class="signup-form">
+               <!--<img class="form-img" src="../img/purple.png" alt="">--> 
                     <h1>Inscripción y pago</h1>
+                    <hr>
                     <h2> <?php echo $titulo ?></h2>
                     <p>Asegúrese de verificar que su información sea correcta y que TODOS LOS CAMPOS sean válidos.</p>
-                    
 
                     <form action="../inserts/insertar_EN.php" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
@@ -76,12 +81,14 @@
                                     <div class="label-flex">
                                             <label for="sexo">Sexo</label>
                                         </div>
+                                        <div class="ayuda">
                                     <select name="sexo" id="sexo">
-                                        <option disabled selected hidden value="selecsexo" >Seleccionar sexo</option>
+                                        <option disabled selected hidden value="selectsex" >Seleccionar sexo</option>
                                         <option value="Masculino">Masculino</option>
                                         <option value="Femenino">Femenino</option>
                                         <option value="Otro">Otro</option>
                                     </select>
+</div>
                                     </div>
 
                                 <div class="form-input">
@@ -101,7 +108,7 @@
                                     </div>
                                     <div class="select-list">
                                         <select name="opcion1" id="opcion1">
-                                            <option disabled selected hidden value="Selecc">Seleccionar</option>
+                                            <option selected value="No aplica">Seleccionar</option>
                                             <option value="Miembro Estudiantil">Miembro Estudiantil</option>
                                             <option value="Miembro Profesional">Miembro Profesional</option>
                                             <option value="Sociedad Afiliada">Sociedad Afiliada</option>
@@ -132,13 +139,14 @@
                         </div> 
 
                         <h1>Cena de Clausura</h1>
+                        <hr>
                             <div class="form-select">
                                 <div class="label-flex">
                                             <label for="Cena">Cena</label>
                                 </div>
                                     <div class="select-list">
                                         <select name="cena" id="opcion4"><!--OJO-->
-                                            <option disabled selected hidden value="selecena" >Seleccionar opción</option>
+                                            <option disabled selected hidden value="No" >Seleccionar opción</option>
                                             <option value="Solo">Si, asistiré a la cena de clausura solo. (+10.00 USD)</option>
                                             <option value="Duo">Si, asistiré a la cena de clausura con un acompañante. (+60.00 USD)</option>
                                             <option value="No">No asistiré a la cena de clausura.</option>
@@ -146,6 +154,7 @@
                                     </div>
                                 </div>
                         <h1>Áreas de intéres</h1>
+                        <hr>
                         <div class= "CHKB">   
                         <label><input type="checkbox" name="ar1" value="Agroind">Agroindustria</label>
                         </div>
@@ -184,6 +193,7 @@
                         </div><br>
 
                         <h1>Opciones de pago</h1>
+                        <hr>
                         <div class= "RBTN">
                         <label><input type="radio" name="pago" value="PayPal" ><img class="img-responsive" src="../img/paypal.png" alt="paypal" width="200" height="400"></label>
                         </div>

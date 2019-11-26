@@ -76,6 +76,14 @@ hr {
   padding: 0;
 }
 
+.navbar-brand {
+  float: left;
+  width: 145px;
+  height: 50px;
+  padding: 0 !important;
+  font-size: 18px;
+  line-height: 20px;}
+
 .navbar {
   font-size: 14px;
   background: #ffffff;
