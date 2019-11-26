@@ -18,12 +18,15 @@
 
     $Nombre = $row['Nombre'];
     $Apellido = $row['Apellido'];
+
     //Generar el numero de formal aleatorea sin que se repita 
     $d=rand(100000,999999);
-    /*if ()
+    
+    if ()
     {
 
-    }*/
+        
+    }
 
 	//Declaramos una carpeta temporal para guardar la imagenes generadas
 	$dir = '../codigo_QR/';
