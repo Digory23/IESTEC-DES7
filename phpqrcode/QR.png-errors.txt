@@ -1,0 +1,11 @@
+2019-11-25 23:39:17: <br />
+<b>Warning</b>:  strlen() expects parameter 1 to be string, array given in <b>C:\xampp\htdocs\IESTEC-DES7\phpqrcode\qrsplit.php</b> on line <b>250</b><br />
+<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>C:\xampp\htdocs\IESTEC-DES7\phpqrcode\qrinput.php</b> on line <b>522</b><br />
+<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>C:\xampp\htdocs\IESTEC-DES7\phpqrcode\qrinput.php</b> on line <b>522</b><br />
+<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>C:\xampp\htdocs\IESTEC-DES7\phpqrcode\qrinput.php</b> on line <b>594</b><br />
+<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>C:\xampp\htdocs\IESTEC-DES7\phpqrcode\qrinput.php</b> on line <b>688</b><br />
+2019-11-25 23:41:34: empty string!!!2019-11-25 23:41:55: empty string!!!2019-11-25 23:42:07: empty string!!!2019-11-25 23:42:25: empty string!!!

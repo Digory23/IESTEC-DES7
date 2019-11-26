@@ -44,7 +44,7 @@ $mail->Send();*/
 
 
 //enviando correo con la función Mail
-
+/*
 $titulo    = 'CERTIFICADO DE PARTICIPACION';
 $mensaje   = 'GRACIAS POR PARTICIPAR';
 $filename = "$cedula.pdf";
@@ -80,5 +80,5 @@ $cabeceras .= 'From: congreso@iestec.local';
 	//Función mail
 	if (mail($para, $titulo, $mensajeContenido, $cabeceras))
 	echo "El mensaje se ha enviado correctamente";
-
+*/
 ?>
