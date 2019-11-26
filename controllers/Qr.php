@@ -53,7 +53,7 @@
 
 
 //enviando correo con la función Mail
-$titulo    = 'CERTIFICADO DE PARTICIPACION';
+$titulo    = 'CODIGO DE ENTRADA';
 $mensaje   = "Hola $Nombre $Apellido gracias por inscribirte aqui esta su tiquete de entrada: $d , debera mostrarlo el dia del evento";
 //$filename = "$cedula.pdf";
 //$ruta = "../certificados/";
