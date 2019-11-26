@@ -3,9 +3,9 @@
     
     //$username = $_POST["username"];
     //$password = $_POST["password"];
-    $cedula = 'mono-chino';
-    $statement = mysqli_prepare($con, "SELECT Nombre, Apellido FROM `usuario` WHERE Cedula = ?");
-    mysqli_stmt_bind_param($statement, "s",$cedula );
+    $tiquete = $_POST['tiquete'];
+    $statement = mysqli_prepare($con, "SELECT Nombre, Apellido FROM usuario INNER JOIN entrada ON usuario.Cedula = entrada.ID_Cedula WHERE cod_entrada = ? ");
+    mysqli_stmt_bind_param($statement, "s",$tiquete );
     mysqli_stmt_execute($statement);
     
     mysqli_stmt_store_result($statement);
