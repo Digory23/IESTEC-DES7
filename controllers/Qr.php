@@ -1,15 +1,13 @@
 <?php
 
-
-
-	//Agregamos la libreria para genera códigos QR
+//Agregamos la libreria para genera códigos QR
     require "../phpqrcode/qrlib.php";    
     require '../conexion/conexion.php';
 
 
 
     $cedula= $_GET['cedula'];
-
+    $para = $_GET['email'];
     $stmt2 = $dbh->prepare("SELECT Nombre, Apellido, Cedula FROM usuario WHERE Cedula=:cedu");
     $stmt2->bindParam(':cedu', $cedula);
       $stmt2->setFetchMode(PDO::FETCH_ASSOC);
@@ -52,12 +50,12 @@
         $stmt = $dbh->prepare($sql);
         $stmt->execute([$d, $cedula]);
 
-        
+
 //enviando correo con la función Mail
 $titulo    = 'CERTIFICADO DE PARTICIPACION';
 $mensaje   = "Hola $Nombre $Apellido gracias por inscribirte aqui esta su tiquete de entrada: $d , debera mostrarlo el dia del evento";
-$filename = "$cedula.pdf";
-$ruta = "../certificados/";
+//$filename = "$cedula.pdf";
+//$ruta = "../certificados/";
 
 //configuracion de Header HTML
 $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
