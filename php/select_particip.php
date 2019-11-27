@@ -21,6 +21,7 @@
 
 			<form action="../controllers/control_formulario.php" class="login100-form validate-form" method="POST" class="register-form" id="register-form">
 				<span class="login100-form-title p-b-37">
+				<img class="img-responsive animation slideDown" src="../img/logo2.png" alt="" width="150" height="150"><br>
 					Seleccione el tipo de participante
 				</span>
 

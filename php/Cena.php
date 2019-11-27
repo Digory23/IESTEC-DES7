@@ -1,5 +1,5 @@
 <?php 
-//include ('../controllers/Frm_EN_controller.php');
+include ('../controllers/control_formulario.php');
 
 
 ?>
@@ -18,7 +18,7 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="../css/form css/styleform.css">
-    <link rel="stylesheet" href="../css/prueba.css">
+    <link rel="stylesheet" href="../css/selectstyle.css">
 </head>
 <body>
 
@@ -52,7 +52,7 @@
                                             <label><input type="checkbox" value="PayPal" >Empresa de Reciclaje </label>
                                             </div> ';
                                     }*/
-                                ?>
+                            ?>
 
                             <h1>Cena de Clausura</h1>
                                     <div class="form-select">
