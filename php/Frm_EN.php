@@ -32,7 +32,7 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                <img class="form-img2" src="../img/prueba.png" alt="">
+                <!--<img class="form-img2" src="../img/prueba.png" alt="">--> 
                 <img class="form-img" src="../img/logo.png" alt="">
                 
                     <div class="signup-img-content">
