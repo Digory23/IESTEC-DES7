@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
+<<<<<<< HEAD
 -- Tiempo de generación: 23-11-2019 a las 18:03:42
+=======
+-- Tiempo de generación: 23-11-2019 a las 23:37:36
+>>>>>>> e445c119ef187b78d63981ba6d4ec967dbc54a21
 -- Versión del servidor: 10.3.17-MariaDB-0+deb10u1
 -- Versión de PHP: 7.3.11-1~deb10u1
 
@@ -85,7 +89,10 @@ CREATE TABLE `articulos` (
 
 CREATE TABLE `entrada` (
   `cod_entrada` int(6) NOT NULL,
+<<<<<<< HEAD
   `cod_qr` varchar(30) NOT NULL,
+=======
+>>>>>>> e445c119ef187b78d63981ba6d4ec967dbc54a21
   `ID_Cedula` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -93,8 +100,14 @@ CREATE TABLE `entrada` (
 -- Volcado de datos para la tabla `entrada`
 --
 
+<<<<<<< HEAD
 INSERT INTO `entrada` (`cod_entrada`, `cod_qr`, `ID_Cedula`) VALUES
 (324567, 'qrprueba', '8-888-8888');
+=======
+INSERT INTO `entrada` (`cod_entrada`, `ID_Cedula`) VALUES
+(765488, '555-5555'),
+(324567, '8-888-8888');
+>>>>>>> e445c119ef187b78d63981ba6d4ec967dbc54a21
 
 -- --------------------------------------------------------
 
@@ -128,6 +141,10 @@ CREATE TABLE `participantes` (
 --
 
 INSERT INTO `participantes` (`ID_Cedula`, `Cena`, `Tipo_Participante`, `email_facultad`) VALUES
+<<<<<<< HEAD
+=======
+('555-5555', 'Solo', 'est_nac', NULL),
+>>>>>>> e445c119ef187b78d63981ba6d4ec967dbc54a21
 ('8-888-8888', 'Duo', 'est_nac', NULL),
 ('mono-chino', 'No', 'est_nac', NULL);
 
@@ -161,7 +178,13 @@ INSERT INTO `participante_interes` (`ID_Cedula`, `Cod_Area`) VALUES
 ('mono-chino', 'Cien_Bas'),
 ('mono-chino', 'Econ_Soc'),
 ('8-888-8888', 'Cien_Bas'),
+<<<<<<< HEAD
 ('8-888-8888', 'Econ_Soc');
+=======
+('8-888-8888', 'Econ_Soc'),
+('555-5555', 'Agroind'),
+('555-5555', 'Cien_Bas');
+>>>>>>> e445c119ef187b78d63981ba6d4ec967dbc54a21
 
 -- --------------------------------------------------------
 
@@ -273,7 +296,12 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Telefono`, `Miembro_IEEE`, `Tipo_Ussuario`, `Cedula`, `Institucion`, `Unidad`, `Pais`, `Ciudad`, `Provincia`) VALUES
 (27, 'Daniel', 'Diaz', 'Masculino', 'danyd2339@gmail.com', '445-2345', 'Sociedad Afiliada', 'adm', '8-928-1643', 'UTP', 'FISC', NULL, 'Panama', 'Panama'),
 (44, 'Izuku', 'Midoriya', 'Masculino', 'user1@iestec.local', '754332', 'Miembro Estudiantil', 'par', 'mono-chino', 'UA', 'Departamento de heroes', NULL, 'Japon', 'Japon'),
+<<<<<<< HEAD
 (46, 'Nathalie', 'Acevedo', 'Femenino', 'user2@iestec.local', '536478', 'Miembro Profesional', 'par', '8-888-8888', 'UTP', 'FISC', NULL, 'Narnia', 'Panama');
+=======
+(46, 'Nathalie', 'Acevedo', 'Femenino', 'user2@iestec.local', '536478', 'Miembro Profesional', 'par', '8-888-8888', 'UTP', 'FISC', NULL, 'Narnia', 'Panama'),
+(59, 'Diana', 'Garcia', 'Femenino', 'user1@iestec.local', '45374567', 'Miembro Profesional', 'par', '555-5555', 'UTP', 'FISC', NULL, 'Panamá', 'Panamá');
+>>>>>>> e445c119ef187b78d63981ba6d4ec967dbc54a21
 
 --
 -- Índices para tablas volcadas
@@ -392,7 +420,11 @@ ALTER TABLE `programas`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
+<<<<<<< HEAD
   MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+=======
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+>>>>>>> e445c119ef187b78d63981ba6d4ec967dbc54a21
 --
 -- Restricciones para tablas volcadas
 --

@@ -4,7 +4,7 @@ require '../conexion/conexion.php';
 //require_once ('../class.phpmailer.php');
 
 $cedula= $_GET['cedula'];
-$para = $_GET['email'];
+//$para = $_GET['email'];
 //$para = 'user1@iestec.local';
 
   $stmt2 = $dbh->prepare("SELECT Nombre, Apellido FROM usuario WHERE Cedula=:cedu");
