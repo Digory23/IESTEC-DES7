@@ -203,10 +203,6 @@ img {
   max-width: 100%;
   height: auto; }
 
-.RBTN img{
-  display: inline;
-  vertical-align: middle;
-}
 
 figure {
   margin: 0; }
@@ -302,12 +298,9 @@ label, input {
       vertical-align: middle;
 }
 
-.RBTN label {
-    width: 100%; }
 
-.RBTN input {
-    display: inline-flex;
-    width: 100%; }
+
+
 
 label {
   font-weight: bold;

@@ -1,6 +1,7 @@
 <?php 
     $titulo= $_GET['titulo'];
     $tipo= $_GET['tipo'];
+    
 ?>
 
 <!DOCTYPE html>
@@ -185,7 +186,8 @@
 
                         <h1>Opciones de pago</h1>
                         <div class= "RBTN">
-                        <label><input type="radio" name="pago" value="PayPal" ><img class="img-responsive" src="../img/paypal.png" alt="paypal" width="200" height="400"></label>
+                            <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+                            <script>paypal.Buttons().render('body');</script>
                         </div>
                         
                         <div class="form-submit">
