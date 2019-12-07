@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 23-11-2019 a las 23:37:36
--- Versión del servidor: 10.3.17-MariaDB-0+deb10u1
--- Versión de PHP: 7.3.11-1~deb10u1
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 06-12-2019 a las 23:10:34
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -85,16 +87,17 @@ CREATE TABLE `articulos` (
 
 CREATE TABLE `entrada` (
   `cod_entrada` int(6) NOT NULL,
-  `ID_Cedula` varchar(15) NOT NULL
+  `ID_Cedula` varchar(15) NOT NULL,
+  `asistencia` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `entrada`
 --
 
-INSERT INTO `entrada` (`cod_entrada`, `ID_Cedula`) VALUES
-(765488, '555-5555'),
-(324567, '8-888-8888');
+INSERT INTO `entrada` (`cod_entrada`, `ID_Cedula`, `asistencia`) VALUES
+(324567, '8-888-8888', 'SI'),
+(765488, '555-5555', '');
 
 -- --------------------------------------------------------
 
@@ -217,7 +220,7 @@ CREATE TABLE `sala` (
 
 CREATE TABLE `tipo_part` (
   `ID_TipoPart` varchar(30) NOT NULL,
-  `Descrip` text DEFAULT NULL
+  `Descrip` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -235,7 +238,7 @@ INSERT INTO `tipo_part` (`ID_TipoPart`, `Descrip`) VALUES
 
 CREATE TABLE `tipo_usuario` (
   `ID_TipoUsuario` varchar(30) NOT NULL,
-  `Descrip` text DEFAULT NULL
+  `Descrip` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -387,16 +390,19 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `eventos`
   MODIFY `ID_Eventos` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `programas`
 --
 ALTER TABLE `programas`
   MODIFY `ID_programa` int(15) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -459,6 +465,7 @@ ALTER TABLE `programas`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `fk_tipousu` FOREIGN KEY (`Tipo_Ussuario`) REFERENCES `tipo_usuario` (`ID_TipoUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
