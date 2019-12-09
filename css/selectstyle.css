@@ -1,0 +1,72 @@
+select option{
+    box-sizing: border-box;
+    border: 1px solid #ebebeb;
+    padding: 14px 20px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Lucida Sans', sans-serif;
+    width: 90%;
+}
+select option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    /*padding: 0px 2px 1px;*/
+}
+
+option:hover {
+    background-color: #a734db !important;
+}
+
+.selecc::after {
+    content: "";
+    position: absolute;
+    width: 1.8em;
+    height: 2em;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/9674/chevron-down.svg');
+    background-size: 100% auto;
+    z-index: 2;
+    pointer-events: none;
+    display: inline-flex;
+    margin-left: -25px;
+    margin-top: 14px;
+}
+
+
+.select-list select {
+    
+    text-rendering: auto;
+    color: black;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    font: 400 13.3333px Arial;
+    font-size: 14px;
+    box-shadow: #a734db;
+    -webkit-box-shadow: 0 2px 10px 0px rgba(189, 89, 212, 0.8);
+}   
+
+.select-list {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 47px; }
+
+label, input{
+    width: auto !important;
+}
+
+
+
+
+
