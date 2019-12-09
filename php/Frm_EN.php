@@ -48,8 +48,8 @@
                     <p>Asegúrese de verificar que su información sea correcta y que TODOS LOS CAMPOS sean válidos.</p>
 
                     <form action="../inserts/insertar_EN.php" method="POST" class="register-form" id="register-form">
-                    <!-- input oculto que deberia almacenar la fokin variable de tipo para poder pasarla al insert-->
-                    <input type="hidden" name="tipo" value="$tipo">
+                    <!-- input oculto para pasar los datos al insert-->
+                    <input type="hidden" name="tipo" value="<?php echo $_GET['tipo']?>">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
