@@ -17,7 +17,7 @@ $departamento = $_POST['departamento'];
 
 //variables de participante
 $cena = $_POST['cena'];
-$tipo_participante = 'est_nac';
+$tipo_participante = $_POST['tipo'];
 
 
 

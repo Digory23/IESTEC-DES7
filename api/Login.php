@@ -1,8 +1,8 @@
 <?php
     $con = mysqli_connect("localhost", "root", "", "iestec");
+    //$con = mysqli_connect("mysql.congreso1.ds507.online", "congreso1", "db.congreso_2019", "congreso_utp1");
+
     
-    //$username = $_POST["username"];
-    //$password = $_POST["password"];
     $tiquete = $_POST['tiquete'];
     $statement = mysqli_prepare($con, "SELECT Nombre, Apellido FROM usuario INNER JOIN entrada ON usuario.Cedula = entrada.ID_Cedula WHERE cod_entrada = ? ");
     mysqli_stmt_bind_param($statement, "s",$tiquete );

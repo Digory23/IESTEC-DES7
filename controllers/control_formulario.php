@@ -6,11 +6,11 @@ $select_user = $_POST['select_part'];
 switch ($select_user) 
 {
     case 'Est_NPre':{
-        header('Location: ../php/Frm_EN.php?titulo=Estudiante Nacional Pregrado&tipo=Est_NPre');
+        header("Location: ../php/Frm_EN.php?titulo=Estudiante Nacional Pregrado&tipo=Est_NPre");
     break;
     }
     case 'Est_NPost':{
-        header('Location: ../php/Frm_EN.php?titulo=Estudiante Nacional Postgrado&tipo=Est_NPost');
+        header("Location: ../php/Frm_EN.php?titulo=Estudiante Nacional Postgrado&tipo=Est_NPost");
     break;
     }
     case 'Est_Int':{
