@@ -43,8 +43,9 @@
 	
         //Enviamos los parametros a la Función para generar código QR 
     QRcode::png($contenido, $filename, $level, $tamaño, $framSize); 
-    header("Location: certificado.php?cedula=$cedula");
-
+    
+    //header("Location: certificado.php?cedula=$cedula");
+    header('Location: ../php/RegistroExitoso.php');
 
     //insercion del codigo tiquete
     $sql = "INSERT INTO entrada (cod_entrada, ID_Cedula) VALUES (?, ?)";
