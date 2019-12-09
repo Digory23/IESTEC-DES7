@@ -1,106 +1,36 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
+require 'lib/PHPMailer-master/src/Exception.php';
+require 'lib/PHPMailer-master/src/PHPMailer.php';
+require 'lib/PHPMailer-master/src/SMTP.php';
 
-require("SMTP-PHPMailer/class.phpmailer.php");
-require("SMTP-PHPMailer/class.smtp.php");
+$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'iestec2019@gmail.com';                 // SMTP username
+    $mail->Password = 'Taco12345';                           // SMTP password
+    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 465;                                    // TCP port to connect to
 
-// Valores enviados desde el formulario
-if ( !isset($_POST["nombre"]) || !isset($_POST["email"]) || !isset($_POST["telefono"])  || !isset($_POST["asunto"])  || !isset($_POST["mensaje"]) ) {
-    die ("Es necesario completar todos los datos del formulario");
+    //Recipients
+    $mail->setFrom('iestec2019@gmail.com');
+    $mail->addAddress('jahir2442@gmail.com');     // Add a recipient
+
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Hola mundo';
+    $mail->Body    = '<b>Hola Mundo</b>';
+    $mail->AltBody = 'Hola Mundo';
+
+    $mail->send();
+    echo '<br>El mensaje se ha enviado<br>';
+
+} catch (Exception $e) {
+    echo 'EL mensaje no ha podido ser enviado. Error: ', $mail->ErrorInfo;
 }
-
-
-
-
-
-$nombre = $_POST["nombre"];
-
-$email = $_POST["email"];
-
-$telefono = $_POST["telefono"];
-
-$asunto = $_POST["asunto"];
-
-$mensaje = $_POST["mensaje"];
-
-
-$destinatario = "destinatario@eldominio.com";
-
-
-// Datos de la cuenta de correo utilizada para enviar v�a SMTP
-$smtpHost = "mail.tudominio.com";  // Dominio alternativo brindado en el email de alta 
-$smtpUsuario = "correo@tudominio.com";  // Mi cuenta de correo
-$smtpClave = "123456789";  // Mi contrase�a
-
-
-
-
-$mail = new PHPMailer();
-$mail->IsSMTP();
-$mail->SMTPAuth = true;
-$mail->Port = 587; 
-$mail->IsHTML(true); 
-$mail->CharSet = "utf-8";
-
-// VALORES A MODIFICAR //
-$mail->Host = $smtpHost; 
-$mail->Username = $smtpUsuario; 
-$mail->Password = $smtpClave;
-
-
-$mail->From = $email; // Email desde donde env�o el correo.
-$mail->FromName = $nombre;
-$mail->AddAddress($destinatario); // Esta es la direcci�n a donde enviamos los datos del formulario
-
-$mail->Subject = "Formulario desde el Sitio Web"; // Este es el titulo del email.
-$mensajeHtml = nl2br($mensaje);
-$mail->Body = "
-<html> 
-
-<body> 
-
-<h1>Recibiste un nuevo mensaje desde el formulario de contacto</h1>
-
-<p>Informacion enviada por el usuario de la web:</p>
-
-<p>nombre: {$nombre}</p>
-
-<p>email: {$email}</p>
-
-<p>telefono: {$telefono}</p>
-
-<p>asunto: {$asunto}</p>
-
-<p>mensaje: {$mensaje}</p>
-
-</body> 
-
-</html>
-
-<br />"; // Texto del email en formato HTML
-$mail->AltBody = "{$mensaje} \n\n "; // Texto sin formato HTML
-// FIN - VALORES A MODIFICAR //
-
-$mail->SMTPOptions = array(
-    'ssl' => array(
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-        'allow_self_signed' => true
-    )
-);
-
-$estadoEnvio = $mail->Send(); 
-if($estadoEnvio){
-    echo "El correo fue enviado correctamente.";
-} else {
-    echo "Ocurri� un error inesperado.";
-}
-
-
-
-
-
-
-
-?>
-
