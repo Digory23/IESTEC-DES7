@@ -18,19 +18,19 @@ switch ($select_user)
     break;
     }
     case 'Est_Art':{
-        header('Location: ../php/Frm_AR.php?titulo=Estudiante de Pregrado con Artículo&tipo=Estudiante');
+        header('Location: ../php/Frm_AR.php?titulo=Estudiante de Pregrado con Artículo&tipo=Est_Art');
     break;
     }
     case 'Pro_Art':{
-        header('Location: ../php/Frm_AR.php?titulo=Profesional con Artículo&tipo=Profesional');
+        header('Location: ../php/Frm_AR.php?titulo=Profesional con Artículo&tipo=Pro_Art');
     break;
     }
     case 'Pro_Nac':{
-        header('Location: ../php/Frm_PI.php?titulo=Profesionales Nacionales&lugar=Provincia');
+        header('Location: ../php/Frm_PI.php?titulo=Profesionales Nacionales&tipo=Pro_Nac');
     break;
     }
     case 'Par_Int':{
-        header('Location: ../php/Frm_PI.php?titulo=Participante Internacional&lugar=País');
+        header('Location: ../php/Frm_PI.php?titulo=Participante Internacional&tipo=Par_Int');
     break;
     }
 }

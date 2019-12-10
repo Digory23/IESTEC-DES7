@@ -1,5 +1,6 @@
 <?php 
     $titulo= $_GET['titulo'];
+    $tipo= $_GET['tipo'];
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $titulo ?></title>
-
+    <link href="../img/utp.png" rel="icon">
     <!-- Font Icon -->
     <link rel="stylesheet" href="../css/form css/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../js/vendor/nouislider/nouislider.min.css">
@@ -26,16 +27,21 @@
             <div class="signup-content">
                 <div class="signup-img">
                      <!--<img src="../img/form-img.jpg" alt="">-->
+                     <img class="form-img" src="../img/logo.png" alt="">
                     <div class="signup-img-content">
+
                     </div>
                 </div>
             
                 <div class="signup-form">
                     <h1>Inscripción y pago</h1>
+                    <hr>
                     <h2><?php echo $titulo ?></h2>
                     <p>Asegúrese de verificar que su información sea Correcta y que TODOS LOS CAMPOS sean válidos</p>
                     
-                    <form action="Cena_Inter.php" method="POST" class="register-form" id="register-form">
+                    <form action="../inserts/insertar_EI.php" method="POST" class="register-form" id="register-form">
+                    <!-- input oculto para pasar el tipo al insert-->
+                    <input type="hidden" name="tipo" value="<?php echo $_GET['tipo']?>">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
@@ -47,23 +53,23 @@
                                     <input type="text" name="last_name" id="last_name" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="id" class="required">Identificación (Cédula)</label>
+                                    <label for="id" class="required">Identificación (Cédula/Pasaporte)</label>
                                     <input type="text" name="ID" id="ID" />
                                 </div>
 
                                 <div class="form-select">
-                                        <div class="label-flex">
+                                    <div class="label-flex">
                                             <label for="sexo">Sexo</label>
                                         </div>
-                                        <div class="select-list">
-                                            <select name="opcion" id="opcion"><!--OJO-->
-                                                <option disabled selected hidden value="selecsex" >Seleccionar sexo</option>
-                                                <option value="Masculino">Masculino</option>
-                                                <option value="Femenino">Femenino</option>
-                                                <option value="Otro">Otro</option>
-                                            </select>
-                                        </div>
+                                        <div class="selecc">
+                                    <select name="sexo" id="sexo">
+                                        <option disabled selected hidden value="selectsex" >Seleccionar sexo</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
                                     </div>
+                                </div>
 
                                 <div class="form-input">
                                     <label for="email" class="required">Email del Estudiante</label>
@@ -88,16 +94,16 @@
                                     </div>
                                     <div class="select-list">
                                         <select name="opcion1" id="opcion1">
-                                            <option disabled selected hidden value="Selecc">Seleccionar</option>
-                                            <option value="Miempro_Estudiantil">Miembro Estudiantil</option>
-                                            <option value="Miembro_Profesional">Miembro Profesional</option>
-                                            <option value="Sociedad_Afiliada">Sociedad Afiliada</option>
+                                        <option selected value="No aplica">Seleccionar</option>
+                                        <option value="Miembro Estudiantil">Miembro Estudiantil</option>
+                                        <option value="Miembro Profesional">Miembro Profesional</option>
+                                        <option value="Sociedad Afiliada">Sociedad Afiliada</option>
                                         </select>
                                     </div>
                                 </div>
                                
                                 <div class="form-input">
-                                        <label for="provincia">Pais</label>
+                                        <label for="provincia">País</label>
                                         <input type="text" name="pais" id="pais" />
                                     </div>
 
@@ -113,16 +119,79 @@
                                     <label for="departamento">Unidad/Departamento/Facultad</label>
                                     <input type="text" name="departamento" id="departamento" />
                                 </div>
-                                <div class="form-input">
+                                <!--<div class="form-input">
                                     <label for="idest" >Número de Identificación del estudiante</label>
                                     <input type="text" name="IDest" id="IDest" />
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                        
+                        <h1>Cena de Clausura</h1>
+                        <hr>
+                        <div class="form-select">
+                                <div class="label-flex">
+                                            <label for="Cena">Cena</label>
+                                </div>
+                                    <div class="select-list">
+                                        <div class="selecc">
+                                        <select name="cena" id="opcion4"><!--OJO-->
+                                            <option disabled selected hidden value="No" >Seleccionar opción</option>
+                                            <option value="Solo">Si, asistiré a la cena de clausura solo. (+10.00 USD)</option>
+                                            <option value="Duo">Si, asistiré a la cena de clausura con un acompañante. (+60.00 USD)</option>
+                                            <option value="No">No asistiré a la cena de clausura.</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                        <h1>Áreas de intéres</h1>
+                        <hr>
+                        <div class= "CHKB">   
+                        <label><input type="checkbox" name="ar1" value="Agroind">Agroindustria</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar2" value="Cien_Bas">Ciencias Básicas</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar3" value="Econ_Soc" >Economía y Sociedad</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar4" value="Edu_Ing" >Educación en Ingeniería</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar5" value="Ener_Amb" >Energía y Ambiente</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar6" value="Gest_Empre" >Gestión Empresarial</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar7" value="Infraes" >Infraestrucutra</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar8" value="Log_Trans" >Logística y Transporte</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar9" value="Robot" >Robótica</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar10" value="TIC" >TIC</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar11" value="Tec_Emerg" >Tecnologías Emergentes</label>
+                        </div>
+                        <div class= "CHKB">
+                        <label><input type="checkbox" name="ar12" value="Otros" >Otros</label>
+                        </div><br>
+
+                        <h1>Opciones de pago</h1>
+                        <hr>
+                        <div class= "RBTN">
+                        <label><input type="radio" name="pago" value="PayPal" ><img class="img-responsive" src="../img/paypal.png" alt="paypal" width="200" height="400"></label>
+                        </div>
+
                         <div class="form-submit">
-                            <input type="submit" value="Cena y Pago" class="submit" id="submit" name="submit" />
-                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                            <input type="submit" value="Inscribirme y Pagar" class="submit" id="submit" name="submit" />
+                            <input type="submit" value="Volver" class="submit" id="reset" name="reset" />
                         </div>
                     </form>
                 </div>

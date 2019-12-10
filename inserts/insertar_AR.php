@@ -9,7 +9,9 @@ $sexo = $_POST['sexo'];
 $email = $_POST['email'];
 $telefono = $_POST['phone_number'];
 $ieee = $_POST['opcion1'];
+$ocupacion = $_POST['opcion2'];
 $tipo_user = 'par';
+$pais = 'Panama';
 $provincia = $_POST['provincia'];
 $ciudad = $_POST['ciudad'];
 $institucion = $_POST['institucion'];
@@ -17,15 +19,23 @@ $departamento = $_POST['departamento'];
 
 //variables de participante
 $cena = $_POST['cena'];
-$tipo_participante = 'est_nac';
+$tipo_participante = $_POST['tipo'];
 
 
 
 //sql de insercion a usuario
-$sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IEEE, Tipo_Ussuario, Cedula, Institucion, Unidad, Ciudad, Provincia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $dbh->prepare($sql);
-        $stmt->execute([$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $ciudad, $provincia]);
+if($tipo_participante=='Pro_Art')
+{
+    $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IEEE, Tipo_Ussuario, Cedula, Institucion, Unidad, Pais, Ciudad, Provincia, ocupacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute([$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $pais, $ciudad, $provincia, $ocupacion]);
+}
+else {
+    $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IEEE, Tipo_Ussuario, Cedula, Institucion, Unidad, Pais, Ciudad, Provincia) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $dbh->prepare($sql);
+    $stmt->execute([$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $pais, $ciudad, $provincia]);
 
+    }
        if($stmt->rowCount() > 0)
         {
             echo "Registro exitoso";
