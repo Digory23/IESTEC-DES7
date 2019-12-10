@@ -40,7 +40,7 @@ else {
         if($stmt->rowCount() > 0)
             {
                 echo "Registro exitoso";
-                header('Location: ../php/RegistroExitoso.php');
+                header("Location: ../controllers/Qr.php?cedula=$cedula&email=$email");
             }
             else{
                 echo "Error";

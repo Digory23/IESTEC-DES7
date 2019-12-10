@@ -5,7 +5,7 @@
 
     
     //$tiquete = $_POST['tiquete'];
-    $tiquete = '763211';
+    $tiquete = '912796';
     $statement = mysqli_prepare($con, "SELECT ID_Cedula FROM entrada WHERE cod_entrada = ? ");
     mysqli_stmt_bind_param($statement, "s",$tiquete );
     mysqli_stmt_execute($statement);
