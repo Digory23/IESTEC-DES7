@@ -28,7 +28,16 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
 //$mensaje   = "Hola $Nombre $Apellido gracias por inscribirte aqui esta su tiquete de entrada: $d , debera mostrarlo el dia del evento";
     //Generar el numero de formal aleatorea sin que se repita 
     $d=rand(100000,999999);
+<<<<<<< HEAD
   
+=======
+    /*
+    if ()
+    {
+
+        
+    }*/
+>>>>>>> 270c013b6ed7b0639a134afb718b22897b1a7657
 
 	//Declaramos una carpeta temporal para guardar la imagenes generadas
 	$dir = '../codigo_QR/';
