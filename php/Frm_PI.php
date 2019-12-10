@@ -1,6 +1,6 @@
 <?php 
     $titulo= $_GET['titulo'];
-    $lugar= $_GET['lugar'];
+    $tipo= $_GET['tipo'];
 ?>
 
 <!DOCTYPE html>
@@ -30,16 +30,22 @@
             <div class="signup-content">
                 <div class="signup-img">
                      <!--<img src="../img/form-img.jpg" alt="">-->
+                     <img class="form-img" src="../img/logo.png" alt="">
+
                     <div class="signup-img-content">
+                    
                     </div>
                 </div>
             
                 <div class="signup-form">
                     <h1>Inscripción y pago</h1>
+                    <hr>
                     <h2><?php echo $titulo ?></h2>
                     <p>Asegúrese de verificar que su información sea Correcta y que TODOS LOS CAMPOS sean válidos</p>
                     
                     <form action="../inserts/insertar_PI.php" method="POST" class="register-form" id="register-form">
+                        <!-- input oculto para pasar el tipo al insert-->
+                    <input type="hidden" name="tipo" value="<?php echo $_GET['tipo']?>">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
@@ -54,7 +60,7 @@
                                 <!--Comparacion para saber si es internacional o no con el lugar
                                     Dependiendo de si es o no internacional, pedirá cedula o pasaporte.-->
                                 <?php
-                                if($lugar=='Provincia'){
+                                if($tipo=='Pro_Nac'){
                                     echo '  <div class="form-input">
                                             <label for="id" class="required">Identificación (Cédula)</label>
                                             <input type="text" name="ID" id="ID" />
@@ -69,15 +75,17 @@
                                 ?>
 
                                 <div class="form-select">
-                                        <div class="label-flex">
+                                    <div class="label-flex">
                                             <label for="sexo">Sexo</label>
                                         </div>
-                                            <select name="opcion" id="opcion"><!--OJO-->
-                                                <option disabled selected hidden value="selecsex" >Seleccionar sexo</option>
-                                                <option value="Masculino">Masculino</option>
-                                                <option value="Femenino">Femenino</option>
-                                                <option value="Otro">Otro</option>
-                                            </select>
+                                        <div class="selecc">
+                                    <select name="sexo" id="sexo">
+                                        <option disabled selected hidden value="selectsex" >Seleccionar sexo</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                    </div>
                                     </div>
 
                                 <div class="form-input">
@@ -97,10 +105,10 @@
                                     </div>
                                     <div class="select-list">
                                         <select name="opcion1" id="opcion1">
-                                            <option disabled selected hidden value="Selecc">Seleccionar</option>
-                                            <option value="Miempro_Estudiantil">Miembro Estudiantil</option>
-                                            <option value="Miembro_Profesional">Miembro Profesional</option>
-                                            <option value="Sociedad_Afiliada">Sociedad Afiliada</option>
+                                        <option selected value="No aplica">Seleccionar</option>
+                                        <option value="Miembro Estudiantil">Miembro Estudiantil</option>
+                                        <option value="Miembro Profesional">Miembro Profesional</option>
+                                        <option value="Sociedad Afiliada">Sociedad Afiliada</option>
                                         </select>
                                     </div>
                                 </div>
@@ -121,7 +129,7 @@
                             
                             <!--Comparacion para saber si es internacional o no con el lugar-->
                               <?php
-                              if($lugar=='Provincia'){
+                              if($tipo=='Pro_Nac'){
                                 echo '  <div class="form-input">
                                         <label for="provincia">Provincia</label>
                                         <input type="text" name="provincia" id="provincia" />
@@ -152,21 +160,25 @@
                         </div>
                         
                         <h1>Cena de Clausura</h1>
-                            <div class="form-select">
+                        <hr>
+                        <div class="form-select">
                                 <div class="label-flex">
                                             <label for="Cena">Cena</label>
                                 </div>
                                     <div class="select-list">
+                                        <div class="selecc">
                                         <select name="cena" id="opcion4"><!--OJO-->
-                                            <option disabled selected hidden value="selecena" >Seleccionar opción</option>
+                                            <option disabled selected hidden value="No" >Seleccionar opción</option>
                                             <option value="Solo">Si, asistiré a la cena de clausura solo. (+10.00 USD)</option>
                                             <option value="Duo">Si, asistiré a la cena de clausura con un acompañante. (+60.00 USD)</option>
                                             <option value="No">No asistiré a la cena de clausura.</option>
                                         </select>
+                                        </div>
                                     </div>
                                 </div>
                         
                         <h1>Áreas de intéres</h1>
+                        <hr>
                         <div class= "CHKB">   
                         <label><input type="checkbox" name="ar1" value="Agroind">Agroindustria</label>
                         </div>
@@ -205,13 +217,14 @@
                         </div><br>
 
                         <h1>Opciones de pago</h1>
+                        <hr>
                         <div class= "RBTN">
                         <label><input type="radio" name="pago" value="PayPal" ><img class="img-responsive" src="../img/paypal.png" alt="paypal" width="200" height="400"></label>
                         </div>
 
                         <div class="form-submit">
-                            <input type="submit" value="Cena y Pago" class="submit" id="submit" name="submit" />
-                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                            <input type="submit" value="Inscribirme y Pagar" class="submit" id="submit" name="submit" />
+                            <input type="submit" value="Volver" class="submit" id="reset" name="reset" />
                         </div>
                     </form>
 
