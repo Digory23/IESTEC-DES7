@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $titulo ?></title>
 
+    <link href="../img/utp.png" rel="icon">
     <!-- Font Icon -->
     <link rel="stylesheet" href="../css/form css/fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../js/vendor/nouislider/nouislider.min.css">
@@ -25,7 +26,6 @@
 <body>
 
     <div class="main">
-
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
@@ -33,7 +33,7 @@
                      <img class="form-img" src="../img/logo.png" alt="">
 
                     <div class="signup-img-content">
-                    
+
                     </div>
                 </div>
             
@@ -120,9 +120,9 @@
                                         <div class="select-list">
                                             <select name="opcion2" id="opcion2"><!--OJO-->
                                                 <option disabled selected hidden value="Selecc">Seleccionar</option>
-                                                <option value="intestigador">Investigador</option>
-                                                <option value="profesor">Profesor</option>
-                                                <option value="ingeniero">Ingeniero</option>
+                                                <option value="Investigador">Investigador</option>
+                                                <option value="Profesor">Profesor</option>
+                                                <option value="Ingeniero">Ingeniero</option>
                                             </select>
                                         </div>
                                     </div>
