@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-12-2019 a las 23:10:34
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.2.14
+-- Tiempo de generación: 09-12-2019 a las 23:01:14
+-- Versión del servidor: 10.4.10-MariaDB
+-- Versión de PHP: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -96,7 +96,10 @@ CREATE TABLE `entrada` (
 --
 
 INSERT INTO `entrada` (`cod_entrada`, `ID_Cedula`, `asistencia`) VALUES
+(300106, '8-968-7844', ''),
 (324567, '8-888-8888', 'SI'),
+(673013, '45454545', ''),
+(763211, '8-968-7744', ''),
 (765488, '555-5555', '');
 
 -- --------------------------------------------------------
@@ -107,11 +110,26 @@ INSERT INTO `entrada` (`cod_entrada`, `ID_Cedula`, `asistencia`) VALUES
 
 CREATE TABLE `eventos` (
   `ID_Eventos` int(11) NOT NULL,
-  `Nombre_Evento` varchar(30) NOT NULL,
+  `Nombre_Evento` varchar(50) NOT NULL,
   `Hora` varchar(15) NOT NULL,
   `ID_Sala` int(10) NOT NULL,
   `ID_area` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `eventos`
+--
+
+INSERT INTO `eventos` (`ID_Eventos`, `Nombre_Evento`, `Hora`, `ID_Sala`, `ID_area`) VALUES
+(3, 'Inicio de Recepción de Artículos', '6:00 pm', 12, 'TIC'),
+(4, 'Limite de Entrega de Artículos', '8:00 pm', 4, 'Econ_Soc'),
+(5, 'Notificación de Aceptación', '5:00 pm', 6, 'TIC'),
+(6, 'Alimentec', '12:00 pm', 4, 'Agroind'),
+(7, 'INOFOOD', '3:00 pm', 5, 'Agroind'),
+(8, 'Eshow', '7:00 pm', 8, 'Econ_Soc'),
+(9, 'OMExpo', '4:00 pm', 3, 'Robot'),
+(10, 'Digital Enterprise Show', '5:30 pm', 2, 'Gest_Empre'),
+(11, 'Fintech Unconference', '6:30 pm', 3, 'Cien_Bas');
 
 -- --------------------------------------------------------
 
@@ -131,9 +149,8 @@ CREATE TABLE `participantes` (
 --
 
 INSERT INTO `participantes` (`ID_Cedula`, `Cena`, `Tipo_Participante`, `email_facultad`) VALUES
-('555-5555', 'Solo', 'est_nac', NULL),
-('8-888-8888', 'Duo', 'est_nac', NULL),
-('mono-chino', 'No', 'est_nac', NULL);
+('8-968-7744', 'Solo', 'Est_NPre', NULL),
+('8-968-7844', 'Duo', 'Est_NPre', NULL);
 
 -- --------------------------------------------------------
 
@@ -162,12 +179,17 @@ CREATE TABLE `participante_interes` (
 --
 
 INSERT INTO `participante_interes` (`ID_Cedula`, `Cod_Area`) VALUES
-('mono-chino', 'Cien_Bas'),
-('mono-chino', 'Econ_Soc'),
-('8-888-8888', 'Cien_Bas'),
-('8-888-8888', 'Econ_Soc'),
-('555-5555', 'Agroind'),
-('555-5555', 'Cien_Bas');
+('8-968-7744', 'Edu_Ing'),
+('8-968-7744', 'Ener_Amb'),
+('8-968-7744', 'Infraes'),
+('8-968-7744', 'Robot'),
+('8-968-7744', 'TIC'),
+('8-968-7844', 'Cien_Bas'),
+('8-968-7844', 'Edu_Ing'),
+('8-968-7844', 'Ener_Amb'),
+('8-968-7844', 'Infraes'),
+('8-968-7844', 'Robot'),
+('8-968-7844', 'TIC');
 
 -- --------------------------------------------------------
 
@@ -176,15 +198,22 @@ INSERT INTO `participante_interes` (`ID_Cedula`, `Cod_Area`) VALUES
 --
 
 CREATE TABLE `precios` (
-  `autores_est_art_acep` int(11) NOT NULL,
-  `autores_prof_art_acep` int(11) NOT NULL,
-  `est_pregrado` int(11) NOT NULL,
-  `est_postgrado` int(11) NOT NULL,
-  `prof_nacionales` int(11) NOT NULL,
-  `est_inter_pre_post` int(11) NOT NULL,
-  `otros_internacionales` int(11) NOT NULL,
-  `ID_TipoPart` varchar(30) NOT NULL
+  `ID_TipoPart` varchar(30) NOT NULL,
+  `Precio` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `precios`
+--
+
+INSERT INTO `precios` (`ID_TipoPart`, `Precio`) VALUES
+('Est_Art', 100),
+('Est_Int', 125),
+('Est_NPost', 50),
+('Est_NPre', 80),
+('Par_Int', 225),
+('Pro_Art', 175),
+('Pro_Nac', 125);
 
 -- --------------------------------------------------------
 
@@ -200,6 +229,13 @@ CREATE TABLE `programas` (
   `ID_programa` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `programas`
+--
+
+INSERT INTO `programas` (`ID_Evento`, `ID_Sala`, `Fecha`, `ID_Usuario`, `ID_programa`) VALUES
+(3, 12, '2019-12-10', 27, 123);
+
 -- --------------------------------------------------------
 
 --
@@ -212,6 +248,24 @@ CREATE TABLE `sala` (
   `Descripcion` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `sala`
+--
+
+INSERT INTO `sala` (`ID_Sala`, `Nombre`, `Descripcion`) VALUES
+(1, 'Scalterna', 'Sala de conferencias y talleres'),
+(2, 'Geranium', 'Sala de conferencias y talleres'),
+(3, 'Asculus', 'Sala de conferencias y talleres'),
+(4, 'Cynodon', 'Sala de conferencias y talleres'),
+(5, 'Tessaria', 'Sala de conferencias y talleres'),
+(6, 'Solanum', 'Sala de conferencias y talleres'),
+(7, 'Condalia', 'Sala de conferencias y talleres'),
+(8, 'Eupatorium', 'Sala de conferencias y talleres'),
+(9, 'Ambrosia', 'Sala de Generación de Certificados'),
+(10, 'Eclipta', 'Sala de conferencias y talleres'),
+(11, 'Amaranthus', 'Sala de recepción del Evento'),
+(12, 'Recepción', 'Sala de recepción del Evento');
+
 -- --------------------------------------------------------
 
 --
@@ -220,7 +274,7 @@ CREATE TABLE `sala` (
 
 CREATE TABLE `tipo_part` (
   `ID_TipoPart` varchar(30) NOT NULL,
-  `Descrip` text
+  `Descrip` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -228,7 +282,13 @@ CREATE TABLE `tipo_part` (
 --
 
 INSERT INTO `tipo_part` (`ID_TipoPart`, `Descrip`) VALUES
-('est_nac', 'Estudiante Nacional tanto de Pregrado y Postgrado');
+('Est_Art', 'Estudiante con Artículo'),
+('Est_Int', 'Estudiante Internacional'),
+('Est_NPost', 'Estudiante Nacional Postgrado'),
+('Est_NPre', 'Estudiante Nacional Pregrado'),
+('Par_Int', 'Participante Internacional'),
+('Pro_Art', 'Profesional con Artículo'),
+('Pro_Nac', 'Profesional Nacional');
 
 -- --------------------------------------------------------
 
@@ -238,7 +298,7 @@ INSERT INTO `tipo_part` (`ID_TipoPart`, `Descrip`) VALUES
 
 CREATE TABLE `tipo_usuario` (
   `ID_TipoUsuario` varchar(30) NOT NULL,
-  `Descrip` text
+  `Descrip` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -269,18 +329,22 @@ CREATE TABLE `usuario` (
   `Unidad` varchar(25) DEFAULT NULL,
   `Pais` varchar(20) DEFAULT NULL,
   `Ciudad` varchar(25) DEFAULT NULL,
-  `Provincia` varchar(30) DEFAULT NULL
+  `Provincia` varchar(30) DEFAULT NULL,
+  `ocupacion` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Telefono`, `Miembro_IEEE`, `Tipo_Ussuario`, `Cedula`, `Institucion`, `Unidad`, `Pais`, `Ciudad`, `Provincia`) VALUES
-(27, 'Daniel', 'Diaz', 'Masculino', 'danyd2339@gmail.com', '445-2345', 'Sociedad Afiliada', 'adm', '8-928-1643', 'UTP', 'FISC', NULL, 'Panama', 'Panama'),
-(44, 'Izuku', 'Midoriya', 'Masculino', 'user1@iestec.local', '754332', 'Miembro Estudiantil', 'par', 'mono-chino', 'UA', 'Departamento de heroes', NULL, 'Japon', 'Japon'),
-(46, 'Nathalie', 'Acevedo', 'Femenino', 'user2@iestec.local', '536478', 'Miembro Profesional', 'par', '8-888-8888', 'UTP', 'FISC', NULL, 'Narnia', 'Panama'),
-(59, 'Diana', 'Garcia', 'Femenino', 'user1@iestec.local', '45374567', 'Miembro Profesional', 'par', '555-5555', 'UTP', 'FISC', NULL, 'Panamá', 'Panamá');
+INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Telefono`, `Miembro_IEEE`, `Tipo_Ussuario`, `Cedula`, `Institucion`, `Unidad`, `Pais`, `Ciudad`, `Provincia`, `ocupacion`) VALUES
+(27, 'Daniel', 'Diaz', 'Masculino', 'danyd2339@gmail.com', '445-2345', 'Sociedad Afiliada', 'adm', '8-928-1643', 'UTP', 'FISC', NULL, 'Panama', 'Panama', ''),
+(44, 'Izuku', 'Midoriya', 'Masculino', 'user1@iestec.local', '754332', 'Miembro Estudiantil', 'par', 'mono-chino', 'UA', 'Departamento de heroes', NULL, 'Japon', 'Japon', ''),
+(46, 'Nathalie', 'Acevedo', 'Femenino', 'user2@iestec.local', '536478', 'Miembro Profesional', 'par', '8-888-8888', 'UTP', 'FISC', NULL, 'Narnia', 'Panama', ''),
+(59, 'Diana', 'Garcia', 'Femenino', 'user1@iestec.local', '45374567', 'Miembro Profesional', 'par', '555-5555', 'UTP', 'FISC', NULL, 'Panamá', 'Panamá', ''),
+(60, 'Diana', 'García', 'Femenino', 'asdfghjkl@gmail.com', '65349264', 'Miembro Profesional', 'par', '45454545', 'Utp', 'Utp', NULL, 'Panama', 'Panama', ''),
+(61, 'Pedro', 'Stanziola', 'Masculino', 'pedro123@gmail.com', '6547-8954', 'Miembro Profesional', 'par', '8-968-7744', 'INAC', 'INAC', NULL, 'Panama', 'Bocas del Toro', ''),
+(62, 'AnaMarie', 'Stanziola', 'Femenino', 'anamaria23@gmail.com', '6547-8956', 'Sociedad Afiliada', 'par', '8-968-7844', 'INAC', 'INAC', NULL, 'Panama', 'Chiriquí', '');
 
 --
 -- Índices para tablas volcadas
@@ -389,19 +453,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `ID_Eventos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Eventos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `programas`
 --
 ALTER TABLE `programas`
-  MODIFY `ID_programa` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_programa` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- Restricciones para tablas volcadas
