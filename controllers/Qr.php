@@ -47,8 +47,29 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
 
     $precio = $row['Precio'];
 
+    //calculo del precio final
+    $precio_Final= 0.0;
+    $cena_total = 0.0;
+    switch($cena)
+    {
+        case 'Solo':{
+          $cena_total = 10.0;
+        break;
+        }
+        case 'Duo':{
+          $cena_total = 60.0;
+        }
+    }
 
-
+    if($miembroIEEE== 'No Aplica'){
+      $precio_Final = precio;
+    }
+    else
+    {
+      $precio_Final = precio - (precio * 0.15);
+    }
+    
+    $precio_Final = $precio_Final + $cena_total;
 
     
     $d=rand(100000,999999);                                   //Generar el numero de formal aleatorea sin que se repita 
