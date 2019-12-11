@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-12-2019 a las 23:01:14
--- Versión del servidor: 10.4.10-MariaDB
--- Versión de PHP: 7.3.12
+-- Tiempo de generación: 11-12-2019 a las 18:14:14
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -96,11 +96,14 @@ CREATE TABLE `entrada` (
 --
 
 INSERT INTO `entrada` (`cod_entrada`, `ID_Cedula`, `asistencia`) VALUES
-(300106, '8-968-7844', ''),
+(300106, '8-968-7844', 'SI'),
+(304348, '000-9999', ''),
 (324567, '8-888-8888', 'SI'),
-(673013, '45454545', ''),
-(763211, '8-968-7744', ''),
-(765488, '555-5555', '');
+(440208, '222-2345', ''),
+(763211, '8-968-7744', 'SI'),
+(765488, '555-5555', ''),
+(904350, '222-23467', 'SI'),
+(915488, '111-66666', '');
 
 -- --------------------------------------------------------
 
@@ -149,6 +152,10 @@ CREATE TABLE `participantes` (
 --
 
 INSERT INTO `participantes` (`ID_Cedula`, `Cena`, `Tipo_Participante`, `email_facultad`) VALUES
+('000-9999', 'No', 'Pro_Nac', NULL),
+('111-66666', 'Duo', 'Pro_Nac', NULL),
+('222-2345', 'Duo', 'Est_NPre', NULL),
+('222-23467', 'Duo', 'Pro_Nac', NULL),
 ('8-968-7744', 'Solo', 'Est_NPre', NULL),
 ('8-968-7844', 'Duo', 'Est_NPre', NULL);
 
@@ -189,7 +196,21 @@ INSERT INTO `participante_interes` (`ID_Cedula`, `Cod_Area`) VALUES
 ('8-968-7844', 'Ener_Amb'),
 ('8-968-7844', 'Infraes'),
 ('8-968-7844', 'Robot'),
-('8-968-7844', 'TIC');
+('8-968-7844', 'TIC'),
+('000-9999', 'Agroind'),
+('000-9999', 'Cien_Bas'),
+('000-9999', 'Gest_Empre'),
+('000-9999', 'TIC'),
+('222-2345', 'Agroind'),
+('222-2345', 'Econ_Soc'),
+('222-2345', 'Ener_Amb'),
+('222-2345', 'Infraes'),
+('222-23467', 'Cien_Bas'),
+('222-23467', 'Econ_Soc'),
+('222-23467', 'Edu_Ing'),
+('111-66666', 'Edu_Ing'),
+('111-66666', 'Ener_Amb'),
+('111-66666', 'Gest_Empre');
 
 -- --------------------------------------------------------
 
@@ -274,7 +295,7 @@ INSERT INTO `sala` (`ID_Sala`, `Nombre`, `Descripcion`) VALUES
 
 CREATE TABLE `tipo_part` (
   `ID_TipoPart` varchar(30) NOT NULL,
-  `Descrip` text DEFAULT NULL
+  `Descrip` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -298,7 +319,7 @@ INSERT INTO `tipo_part` (`ID_TipoPart`, `Descrip`) VALUES
 
 CREATE TABLE `tipo_usuario` (
   `ID_TipoUsuario` varchar(30) NOT NULL,
-  `Descrip` text DEFAULT NULL
+  `Descrip` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -320,7 +341,7 @@ CREATE TABLE `usuario` (
   `Nombre` varchar(20) DEFAULT NULL,
   `Apellido` varchar(20) DEFAULT NULL,
   `Sexo` varchar(20) DEFAULT NULL,
-  `Email` varchar(20) DEFAULT NULL,
+  `Email` varchar(100) DEFAULT NULL,
   `Telefono` varchar(15) DEFAULT NULL,
   `Miembro_IEEE` varchar(25) NOT NULL,
   `Tipo_Ussuario` varchar(30) DEFAULT NULL,
@@ -342,9 +363,12 @@ INSERT INTO `usuario` (`ID_Usuario`, `Nombre`, `Apellido`, `Sexo`, `Email`, `Tel
 (44, 'Izuku', 'Midoriya', 'Masculino', 'user1@iestec.local', '754332', 'Miembro Estudiantil', 'par', 'mono-chino', 'UA', 'Departamento de heroes', NULL, 'Japon', 'Japon', ''),
 (46, 'Nathalie', 'Acevedo', 'Femenino', 'user2@iestec.local', '536478', 'Miembro Profesional', 'par', '8-888-8888', 'UTP', 'FISC', NULL, 'Narnia', 'Panama', ''),
 (59, 'Diana', 'Garcia', 'Femenino', 'user1@iestec.local', '45374567', 'Miembro Profesional', 'par', '555-5555', 'UTP', 'FISC', NULL, 'Panamá', 'Panamá', ''),
-(60, 'Diana', 'García', 'Femenino', 'asdfghjkl@gmail.com', '65349264', 'Miembro Profesional', 'par', '45454545', 'Utp', 'Utp', NULL, 'Panama', 'Panama', ''),
 (61, 'Pedro', 'Stanziola', 'Masculino', 'pedro123@gmail.com', '6547-8954', 'Miembro Profesional', 'par', '8-968-7744', 'INAC', 'INAC', NULL, 'Panama', 'Bocas del Toro', ''),
-(62, 'AnaMarie', 'Stanziola', 'Femenino', 'anamaria23@gmail.com', '6547-8956', 'Sociedad Afiliada', 'par', '8-968-7844', 'INAC', 'INAC', NULL, 'Panama', 'Chiriquí', '');
+(62, 'AnaMarie', 'Stanziola', 'Femenino', 'anamaria23@gmail.com', '6547-8956', 'Sociedad Afiliada', 'par', '8-968-7844', 'INAC', 'INAC', NULL, 'Panama', 'Chiriquí', ''),
+(64, 'Digory', 'Speedwagon', 'Masculino', 'danyd2339@gmail.com', '12345356', 'Miembro Estudiantil', 'par', '000-9999', 'UTP', 'FISC', 'Panama', 'Panama', 'Panama', 'Profesor'),
+(65, 'Diana', 'Joestar', 'Femenino', 'dianac.vergara1@gmai', '4567857', 'Miembro Profesional', 'par', '222-2345', '', '', 'Panama', '', '', ''),
+(66, 'Diana', 'Speedwagon', 'Femenino', 'dianac.vergara1@gmai', '7898654', 'Miembro Profesional', 'par', '222-23467', '', '', 'Panama', '', '', 'Profesor'),
+(70, 'Daniel', 'Joestar', 'Masculino', 'danyd2339@gmail.com', '7897654', 'Sociedad Afiliada', 'par', '111-66666', '', '', 'Panama', '', '', 'Profesor');
 
 --
 -- Índices para tablas volcadas
@@ -465,7 +489,7 @@ ALTER TABLE `programas`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- Restricciones para tablas volcadas
