@@ -195,10 +195,20 @@ include "../controllers/estadisticas-controller.php"
                     <li class="nav-label">Tabla</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-menu menu-icon"></i><span class="nav-text">Tabla</span>
+                            <i class="icon-menu menu-icon"></i><span class="nav-text">Tabla de Datos</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./table-datatable.php" aria-expanded="false">Tabla de Datos</a></li>
+                            <li><a href="./table-datatable.php" aria-expanded="false">Datos de los Participantes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-label">Certificados</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-envelope-open menu-icon"></i><span class="nav-text">Generar</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./GenerarCertif.php" aria-expanded="false">Generar Certificados</a></li>
                         </ul>
                     </li>
                 </ul>
