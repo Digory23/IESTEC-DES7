@@ -1,6 +1,8 @@
 <?php 
 include "../controllers/validar.php";
+include "../controllers/estadisticas-controller.php"
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +11,32 @@ include "../controllers/validar.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Estadísticas del Congreso</title>
+
+    <!--Variables con los resultados de las consultas estadisticas-->
+    <script> 
+    //Consulta de Cantidad de Participantes por Area de Interes
+        var a1 = '<?php echo $a1;?>'; //Agroindustria
+        var a2 = '<?php echo $a2;?>'; //Ciencias Basicas
+        var a3 = '<?php echo $a3;?>'; //Economia y Sociedad
+        var a4 = '<?php echo $a4;?>'; //Educacion en Ingenieria
+        var a5 = '<?php echo $a5;?>'; //Energia y Ambiente
+        var a6 = '<?php echo $a6;?>'; //Gestion Empresarial
+        var a7 = '<?php echo $a7;?>'; //Infraestructura
+        var a8 = '<?php echo $a8;?>'; //Logistica y Transporte
+        var a9 = '<?php echo $a9;?>'; //Robot
+        var a10 = '<?php echo $a10;?>'; //TIC
+        var a11 = '<?php echo $a11;?>'; //Otros
+
+    //Consulta de Cantidad de Participantes por tipo
+        var p1 = '<?php echo $p1;?>'; //Estudiante con Articulo
+        var p2 = '<?php echo $p2;?>'; //Estudiante Internacional
+        var p3 = '<?php echo $p3;?>'; //Estudiante Nacional Postgrado
+        var p4 = '<?php echo $p4;?>'; //Estudiante Nacional Pregrado
+        var p5 = '<?php echo $p5;?>'; //Participante Internacional
+        var p6 = '<?php echo $p6;?>'; //Profesional con Articulo
+        var p7 = '<?php echo $p7;?>'; //Profesional Nacional
+        
+    </script>
 
     <script src="../js/Chart.js-2.9.1/dist/Chart.min.js"></script>
     <script src="../js/Chart.js-2.9.1/samples/utils.js"></script>
