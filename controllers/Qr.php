@@ -11,7 +11,7 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
     require "../phpqrcode/qrlib.php";    
     require '../conexion/conexion.php';
     require '../fpdf/fpdf.php';
-    require '../conexion/conexion.php';
+ 
 
 
     $cedula= $_GET['cedula'];
@@ -48,25 +48,28 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
     $precio = $row['Precio'];
 
     //calculo del precio final
-    $precio_Final= 0.0;
-    $cena_total = 0.0;
-    switch($cena)
+
+    if($cena='Solo')
     {
-        case 'Solo':{
-          $cena_total = 10.0;
-        break;
-        }
-        case 'Duo':{
-          $cena_total = 60.0;
-        }
+    
+     $cena_total = 10.0;
+    }
+    else if('Duo')
+    {
+      $cena_total = 60.0;
+    }
+    else 
+    {
+      $cena_total = 0.0;
     }
 
+
     if($miembroIEEE== 'No Aplica'){
-      $precio_Final = precio;
+      $precio_Final = $precio;
     }
     else
     {
-      $precio_Final = precio - (precio * 0.15);
+      $precio_Final = $precio - ($precio * 0.15);
     }
     
     $precio_Final = $precio_Final + $cena_total;
@@ -88,14 +91,13 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
 	
 	$tamaño = 10; //Tamaño de Pixel
 	$level = 'M'; //Precisión Baja
-	$framSize = 1; //Tamaño en blanco
-	$contenido =  "Nombre: $Nombre, Apellido: $Apellido, ID: $cedula, Código de Entrada: $d" ; //Texto
+	$framSize = 0; //Tamaño en blanco
+	$contenido =  "Código de Entrada: $d" ; //Texto
 
-  
         
    QRcode::png($contenido, $filename, $level, $tamaño, $framSize);      //Enviamos los parametros a la Función para generar código QR 
     
-    //header("Location: certificado.php?cedula=$cedula");
+   // header("Location: certificado.php?cedula=$cedula");
    
     $codigo= "../codigo_QR/$cedula.png";
     
@@ -109,15 +111,31 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
         $pdf= new FPDF('P','mm','A4');
         $pdf->Addpage();
         $pdf->SetFont('times','B','20');
-        $pdf->Image('../img/Factura.png',0,0,210,310);
+        $pdf->Image('../img/Factura.png',0,0,210,305);
         
-        $pdf->SetXY(55,60);
-       // $pdf->Cell(140, 60, $row['Nombre'],20,0,'C');
-        $pdf->Image("$codigo",115,170, 70, 70);
-        $pdf->Cell(190, 215, $d,15,15,'C');
+        
+
+       /* $pdf->Cell(140, 60, '100.00',20,0,'C');
+        $pdf->Cell(140, 60, '100.00',20,0,'C');*/
+
+        $pdf->SetXY(150,103);
+        $pdf->Cell(20, 10, "$precio",0,'R',0);
+
+        $pdf->SetXY(150,118);
+        $pdf->Cell(20, 10, "$cena_total",0,'R',0);
+
+        $pdf->SetXY(150,133);
+        $pdf->Cell(20, 10, "$precio_Final",0,'R',0);
+
+        $pdf->SetXY(146,165);
+        $pdf->Cell(20, 10, $d,0,'R',0);
+        $pdf->Image("$codigo",125,175, 60, 60);
+       
         
         $pdf->output("F","../codigo_QR/$cedula.pdf");
+        
         $archivo="../codigo_QR/$cedula.pdf";
+
 
 
 //Envio de correo con PHPMAILER
@@ -139,8 +157,8 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'CODIGO DE ENTRADA';
-    $mail->Body    = "Hola $Nombre $Apellido gracias por inscribirte aqui esta su tiquete de entrada: $d , debera mostrarlo el dia del evento ";                                              //OJO ESTO HAY QUE CAMBIARLO POR PALABRAS MAS BONITAS
+    $mail->Subject = 'IESTEC 2021: Constancia de Entrada';
+    $mail->Body    = "¡Hola, $Nombre $Apellido! Gracias por inscribirte al IESTEC 2021. Esperemos que disfrutes el congreso. Aquí esta tu tiquete de entrada: $d. Debes mostrarlo el día del evento para entrar.";                                              //OJO ESTO HAY QUE CAMBIARLO POR PALABRAS MAS BONITAS
     $mail->AltBody = 'CODIGO DE ENTRADA';
     $mail->AddAttachment($archivo,$archivo);              //Agregar el archivo adjunto al correo 
     
@@ -151,43 +169,4 @@ try {
 }
 header('Location: ../php/RegistroExitoso.php');
 
-
-
-/*
-//enviando correo con la función Mail
-$titulo    = 'CODIGO DE ENTRADA';
-$mensaje   = "Hola $Nombre $Apellido gracias por inscribirte aqui esta su tiquete de entrada: $d , debera mostrarlo el dia del evento";
-//$filename = "$cedula.pdf";
-//$ruta = "../certificados/";
-
-//configuracion de Header HTML
-$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
-$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$cabeceras .= 'From: congreso@iestec.local';
-
-//Mensaje en HTML
- $mensajeContenido='<html>
-    <head>
-    </head>
-    <body>
-    <table width="100%"  border="0" cellpadding="2" cellspacing="2">
-      <tr>
-        <td><h3 align="center"><embed src="../certificados/'.$filename.'" type="application/pdf" width="100%" height="600px" /><br>
-          Congreso IESTEC<br>
-        </h3>
-        </td>
-      </tr>
-      <tr>
-        <td>'.$mensaje.'</td>
-      </tr>
-      <tr>
-        <td bgcolor="#660066">&nbsp;</td>
-      </tr>
-    </table>
-    </body>
-    </html>';
-
-	//Función mail
-	if (mail($para, $titulo, $mensajeContenido, $cabeceras))
-	echo "El mensaje se ha enviado correctamente";*/
 ?>

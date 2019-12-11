@@ -9,6 +9,13 @@ $sexo = $_POST['sexo'];
 $email = $_POST['email'];
 $telefono = $_POST['phone_number'];
 $ieee = $_POST['opcion1'];
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1d4b16b5341941f19d3ef6b186ba9576bb7096fd
+=======
+>>>>>>> 6477f87a8a4ca3f32d27b46c0a968508491af3e3
 $tipo_user = 'par';
 $pais = 'Panama';
 $provincia = $_POST['provincia'];

@@ -66,19 +66,7 @@
                                     <input type="text" name="ID" id="ID" />
                                 </div>
 
-                                <!--<div class="form-select">
-                                        <div class="label-flex">
-                                            <label for="sexo">Sexo</label>
-                                        </div>
-                                        <div class="select-list">
-                                            <select name="opcion" id="opcion">
-                                                <option disabled selected hidden value="selecsex" >Seleccionar sexo</option>
-                                                <option value="Masculino">Masculino</option>
-                                                <option value="Femenino">Femenino</option>
-                                                <option value="Otro">Otro</option>
-                                            </select>
-                                        </div>
-                                    </div>-->
+                            
 
                                     <div class="form-select">
                                     <div class="label-flex">
