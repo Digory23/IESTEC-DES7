@@ -45,7 +45,10 @@ include "../controllers/estadisticas-controller.php"
         var c1 = '<?php echo $c1;?>'; //Solo
         var c2 = '<?php echo $c2;?>'; //Duo
         var c3 = '<?php echo $c3;?>'; //No
-        
+
+    //Consulta de cantidad de participantes que asistieron o no
+        var as1 = '<?php echo $as1;?>'; //Si asistieron
+        var as2 = '<?php echo $as2;?>'; //No asistieron
     </script>
 
     <script src="../js/Chart.js-2.9.1/dist/Chart.min.js"></script>
