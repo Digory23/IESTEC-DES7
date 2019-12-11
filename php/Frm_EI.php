@@ -185,7 +185,7 @@
 
                         <h1>Opciones de pago</h1>
                         <hr>
-                        <div class= "RBTN">
+                        <div class="RBTN">
                         <label><input type="radio" name="pago" value="PayPal" ><img class="img-responsive" src="../img/paypal.png" alt="paypal" width="200" height="400"></label>
                         </div>
 

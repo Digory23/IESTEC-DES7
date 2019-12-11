@@ -87,12 +87,6 @@ include "../controllers/estadisticas-controller.php"
         ***********************************-->
         <div class="header">    
             <div class="header-content clearfix">
-                
-                <div class="nav-control">
-                    <div class="hamburger">
-                        <span class="toggle-icon"><i class="icon-menu"></i></span>
-                    </div>
-                </div>
 
                 <!--**********************************
                 <div class="nav-control">
@@ -113,12 +107,18 @@ include "../controllers/estadisticas-controller.php"
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="Estadisticas.php"><img class="navbar-brand" src="../img/estadisticalogo.png" alt="">
-                    <b class="logo-abbr"><h5 style="color:white">I</h5><!--<img src="../img/logo.png" alt="">--> </b>
-                    <span class="logo-compact"><h5 style="color:white">I</h5><!--<img src="../img/logo-compact.png" alt="">--></span>
+                
+                    <!--<b class="logo-abbr"><h5 style="color:white">I</h5><img src="../img/logo.png" alt="">--> </b>
+                    <!--<span class="logo-compact"><h5 style="color:white">I</h5><img src="../img/logo-compact.png" alt="">--></span>
                     <span class="brand-title">
                         <!--<img src="../img/logo_transparent.png" alt="" height="30%" width="50%">-->
                     </span>
                 </a>
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
             </div>
         </div>
         <!--**********************************

@@ -7612,9 +7612,9 @@ sub {
 .nav-control {
   cursor: pointer;
   position: absolute;
-  left: 1.4375rem;
   text-align: center;
-  top: 46%;
+  top: 55%;
+  left: 85%;
   transform: translateY(-50%); }
   @media (max-width: 575.98px) {
     .nav-control {
