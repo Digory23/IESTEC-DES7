@@ -56,6 +56,12 @@
                             <!--<img src="../img/logo_transparent.png" alt="" height="30%" width="50%">-->
                     </span>
                 </a>
+
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
             </div>
         </div>
         <!--**********************************
@@ -126,7 +132,7 @@
                                 <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                             </ul>
                         </li>
-                        <li class="nav-label">Table</li>
+                        <li class="nav-label">Tabla</li>
                         <li>
                             <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                                 <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>

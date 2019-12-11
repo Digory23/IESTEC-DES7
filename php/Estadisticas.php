@@ -108,7 +108,7 @@ include "../controllers/estadisticas-controller.php"
             <div class="brand-logo">
                 <a href="Estadisticas.php"><img class="navbar-brand" src="../img/estadisticalogo.png" alt="">
                 
-                    <!--<b class="logo-abbr"><h5 style="color:white">I</h5><img src="../img/logo.png" alt="">--> </b>
+                    <!--<b class="logo-abbr"><img src="../img/logo.png" alt=""> </b>-->
                     <!--<span class="logo-compact"><h5 style="color:white">I</h5><img src="../img/logo-compact.png" alt="">--></span>
                     <span class="brand-title">
                         <!--<img src="../img/logo_transparent.png" alt="" height="30%" width="50%">-->
@@ -152,7 +152,7 @@ include "../controllers/estadisticas-controller.php"
                         </li>-->
                         
 
-                        <li class="icons dropdown d-none d-md-flex">
+                        <li class="icons dropdown d-md-flex">
                             <a href="../controllers/salir.php" aria-expanded="false">Cerrar Sesión</a>
                         </li>
                     </ul>

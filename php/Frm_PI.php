@@ -104,12 +104,14 @@
                                         <label for="Miembro">¿Miembro IEEE? 15% Descuento</label>
                                     </div>
                                     <div class="select-list">
+                                    <div class="selecc">
                                         <select name="opcion1" id="opcion1">
                                         <option selected value="No aplica">Seleccionar</option>
                                         <option value="Miembro Estudiantil">Miembro Estudiantil</option>
                                         <option value="Miembro Profesional">Miembro Profesional</option>
                                         <option value="Sociedad Afiliada">Sociedad Afiliada</option>
                                         </select>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -224,7 +226,7 @@
 
                         <div class="form-submit">
                             <input type="submit" value="Inscribirme y Pagar" class="submit" id="submit" name="submit" />
-                            <input type="submit" value="Volver" class="submit" id="reset" name="reset" />
+                            <a href="../php/select_particip.php"><input type="button" value="Volver" class="submit" id="reset" name="reset" /></a>
                         </div>
                     </form>
 

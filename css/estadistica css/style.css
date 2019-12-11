@@ -7321,7 +7321,7 @@ body {
   color: #333333; }
 
 a {
-  transition: all 0.4s ease-in-out;
+  /*transition: all 0.4s ease-in-out;*/
   color: #76838f; }
 
 a:focus,
@@ -7617,8 +7617,8 @@ sub {
   left: 85%;
   transform: translateY(-50%); }
   @media (max-width: 575.98px) {
-    .nav-control {
-      left: .4375rem; } }
+    /*.nav-control {
+      left: .4375rem; }*/ }
   .nav-control .hamburger.active {
     z-index: -1; }
 
@@ -7632,7 +7632,7 @@ sub {
   width: 2.3125rem;
   z-index: 999; }
   .hamburger.is-active {
-    left: 0;
+    left: -95%;
     z-index: 9; }
   .hamburger .toggle-icon {
     font-size: 1.4rem;
@@ -7687,7 +7687,7 @@ sub {
 
 @media (max-width: 767px) {
   .nav-header {
-    width: 3.75rem; }
+    width: auto; }
     .nav-header .brand-title {
       display: none; }
   .header-left {
@@ -8235,7 +8235,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 @media (max-width: 767px) {
   .nav-header {
-    width: 3.75rem; }
+    width: auto; }
     .nav-header .brand-title {
       display: none; }
   .header-left {
@@ -8292,8 +8292,9 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo {
     z-index: 999; }
     [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo a {
-      padding: 1.607rem 1.0625rem;
-      text-align: center; }
+      /*padding: 1.607rem 1.0625rem;
+      text-align: center;*/
+      visibility: hidden !important; }
       [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo a b img {
         margin-top: 0.4375rem; }
   [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .nav-control .hamburger .line {
