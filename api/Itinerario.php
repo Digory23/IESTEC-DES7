@@ -3,9 +3,9 @@
     $con = mysqli_connect("localhost", "root", "", "iestec");
     //$con = mysqli_connect("mysql.congreso1.ds507.online", "congreso1", "db.congreso_2019", "congreso_utp1");
 
+    //consulta que obtiene la cedula relacionada con el tiquete
+    $tiquete = $_POST['tiquete'];
     
-    //$tiquete = $_POST['tiquete'];
-    $tiquete = '912796';
     $statement = mysqli_prepare($con, "SELECT ID_Cedula FROM entrada WHERE cod_entrada = ? ");
     mysqli_stmt_bind_param($statement, "s",$tiquete );
     mysqli_stmt_execute($statement);
