@@ -1,9 +1,9 @@
 <?php
     require '../conexion/conexion.php';
-    $sql= "SELECT Nombre, Apellido, Email, Telefono, Miembro_IEEE, Cedula  FROM usuario";
+    /*$sql= "SELECT Nombre, Apellido, Email, Telefono, Miembro_IEEE, Cedula  FROM usuario";
     $consulta = $dbh->prepare($sql);
     $consulta -> execute();
-    $arrDatos=$consulta->fetchAll(PDO::FETCH_ASSOC);
+    $arrDatos=$consulta->fetchAll(PDO::FETCH_ASSOC);*/
     
 ?>
 <!DOCTYPE html>
@@ -13,12 +13,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Tablas de Datos</title>
+    <title>Generar Certificados</title>
     <!-- Favicon icon -->
   <link href="../img/utp.png" rel="icon">
     <!-- Custom Stylesheet -->
     <link href="../plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="../css/estadistica css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/select css/stylesel.css">
 
 </head>
 
@@ -74,11 +75,6 @@
         <div class="header">    
                 <div class="header-content clearfix">
                     
-                    <div class="nav-control">
-                        <div class="hamburger">
-                            <span class="toggle-icon"><i class="icon-menu"></i></span>
-                        </div>
-                    </div>
                     <div class="header-left">
                         <div class="input-group icons">
                             <div class="input-group-prepend">
@@ -141,17 +137,17 @@
                                 <li><a href="./table-datatable.php" aria-expanded="false">Datos de los Participantes</a></li>
                             </ul>
                         </li>
-                        
 
                         <li class="nav-label">Certificados</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope-open menu-icon"></i><span class="nav-text">Generar</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./GenerarCertif.php" aria-expanded="false">Generar Certificados</a></li>
-                        </ul>
-                    </li>
+                        <li>
+                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                <i class="icon-envelope-open menu-icon"></i><span class="nav-text">Generar</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="./GenerarCertif.php" aria-expanded="false">Generar Certificados</a></li>
+                            </ul>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -167,8 +163,7 @@
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                        
                     </ol>
                 </div>
             </div>
@@ -179,48 +174,14 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Participantes del Congreso</h4>
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered zero-configuration">
-                                        <thead>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>Apellido</th>
-                                                <th>Email</th>
-                                                <th>Teléfono</th>
-                                                <th>Miembro IEEE</th>
-                                                <th>ID</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php 
-                                                foreach ($arrDatos as $campo)
-                                                {
-                                                    echo '<tr>';
-                                                    echo '<td>'. $campo['Nombre'] .'</td>';
-                                                    echo '<td>'. $campo['Apellido'] .'</td>';
-                                                    echo '<td>'. $campo['Email'] .'</td>';
-                                                    echo '<td>'. $campo['Telefono'] .'</td>';
-                                                    echo '<td>'. $campo['Miembro_IEEE'] .'</td>';
-                                                    echo '<td>'. $campo['Cedula'] .'</td>';
-                                                    echo '</tr>';
-                                                }
-                                            
-                                            ?>
-                                            
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>Apellido</th>
-                                                <th>Email</th>
-                                                <th>Teléfono</th>
-                                                <th>Miembro IEEE</th>
-                                                <th>ID</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+                                <h1 class="card-title2">Generar Certificados de Participantes</h1>
+                                
+                                <h4 class="card-body2">ATENCIÓN: Sólo se generarán los certificados de aquellos participantes que hayan asistido al IESTEC 2021.</h4>
+                                <img class="img-responsivee" src="../img/certificado.png" alt=""><br><br><br>
+                                <div class="container-login100-form-btn"> 
+                                <input type="button" value="Generar" class="login100-form-btn"/>
                                 </div>
+                            
                             </div>
                         </div>
                     </div>

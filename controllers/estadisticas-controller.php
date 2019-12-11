@@ -227,4 +227,22 @@
     $consulta24 -> execute();
     $row24 = $consulta24->fetch();
     $c3 = $row24['no'];
+
+    //Consulta de cantidad de participantes que asistieron
+    $sql25= "SELECT COUNT(ID_Cedula) AS 'Asistieron'
+    FROM entrada
+    WHERE entrada.asistencia = 'SI'";
+    $consulta25 = $dbh->prepare($sql25);
+    $consulta25 -> execute();
+    $row25 = $consulta25->fetch();
+    $as1 = $row25['Asistieron'];
+
+    //Consulta de cantidad de participantes que no asistieron
+    $sql26= "SELECT COUNT(ID_Cedula) AS 'Asistieron'
+    FROM entrada
+    WHERE entrada.asistencia is null";
+    $consulta26 = $dbh->prepare($sql26);
+    $consulta26 -> execute();
+    $row26 = $consulta26->fetch();
+    $as2 = $row26['Asistieron'];
 ?>
