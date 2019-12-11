@@ -9,7 +9,6 @@ $sexo = $_POST['sexo'];
 $email = $_POST['email'];
 $telefono = $_POST['phone_number'];
 $ieee = $_POST['opcion1'];
-
 $tipo_user = 'par';
 $pais = 'Panama';
 $provincia = $_POST['provincia'];
@@ -20,7 +19,6 @@ $departamento = $_POST['departamento'];
 //variables de participante
 $cena = $_POST['cena'];
 $tipo_participante = $_POST['tipo'];
-
 
 
 //sql de insercion a usuario
@@ -46,7 +44,7 @@ else {
         }
         else{
             echo "Error";
-            //echo "$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $ciudad, $provincia";
+           // echo "$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $ciudad, $provincia";
             
         }
 
