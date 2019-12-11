@@ -9,7 +9,7 @@ $sexo = $_POST['sexo'];
 $email = $_POST['email'];
 $telefono = $_POST['phone_number'];
 $ieee = $_POST['opcion1'];
-$ocupacion = $_POST['opcion2'];
+
 $tipo_user = 'par';
 $pais = 'Panama';
 $provincia = $_POST['provincia'];
@@ -26,6 +26,7 @@ $tipo_participante = $_POST['tipo'];
 //sql de insercion a usuario
 if($tipo_participante=='Pro_Art')
 {
+    $ocupacion = $_POST['opcion2'];
     $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IEEE, Tipo_Ussuario, Cedula, Institucion, Unidad, Pais, Ciudad, Provincia, ocupacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $dbh->prepare($sql);
             $stmt->execute([$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $pais, $ciudad, $provincia, $ocupacion]);
