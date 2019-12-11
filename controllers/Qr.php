@@ -38,8 +38,8 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
 	if (!file_exists($dir))
         mkdir($dir);
 	
-        //Declaramos la ruta y nombre del archivo a generar
-	$filename = $dir."$cedula.png";
+        
+	$filename = $dir."$cedula.png";                             //Declaramos la ruta y nombre del archivo a generar
 
         //Parametros de Condiguración
 	
@@ -49,12 +49,13 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
 	$contenido =  "Nombre: $Nombre, Apellido: $Apellido, ID: $cedula, Código de Entrada: $d" ; //Texto
 
   
-        //Enviamos los parametros a la Función para generar código QR 
-   QRcode::png($contenido, $filename, $level, $tamaño, $framSize); 
+        
+   QRcode::png($contenido, $filename, $level, $tamaño, $framSize);      //Enviamos los parametros a la Función para generar código QR 
     
     //header("Location: certificado.php?cedula=$cedula");
    
     $codigo= "../codigo_QR/$cedula.png";
+    
     //insercion del codigo tiquete
     $sql = "INSERT INTO entrada (cod_entrada, ID_Cedula) VALUES (?, ?)";
         $stmt = $dbh->prepare($sql);
@@ -96,9 +97,9 @@ try {
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'CODIGO DE ENTRADA';
-    $mail->Body    = "Hola $Nombre $Apellido gracias por inscribirte aqui esta su tiquete de entrada: $d , debera mostrarlo el dia del evento ";
+    $mail->Body    = "Hola $Nombre $Apellido gracias por inscribirte aqui esta su tiquete de entrada: $d , debera mostrarlo el dia del evento ";                                              //OJO ESTO HAY QUE CAMBIARLO POR PALABRAS MAS BONITAS
     $mail->AltBody = 'CODIGO DE ENTRADA';
-    $mail->AddAttachment($archivo,$archivo);
+    $mail->AddAttachment($archivo,$archivo);              //Agregar el archivo adjunto al correo 
     
     $mail->send();
 
