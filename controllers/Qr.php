@@ -16,8 +16,8 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
 
     $cedula= $_GET['cedula'];
     $para = $_GET['email'];
-    
-    $stmt2 = $dbh->prepare("SELECT Nombre, Apellido, Cedula, Email FROM usuario WHERE Cedula=:cedu");
+    //consulta de los datos para el certificado
+    $stmt2 = $dbh->prepare("SELECT Nombre, Apellido, Cedula, Email, Miembro_IEEE FROM usuario WHERE Cedula=:cedu");
     $stmt2->bindParam(':cedu', $cedula);
       $stmt2->setFetchMode(PDO::FETCH_ASSOC);
       $stmt2->execute();
@@ -26,6 +26,29 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
     $Nombre = $row['Nombre'];
     $Apellido = $row['Apellido'];
     $Email = $row['Email'];
+    $miembroIEEE = $row['Miembro_IEEE'];
+
+
+
+    $stmt3 = $dbh->prepare("SELECT Cena FROM participantes WHERE Cedula=:cedu");
+    $stmt3->bindParam(':cedu', $cedula);
+      $stmt3->setFetchMode(PDO::FETCH_ASSOC);
+      $stmt3->execute();
+      $row = $stmt3->fetch();
+
+    $cena = $row['Cena'];
+
+
+    $stmt4 = $dbh->prepare("SELECT precios.Precio FROM precios INNER JOIN participantes ON precios.ID_TipoPart = participantes.Tipo_Participante WHERE participantes.ID_Cedula =:cedu");
+    $stmt4->bindParam(':cedu', $cedula);
+      $stmt4->setFetchMode(PDO::FETCH_ASSOC);
+      $stmt4->execute();
+      $row = $stmt4->fetch();
+
+    $precio = $row['Precio'];
+
+
+
 
 
     
