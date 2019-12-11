@@ -48,25 +48,28 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
     $precio = $row['Precio'];
 
     //calculo del precio final
-    $precio_Final= 0.0;
-    $cena_total = 0.0;
-    switch($cena)
+
+    if($cena='Solo')
     {
-        case 'Solo':{
-          $cena_total = 10.0;
-        break;
-        }
-        case 'Duo':{
-          $cena_total = 60.0;
-        }
+    
+     $cena_total = 10.0;
+    }
+    else if('Duo')
+    {
+      $cena_total = 60.0;
+    }
+    else 
+    {
+      $cena_total = 0.0;
     }
 
+
     if($miembroIEEE== 'No Aplica'){
-      $precio_Final = precio;
+      $precio_Final = $precio;
     }
     else
     {
-      $precio_Final = precio - (precio * 0.15);
+      $precio_Final = $precio - ($precio * 0.15);
     }
     
     $precio_Final = $precio_Final + $cena_total;
@@ -119,10 +122,10 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
         $pdf->Cell(20, 10, "$precio",0,'R',0);
 
         $pdf->SetXY(150,118);
-        $pdf->Cell(20, 10, '90.00',0,'R',0);
+        $pdf->Cell(20, 10, "$cena_total",0,'R',0);
 
         $pdf->SetXY(150,133);
-        $pdf->Cell(20, 10, '190.00',0,'R',0);
+        $pdf->Cell(20, 10, "$precio_Final",0,'R',0);
 
         $pdf->SetXY(146,165);
         $pdf->Cell(20, 10, $d,0,'R',0);

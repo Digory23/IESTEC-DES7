@@ -11,17 +11,27 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
     require '../fpdf/fpdf.php';
     require '../conexion/conexion.php';
 
-$cedula= $_GET['cedula'];
-//$para = $_GET['email'];
-//$para = 'user1@iestec.local';
 
-  $stmt2 = $dbh->prepare("SELECT Nombre.usuario, Apellido.usuario, Email.usuario, asistencia.entrada FROM usuario  INNER JOIN  entrada  WHERE Cedula.entrada=:cedu");
+$consulta = $dbh->prepare("SELECT ID_Cedula FROM entrada  WHERE asistencia=:asi");
+$asistencia= 'SI';
+$consulta->bindParam(':asi', $asistencia);
+  $consulta -> execute();
+  $arrDatos=$consulta->fetchAll(PDO::FETCH_ASSOC);
+
+
+      
+
+
+
+  foreach ($arrDatos as $consulta) 
+{
+  $cedula= $consulta['ID_Cedula'];
+  $stmt2 = $dbh->prepare("SELECT Nombre, Apellido, Email FROM usuario WHERE Cedula=:cedu");
   $stmt2->bindParam(':cedu', $cedula);
       $stmt2->setFetchMode(PDO::FETCH_ASSOC);
       $stmt2->execute();
       $row = $stmt2->fetch();
-      $Email=$row['Email']
-      $Asistencia=$row['asistencia']
+      $Email=$row['Email'];
 
 $pdf= new FPDF('L','mm','A4');
 $pdf->Addpage();
@@ -34,12 +44,11 @@ $pdf->Cell(140, 60, $row['Nombre'],20,0,'C');
 $pdf->SetXY(80,60);
 $pdf->Cell(-50, 60, $row['Apellido'],20,20,'C');
 
-//header('Location: RegistroExitoso.php');
-$pdf->output("F","../certificados/$cedula.pdf");
-$archivo = "../certificados/$cedula.pdf"
 
-if ($Asistencia='si')
-{
+$pdf->output("F","../certificados/$cedula.pdf");
+$archivo = "../certificados/$cedula.pdf";
+
+
   $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
   try {
       //Server settings
@@ -71,11 +80,11 @@ if ($Asistencia='si')
   header('Location: ../php/RegistroExitoso.php');
   
 }
-else 
-{
-  echo 'EL mensaje no ha podido ser enviado. Error: ';
-}
 
+
+
+
+  
 
 
 ?>

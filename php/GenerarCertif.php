@@ -179,7 +179,7 @@
                                 <h4 class="card-body2">ATENCIÓN: Sólo se generarán los certificados de aquellos participantes que hayan asistido al IESTEC 2021.</h4>
                                 <img class="img-responsivee" src="../img/certificado.png" alt=""><br><br><br>
                                 <div class="container-login100-form-btn"> 
-                                <input type="button" value="Generar" class="login100-form-btn"/>
+                               <a href="../controllers/certificado.php"><input type="button" value="Generar" class="login100-form-btn"/></a>
                                 </div>
                             
                             </div>
