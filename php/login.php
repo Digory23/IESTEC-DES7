@@ -65,7 +65,9 @@
 					
 				</form>
 
-				<div class="login100-more" style="background-image: url('../img/panama.jpg');"></div>
+				<div class="login100-more" style="background-image: url('../img/panama.jpg');">
+					<img class="form-img" src="../img/logo.png" alt="">
+				</div>
 			</div>
 		</div>
 	</div>

@@ -7600,7 +7600,7 @@ sub {
   .nav-header .brand-logo {
     z-index: 999; }
     .nav-header .brand-logo a {
-      padding: 1.607rem 1.8125rem;
+      margin: 5px 19px 5px 10px;
       display: block; }
       .nav-header .brand-logo a i {
         font-size: 1.375rem; }
@@ -7672,10 +7672,12 @@ sub {
 [data-sidebar-style="compact"] .nav-header .logo-compact {
   display: block; }
 
+
+  /*AQUI TA EL HEADEEEEEEER */
 .header {
   height: 5rem;
   z-index: 1;
-  position: relative;
+  /*position: relative;*/
   padding: 0 0.9375rem;
   background: #fff;
   margin-left: 15.1875rem;
@@ -8144,7 +8146,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   top: 5rem;
   padding-top: 0;
   z-index: 99;
-  background: #fff;
+  background: #ead9f0;
   transition: all .2s ease; }
   @media only screen and (min-width: 1200px) and (max-width: 1350px) {
     .nk-sidebar {
@@ -8153,7 +8155,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     padding: 0;
     margin: 0;
     list-style: none;
-    background: #fafafa; }
+    background: #e2c0ee; }
   .nk-sidebar .metismenu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8180,10 +8182,10 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       .nk-sidebar .metismenu > li:hover span, .nk-sidebar .metismenu > li:focus span, .nk-sidebar .metismenu > li.active span {
         color: #464a53; }
       .nk-sidebar .metismenu > li:hover > a {
-        background: #F3F1FA;
+        background: #e2c0ee;
         color: #7571f9; }
       .nk-sidebar .metismenu > li.active > a {
-        background: #F3F1FA;
+        background: #ead9f0;
         color: #464a53; }
       .nk-sidebar .metismenu > li.active ul a {
         color: #464a53; }
@@ -8210,7 +8212,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       transition: all 0.4s ease-in-out; }
       .nk-sidebar .metismenu a:hover, .nk-sidebar .metismenu a:active, .nk-sidebar .metismenu a.active {
         text-decoration: none;
-        background-color: #F3F1FA; }
+        background-color: #e2c0ee; }
     .nk-sidebar .metismenu .has-arrow:after {
       position: absolute;
       content: "";
@@ -8431,6 +8433,22 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   [direction="rtl"][data-sidebar-style="full"][data-layout="vertical"] .menu-toggle + .footer {
     padding-left: 0;
     padding-right: 3.75rem; }
+
+/* Footer Wrap */
+
+#f {
+  background-color: #1b1b1b;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#f p {
+  color: white;
+}
+
+#f h4 {
+  color: white;
+}
 
 /*
 0 - 600: Phone
@@ -14010,7 +14028,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   padding-right: 15rem; }
 
 [data-nav-headerbg="color_1"] .nav-header {
-  background-color: #7571f9; }
+  background-color: #ffffff; }
 
 [data-nav-headerbg="color_2"] .nav-header {
   background-color: #27394F !important; }
@@ -14120,11 +14138,11 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   color: #fff; }
 
 [data-sibebarbg="color_1"] .nk-sidebar .metismenu {
-  background-color: #fff; }
+  background-color: #ead9f0; }
   [data-sibebarbg="color_1"] .nk-sidebar .metismenu > li {
     color: #27394F; }
     [data-sibebarbg="color_1"] .nk-sidebar .metismenu > li ul a {
-      color: #76838f; }
+      color: #4b4d4f; }
 
 [data-sibebarbg="color_2"] .nk-sidebar {
   background-color: #27394F !important; }
