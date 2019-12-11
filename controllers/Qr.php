@@ -50,10 +50,6 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
 
 
 
-    //$precio= $row[''];
-    //$cena = $row[''];
-
-
     
     $d=rand(100000,999999);                                   //Generar el numero de formal aleatorea sin que se repita 
   
@@ -99,7 +95,7 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
         $pdf->Cell(140, 60, '100.00',20,0,'C');*/
 
         $pdf->SetXY(150,103);
-        $pdf->Cell(20, 10, '100.00',0,'R',0);
+        $pdf->Cell(20, 10, "$precio",0,'R',0);
 
         $pdf->SetXY(150,118);
         $pdf->Cell(20, 10, '90.00',0,'R',0);
