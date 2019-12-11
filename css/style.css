@@ -457,16 +457,15 @@ p.capitalize:first-letter {
 .iframe-container{
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; 
-  height: 0;
+  height: 10%;
 }
-.iframe-container iframe{
+/*.iframe-container video{
   position: absolute;
   top:0;
   left: 0;
   width: 100%;
   height: 100%;
-}
+}*/
 
 #headerwrap-2 {
   background: url(../img/hwrap2.jpg) no-repeat center top;
