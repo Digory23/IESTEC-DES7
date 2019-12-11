@@ -66,19 +66,7 @@
                                     <input type="text" name="ID" id="ID" />
                                 </div>
 
-                                <!--<div class="form-select">
-                                        <div class="label-flex">
-                                            <label for="sexo">Sexo</label>
-                                        </div>
-                                        <div class="select-list">
-                                            <select name="opcion" id="opcion">
-                                                <option disabled selected hidden value="selecsex" >Seleccionar sexo</option>
-                                                <option value="Masculino">Masculino</option>
-                                                <option value="Femenino">Femenino</option>
-                                                <option value="Otro">Otro</option>
-                                            </select>
-                                        </div>
-                                    </div>-->
+                            
 
                                     <div class="form-select">
                                     <div class="label-flex">
@@ -202,8 +190,11 @@
                         <h1>Opciones de pago</h1>
                         <hr>
                         <div class= "RBTN">
+
+                        
                         <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
                         <script>paypal.Buttons().render('body');</script>
+
                         </div>
                         
                         <div class="form-submit">

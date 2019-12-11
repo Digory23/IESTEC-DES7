@@ -1,7 +1,15 @@
 <?php
-require '../fpdf/fpdf.php';
-require '../conexion/conexion.php';
-//require_once ('../class.phpmailer.php');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../correo/lib/PHPMailer-master/src/Exception.php';
+require '../correo/lib/PHPMailer-master/src/PHPMailer.php';
+require '../correo/lib/PHPMailer-master/src/SMTP.php';
+
+  
+    require '../conexion/conexion.php';
+    require '../fpdf/fpdf.php';
+    require '../conexion/conexion.php';
 
 $cedula= $_GET['cedula'];
 //$para = $_GET['email'];
