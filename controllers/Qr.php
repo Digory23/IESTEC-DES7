@@ -157,8 +157,8 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'CODIGO DE ENTRADA';
-    $mail->Body    = "Hola $Nombre $Apellido gracias por inscribirte aqui esta su tiquete de entrada: $d , debera mostrarlo el dia del evento ";                                              //OJO ESTO HAY QUE CAMBIARLO POR PALABRAS MAS BONITAS
+    $mail->Subject = 'IESTEC 2021: Constancia de Entrada';
+    $mail->Body    = "¡Hola, $Nombre $Apellido! Gracias por inscribirte al IESTEC 2021. Esperemos que disfrutes el congreso. Aquí esta tu tiquete de entrada: $d. Debes mostrarlo el día del evento para entrar.";                                              //OJO ESTO HAY QUE CAMBIARLO POR PALABRAS MAS BONITAS
     $mail->AltBody = 'CODIGO DE ENTRADA';
     $mail->AddAttachment($archivo,$archivo);              //Agregar el archivo adjunto al correo 
     

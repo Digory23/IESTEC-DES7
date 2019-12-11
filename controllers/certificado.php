@@ -67,8 +67,8 @@ $archivo = "../certificados/$cedula.pdf";
   
       //Content
       $mail->isHTML(true);                                  // Set email format to HTML
-      $mail->Subject = 'CODIGO DE ENTRADA';
-      $mail->Body    = "Hola $Nombre $Apellido racias por asistir al IESTEC 2021.";                                   
+      $mail->Subject = 'IESTEC 2021: Certificado de Asistencia';
+      $mail->Body    = "¡Hola, $Nombre $Apellido! Gracias por asistir al IESTEC 2021. Aqui adjuntamos tu certificado de asistencia.";                                   
       $mail->AltBody = 'CERTIFICADO DE ASISTENCIA';
       $mail->AddAttachment($archivo,$archivo);              //Agregar el archivo adjunto al correo 
       
