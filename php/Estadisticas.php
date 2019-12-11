@@ -35,6 +35,16 @@ include "../controllers/estadisticas-controller.php"
         var p5 = '<?php echo $p5;?>'; //Participante Internacional
         var p6 = '<?php echo $p6;?>'; //Profesional con Articulo
         var p7 = '<?php echo $p7;?>'; //Profesional Nacional
+
+    //Consulta de cantidad de participantes por sexo
+        var s1 = '<?php echo $s1;?>'; //Masculino
+        var s2 = '<?php echo $s2;?>'; //Femenino
+        var s3 = '<?php echo $s3;?>'; //Otro
+
+    //Consulta de cantidad de participantes por opcion de cena
+        var c1 = '<?php echo $c1;?>'; //Solo
+        var c2 = '<?php echo $c2;?>'; //Duo
+        var c3 = '<?php echo $c3;?>'; //No
         
     </script>
 
@@ -223,7 +233,7 @@ include "../controllers/estadisticas-controller.php"
                                         </div>
                                     </div>
                                     <div class="chart-wrapper">
-                                        <canvas id="lineChart2" style="padding: 28.8px;"></canvas>
+                                        <canvas id="horizontalBar2" style="padding: 28.8px;"></canvas> <!-- grafica que cambie-->
                                     </div>
                                     
                                 </div>
@@ -248,7 +258,7 @@ include "../controllers/estadisticas-controller.php"
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Asistencia de Extranjeros y Nacionales al Congreso</h4>
-                                        <canvas id="lineChart"></canvas>
+                                        <canvas id="pieChart2"></canvas> <!-- grafica que cambie-->
                                     </div>
                                 </div>
                             </div>     
