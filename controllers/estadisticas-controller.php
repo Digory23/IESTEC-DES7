@@ -174,4 +174,57 @@
     $row18 = $consulta18->fetch();
     $p7 = $row18['ProNacional'];
 
+    //Consulta de cantidad de participantes masculinos
+    $sql19= "SELECT COUNT(ID_Usuario) AS 'Masculino'
+    FROM usuario
+    WHERE sexo = 'Masculino'";
+    $consulta19 = $dbh->prepare($sql19);
+    $consulta19 -> execute();
+    $row19 = $consulta19->fetch();
+    $s1 = $row19['Masculino'];
+
+    //Consulta de cantidad de participantes femeninas
+    $sql20= "SELECT COUNT(ID_Usuario) AS 'Femenino'
+    FROM usuario
+    WHERE sexo = 'Femenino'";
+    $consulta20 = $dbh->prepare($sql20);
+    $consulta20 -> execute();
+    $row20 = $consulta20->fetch();
+    $s2 = $row20['Femenino'];
+
+    //Consulta de cantidad de participantes otros
+    $sql21= "SELECT COUNT(ID_Usuario) AS 'Otro'
+    FROM usuario
+    WHERE sexo = 'Otro'";
+    $consulta21 = $dbh->prepare($sql21);
+    $consulta21 -> execute();
+    $row21 = $consulta21->fetch();
+    $s3 = $row21['Otro'];
+
+    //Consulta de cantidad de participantes por opciones de cena: solo
+    $sql22= "SELECT COUNT(ID_Cedula) AS 'solo'
+    FROM participantes
+    WHERE Cena = 'Solo'";
+    $consulta22 = $dbh->prepare($sql22);
+    $consulta22 -> execute();
+    $row22 = $consulta22->fetch();
+    $c1 = $row22['solo'];
+
+    //Consulta de cantidad de participantes por opciones de cena: duo
+    $sql23= "SELECT COUNT(ID_Cedula) AS 'duo'
+    FROM participantes
+    WHERE Cena = 'Duo'";
+    $consulta23 = $dbh->prepare($sql23);
+    $consulta23 -> execute();
+    $row23 = $consulta23->fetch();
+    $c2 = $row23['duo'];
+
+    //Consulta de cantidad de participantes por opciones de cena: solo
+    $sql24= "SELECT COUNT(ID_Cedula) AS 'no'
+    FROM participantes
+    WHERE Cena = 'No'";
+    $consulta24 = $dbh->prepare($sql24);
+    $consulta24 -> execute();
+    $row24 = $consulta24->fetch();
+    $c3 = $row24['no'];
 ?>
