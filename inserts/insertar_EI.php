@@ -7,7 +7,7 @@ $apellido = $_POST['last_name'];
 $cedula = $_POST['ID'];
 $sexo = $_POST['sexo'];
 $email = $_POST['email'];
-//$email2 = $_POST['email2'];
+$email2 = $_POST['email2'];
 $telefono = $_POST['phone_number'];
 $ieee = $_POST['opcion1'];
 $tipo_user = 'par';
@@ -36,14 +36,14 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
         }
         else{
             echo "Error";
-            //echo "$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $ciudad, $provincia";
+            echo "$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $ciudad, $provincia";
             
         }
 
         //sql de insercion a participante
-        $sql = "INSERT INTO participantes (ID_Cedula, Cena, Tipo_Participante) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO participantes (ID_Cedula, Cena, Tipo_Participante, email_facultad) VALUES (?, ?, ?, ?)";
         $stmt = $dbh->prepare($sql);
-        $stmt->execute([$cedula, $cena, $tipo_participante]);
+        $stmt->execute([$cedula, $cena, $tipo_participante, $email2]);
 
         
             

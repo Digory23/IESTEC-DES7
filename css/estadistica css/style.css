@@ -113,7 +113,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Lucida Sans', sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
@@ -7321,7 +7321,7 @@ body {
   color: #333333; }
 
 a {
-  transition: all 0.4s ease-in-out;
+  /*transition: all 0.4s ease-in-out;*/
   color: #76838f; }
 
 a:focus,
@@ -7341,10 +7341,16 @@ ul {
 li {
   list-style: none; }
 
-.img-responsive {
-  width: 100%;
+
+  
+.img-responsivee {
+  width: 65%;
   height: auto;
-  display: inline-block; }
+  display:block;
+  margin:auto;
+  -webkit-box-shadow: 0 10px 20px 1px rgba(189, 89, 212, 0.8);
+  box-shadow: rgba(189, 89, 212, 0.8);
+  }
 
 .img-rounded {
   border-radius: .4rem; }
@@ -7600,7 +7606,7 @@ sub {
   .nav-header .brand-logo {
     z-index: 999; }
     .nav-header .brand-logo a {
-      padding: 1.607rem 1.8125rem;
+      margin: 5px 19px 5px 10px;
       display: block; }
       .nav-header .brand-logo a i {
         font-size: 1.375rem; }
@@ -7612,13 +7618,13 @@ sub {
 .nav-control {
   cursor: pointer;
   position: absolute;
-  left: 1.4375rem;
   text-align: center;
-  top: 46%;
+  top: 55%;
+  left: 85%;
   transform: translateY(-50%); }
   @media (max-width: 575.98px) {
-    .nav-control {
-      left: .4375rem; } }
+    /*.nav-control {
+      left: .4375rem; }*/ }
   .nav-control .hamburger.active {
     z-index: -1; }
 
@@ -7632,7 +7638,7 @@ sub {
   width: 2.3125rem;
   z-index: 999; }
   .hamburger.is-active {
-    left: 0;
+    left: -95%;
     z-index: 9; }
   .hamburger .toggle-icon {
     font-size: 1.4rem;
@@ -7672,10 +7678,12 @@ sub {
 [data-sidebar-style="compact"] .nav-header .logo-compact {
   display: block; }
 
+
+  /*AQUI TA EL HEADEEEEEEER */
 .header {
   height: 5rem;
   z-index: 1;
-  position: relative;
+  /*position: relative;*/
   padding: 0 0.9375rem;
   background: #fff;
   margin-left: 15.1875rem;
@@ -7685,7 +7693,7 @@ sub {
 
 @media (max-width: 767px) {
   .nav-header {
-    width: 3.75rem; }
+    width: auto; }
     .nav-header .brand-title {
       display: none; }
   .header-left {
@@ -8144,7 +8152,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   top: 5rem;
   padding-top: 0;
   z-index: 99;
-  background: #fff;
+  background: #ead9f0;
   transition: all .2s ease; }
   @media only screen and (min-width: 1200px) and (max-width: 1350px) {
     .nk-sidebar {
@@ -8153,7 +8161,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     padding: 0;
     margin: 0;
     list-style: none;
-    background: #fafafa; }
+    background: #e2c0ee; }
   .nk-sidebar .metismenu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8180,10 +8188,10 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       .nk-sidebar .metismenu > li:hover span, .nk-sidebar .metismenu > li:focus span, .nk-sidebar .metismenu > li.active span {
         color: #464a53; }
       .nk-sidebar .metismenu > li:hover > a {
-        background: #F3F1FA;
+        background: #e2c0ee;
         color: #7571f9; }
       .nk-sidebar .metismenu > li.active > a {
-        background: #F3F1FA;
+        background: #ead9f0;
         color: #464a53; }
       .nk-sidebar .metismenu > li.active ul a {
         color: #464a53; }
@@ -8210,7 +8218,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       transition: all 0.4s ease-in-out; }
       .nk-sidebar .metismenu a:hover, .nk-sidebar .metismenu a:active, .nk-sidebar .metismenu a.active {
         text-decoration: none;
-        background-color: #F3F1FA; }
+        background-color: #e2c0ee; }
     .nk-sidebar .metismenu .has-arrow:after {
       position: absolute;
       content: "";
@@ -8233,7 +8241,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 @media (max-width: 767px) {
   .nav-header {
-    width: 3.75rem; }
+    width: auto; }
     .nav-header .brand-title {
       display: none; }
   .header-left {
@@ -8290,8 +8298,9 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo {
     z-index: 999; }
     [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo a {
-      padding: 1.607rem 1.0625rem;
-      text-align: center; }
+      /*padding: 1.607rem 1.0625rem;
+      text-align: center;*/
+      visibility: hidden !important; }
       [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .brand-logo a b img {
         margin-top: 0.4375rem; }
   [data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .nav-header .nav-control .hamburger .line {
@@ -8431,6 +8440,22 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   [direction="rtl"][data-sidebar-style="full"][data-layout="vertical"] .menu-toggle + .footer {
     padding-left: 0;
     padding-right: 3.75rem; }
+
+/* Footer Wrap */
+
+#f {
+  background-color: #1b1b1b;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#f p {
+  color: white;
+}
+
+#f h4 {
+  color: white;
+}
 
 /*
 0 - 600: Phone
@@ -11321,6 +11346,23 @@ table.dataTable thead .sorting::after {
     font-size: 18px;
     font-weight: 500;
     line-height: 18px; }
+
+    .card-title2 {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 18px; }
+
+      .card-title3 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18px; 
+      color: gray;}
+
+      .card-body2 {
+        flex: 1 1 auto;
+        padding: 1.25rem; 
+        font-size: 16px;
+        color: gray;}
   .card-header {
     border-bottom: 0px;
     background: transparent; }
@@ -14010,7 +14052,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   padding-right: 15rem; }
 
 [data-nav-headerbg="color_1"] .nav-header {
-  background-color: #7571f9; }
+  background-color: #ffffff; }
 
 [data-nav-headerbg="color_2"] .nav-header {
   background-color: #27394F !important; }
@@ -14120,11 +14162,11 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   color: #fff; }
 
 [data-sibebarbg="color_1"] .nk-sidebar .metismenu {
-  background-color: #fff; }
+  background-color: #ead9f0; }
   [data-sibebarbg="color_1"] .nk-sidebar .metismenu > li {
     color: #27394F; }
     [data-sibebarbg="color_1"] .nk-sidebar .metismenu > li ul a {
-      color: #76838f; }
+      color: #4b4d4f; }
 
 [data-sibebarbg="color_2"] .nk-sidebar {
   background-color: #27394F !important; }
