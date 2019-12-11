@@ -30,6 +30,8 @@ $pdf->Image('../img/certificado.png',15,10,-190);
 
 $pdf->SetXY(55,60);
 $pdf->Cell(140, 60, $row['Nombre'],20,0,'C');
+
+$pdf->SetXY(80,60);
 $pdf->Cell(-50, 60, $row['Apellido'],20,20,'C');
 
 //header('Location: RegistroExitoso.php');
@@ -57,8 +59,8 @@ if ($Asistencia='si')
       //Content
       $mail->isHTML(true);                                  // Set email format to HTML
       $mail->Subject = 'CODIGO DE ENTRADA';
-      $mail->Body    = "Hola $Nombre $Apellido gracias por inscribirte aqui esta su tiquete de entrada: $d , debera mostrarlo el dia del evento ";                                              //OJO ESTO HAY QUE CAMBIARLO POR PALABRAS MAS BONITAS
-      $mail->AltBody = 'CODIGO DE ENTRADA';
+      $mail->Body    = "Hola $Nombre $Apellido racias por asistir al IESTEC 2021.";                                   
+      $mail->AltBody = 'CERTIFICADO DE ASISTENCIA';
       $mail->AddAttachment($archivo,$archivo);              //Agregar el archivo adjunto al correo 
       
       $mail->send();
