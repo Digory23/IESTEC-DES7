@@ -113,7 +113,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Lucida Sans', sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
@@ -7341,10 +7341,16 @@ ul {
 li {
   list-style: none; }
 
-.img-responsive {
-  width: 100%;
+
+  
+.img-responsivee {
+  width: 65%;
   height: auto;
-  display: inline-block; }
+  display:block;
+  margin:auto;
+  -webkit-box-shadow: 0 10px 20px 1px rgba(189, 89, 212, 0.8);
+  box-shadow: rgba(189, 89, 212, 0.8);
+  }
 
 .img-rounded {
   border-radius: .4rem; }
@@ -11340,6 +11346,23 @@ table.dataTable thead .sorting::after {
     font-size: 18px;
     font-weight: 500;
     line-height: 18px; }
+
+    .card-title2 {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 18px; }
+
+      .card-title3 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18px; 
+      color: gray;}
+
+      .card-body2 {
+        flex: 1 1 auto;
+        padding: 1.25rem; 
+        font-size: 16px;
+        color: gray;}
   .card-header {
     border-bottom: 0px;
     background: transparent; }
