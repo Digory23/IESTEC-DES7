@@ -326,7 +326,17 @@ label, input {
       vertical-align: middle;
 }
 
+.RBTN img{
+  display: inline;
+  vertical-align: middle;
+}
 
+.RBTN label {
+    width: 100%; }
+
+.RBTN input {
+    display: inline-flex;
+    width: 100%; }
 
 
 

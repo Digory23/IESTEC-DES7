@@ -202,14 +202,14 @@
                         <h1>Opciones de pago</h1>
                         <hr>
                         <div class= "RBTN">
-                        <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
-                        <script>paypal.Buttons().render('body');</script>
+                        <!--<script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+                        <script>paypal.Buttons().render('body');</script>-->
+                        <label><input type="radio" name="pago" value="PayPal" ><img class="img-responsive" src="../img/paypal.png" alt="paypal" width="200" height="400"></label>
                         </div>
                         
                         <div class="form-submit">
-                        
                             <input type="submit" value="Inscribirme y Pagar" class="submit" id="submit" name="submit" />
-                            <input type="submit" value="Volver" class="submit" id="reset" name="reset" />
+                            <a href="../php/select_particip.php"><input type="button" value="Volver" class="submit" id="reset" name="reset" /></a>
                         </div>
                     </form>
 

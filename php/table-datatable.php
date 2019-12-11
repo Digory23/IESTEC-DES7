@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Tablas de Datos</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="../img/png" sizes="16x16" href="../img/favicon.png">
+  <link href="../img/utp.png" rel="icon">
     <!-- Custom Stylesheet -->
     <link href="../plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="../css/estadistica css/style.css" rel="stylesheet">
@@ -49,14 +49,19 @@
         ***********************************-->
         <div class="nav-header">
             <div class="brand-logo">
-                <a href="Estadisticas.php">
+            <a href="Estadisticas.php"><img class="navbar-brand" src="../img/estadisticalogo.png" alt="">
                     <b class="logo-abbr"><h5 style="color:white">I</h5><!--<img src="../img/logo.png" alt="">--> </b>
                     <span class="logo-compact"><h5 style="color:white">I</h5><!--<img src="../img/logo-compact.png" alt="">--></span>
                     <span class="brand-title">
-                            <h4 style="color:white">Estadísticas del Congreso</h4>
                             <!--<img src="../img/logo_transparent.png" alt="" height="30%" width="50%">-->
                     </span>
                 </a>
+
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
             </div>
         </div>
         <!--**********************************
@@ -84,19 +89,24 @@
                     <div class="header-right">
                         <ul class="clearfix">
                             
-                            <li class="icons dropdown d-none d-md-flex">
-                                <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
-                                    <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
-                                </a>
-                                <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
-                                    <div class="dropdown-content-body">
-                                        <ul>
-                                            <li><a href="javascript:void()">English</a></li>
-                                            <li><a href="javascript:void()">Español</a></li>
-                                        </ul>
-                                    </div>
+                            <!--<li class="icons dropdown d-none d-md-flex">
+                            <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+                                <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()">English</a></li>
+                                        <li><a href="javascript:void()">Español</a></li>
+                                    </ul>
                                 </div>
-                            </li>
+                            </div>
+                        </li>-->
+                        
+
+                        <li class="icons dropdown d-none d-md-flex">
+                            <a href="../controllers/salir.php" aria-expanded="false">Cerrar Sesión</a>
+                        </li>
                             
                         </ul>
                     </div>
@@ -122,22 +132,13 @@
                                 <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                             </ul>
                         </li>
-                        <li class="nav-label">Table</li>
+                        <li class="nav-label">Tabla</li>
                         <li>
                             <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                                 <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
                             </a>
                             <ul aria-expanded="false">
                                 <li><a href="./table-datatable.php" aria-expanded="false">Datos de los Participantes</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-label">Regresar</li>
-                        <li>
-                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                                <i class="icon-menu menu-icon"></i><span class="nav-text">Inicio</span>
-                            </a>
-                            <ul aria-expanded="false">
-                                <li><a href="../controllers/salir.php" aria-expanded="false">Regresar al inicio</a></li>
                             </ul>
                         </li>
                         
@@ -221,22 +222,53 @@
             Content body end
         ***********************************-->
         
-        
-        <!--**********************************
-            Footer start
-        ***********************************-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
-            </div>
-        </div>
-        <!--**********************************
-            Footer end
-        ***********************************-->
     </div>
     <!--**********************************
         Main wrapper end
     ***********************************-->
+
+<!--**********************************
+            Footer start
+        ***********************************-->
+        <div id="f">
+            <div class="container">
+            <div class="row">
+                <!-- ADDRESS -->
+                <div class="col-md-6 text-center">
+                <h4>Universidad Tecnológica de Panamá</h4>
+                <p>
+                    Desarrollo de Software VII
+                </p>
+                <p>
+                    <i class="fa fa-lightbulb-o"></i> VIII Congreso Internacional de Ingeniería, Ciencias y Tecnología<br/>
+                    <i class="fa fa-check-circle-o"></i> IESTEC 2021
+                </p>
+                </div>
+
+                <!-- LATEST POSTS -->
+                <div class="col-md-6 text-center">
+                <h4>Creado por:</h4>
+                <p>
+                    <i class="fa fa-angle-right"></i> Nathalie Acevedo<br/>
+                    <i class="fa fa-angle-right"></i> Jahir Calderón<br/>
+                    <i class="fa fa-angle-right"></i> Daniel Díaz<br/>
+                    <i class="fa fa-angle-right"></i> Diana García<br/>
+                    <i class="fa fa-angle-right"></i> Virgilio Valentín<br/>
+                </p>
+                </div>
+        <!-- /col-lg-3 -->
+
+        <!-- /col-lg-3 -->
+      </div>
+
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /f -->
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
 
     <!--**********************************
         Scripts
