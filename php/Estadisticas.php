@@ -232,11 +232,11 @@ include "../controllers/estadisticas-controller.php"
                                 <div class="card">
                                     <div class="card-body pb-0 d-flex justify-content-between">
                                         <div>
-                                            <h4 class="mb-1">Asistencia General al Congreso</h4>
+                                            <h4 class="mb-1">Cantidad de Participantes por Área de Interés</h4>
                                         </div>
                                     </div>
                                     <div class="chart-wrapper">
-                                        <canvas id="horizontalBar2" style="padding: 28.8px;"></canvas> <!-- grafica que cambie-->
+                                        <canvas id="barChart" style="padding: 28.8px;"></canvas> <!-- grafica que cambie-->
                                     </div>
                                     
                                 </div>
@@ -251,8 +251,8 @@ include "../controllers/estadisticas-controller.php"
                         <div class="col-lg-6 col-md-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Asistencia a las Distintas Charlas</h4>
-                                    <canvas id="barChart"></canvas>
+                                    <h4 class="card-title">Cantidad de Participantes por Tipo de Registro</h4>
+                                    <canvas id="horizontalBar"></canvas>
                                 </div>
                             </div>
                         </div> 
@@ -260,7 +260,7 @@ include "../controllers/estadisticas-controller.php"
                         <div class="col-lg-6 col-md-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Asistencia de Extranjeros y Nacionales al Congreso</h4>
+                                        <h4 class="card-title">Cantidad de Participantes por Opciones de Cena</h4>
                                         <canvas id="pieChart2"></canvas> <!-- grafica que cambie-->
                                     </div>
                                 </div>
@@ -270,22 +270,8 @@ include "../controllers/estadisticas-controller.php"
                         <div class="col-lg-6 col-md-6">
                             <div class="card card-widget">
                                 <div class="card-body">
-                                        <h4>Asistencia de Estudiantes Ordenados por Facultad </h4>
-                                    <canvas id="horizontalBar"></canvas>
-                                </div>
-                                <div class="card-body border-top pt-4">
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            <ul>
-                                                <li>86 - Mayor Cantidad de Estudiantes (FII)</li>
-                                                <li>12 - Menor Cantidad de Estudiantes (FIE)</li>
-                                            </ul>
-                                            <div>
-                                                <h5>Asistencia Total </h5>
-                                                <h3>385749</h3>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <h4>Asistencia de Participantes</h4>
+                                    <canvas id="horizontalBar2"></canvas>
                                 </div>
                             </div>
                             
@@ -293,25 +279,8 @@ include "../controllers/estadisticas-controller.php"
                         <div class="col-lg-6 col-md-6">
                             <div class="card card-widget">
                                 <div class="card-body">
-                                        <h4>Área Laboral de los Participantes</h4>
+                                        <h4>Cantidad de Participantes por Género</h4>
                                         <canvas id="pieChart"></canvas>
-                                </div>
-                                <div class="card-body border-top pt-4">
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            <ul>
-                                                <li>300 - Mayor Cantidad de Puntos</li>
-                                                <li>40 -  Menor Cantidad de Puntos</li>
-                                            </ul>
-                                            <div>
-                                                <h5>Total de Puntos por Área</h5>
-                                                <h3>385749</h3>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div id="chart_widget_3_1"></div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

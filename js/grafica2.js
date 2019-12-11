@@ -3,7 +3,7 @@ new Chart(document.getElementById("horizontalBar"), {
     "data": {
     "labels": ["Estudiantes con Artículo", "Estudiantes Internacionales", "Estudiantes Nacionales de Postgrado", "Estudiantes Nacionales de Pregrado", "Participantes Internacionales", "Profesionales con Artículo", "Profesionales Nacionales"],
     "datasets": [{
-    "label": "Tipos de Registros",
+    "label": "Cantidad de Registros",
     "data": [p1, p2, p3, p4, p5, p6, p7],
     "fill": false,
     "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",

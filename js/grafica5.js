@@ -1,17 +1,14 @@
 new Chart(document.getElementById("horizontalBar2"), {
     "type": "horizontalBar",
     "data": {
-    "labels": ["Estudiantes con Artículo", "Estudiantes Internacionales", "Estudiantes Nacionales de Postgrado", "Estudiantes Nacionales de Pregrado", "Participantes Internacionales", "Profesionales con Artículo", "Profesionales Nacionales"],
+    "labels": ["Sí Asistió", "No Asistió"],
     "datasets": [{
-    "label": "Tipos de Registros",
-    "data": [p1, p2, p3, p4, p5, p6, p7],
+    "label": "Asistencia",
+    "data": [as1, as2],
     "fill": false,
-    "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
-    "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)",
-    "rgba(153, 102, 255, 0.2)", "rgba(0 , 0, 0, 0.2)"
+    "backgroundColor": ["rgba(46, 205, 14, 0.2)", "rgba(205, 14, 14, 0.2)"
     ],
-    "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
-    "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(0, 0, 0)"
+    "borderColor": ["rgba(46, 205, 14, 1)", "rgba(205, 14, 14, 1)"
     ],
     "borderWidth": 1
     }]
