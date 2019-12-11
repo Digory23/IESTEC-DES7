@@ -27,6 +27,9 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
     $Apellido = $row['Apellido'];
     $Email = $row['Email'];
 
+    //$precio= $row[''];
+    //$cena = $row[''];
+
 
     
     $d=rand(100000,999999);                                   //Generar el numero de formal aleatorea sin que se repita 
@@ -48,11 +51,10 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
 	$framSize = 1; //Tamaño en blanco
 	$contenido =  "Nombre: $Nombre, Apellido: $Apellido, ID: $cedula, Código de Entrada: $d" ; //Texto
 
-  
         
    QRcode::png($contenido, $filename, $level, $tamaño, $framSize);      //Enviamos los parametros a la Función para generar código QR 
     
-    //header("Location: certificado.php?cedula=$cedula");
+    header("Location: certificado.php?cedula=$cedula");
    
     $codigo= "../codigo_QR/$cedula.png";
     
@@ -69,7 +71,11 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
         $pdf->Image('../img/Factura.png',0,0,210,310);
         
         $pdf->SetXY(55,60);
-       // $pdf->Cell(140, 60, $row['Nombre'],20,0,'C');
+
+        $pdf->Cell(140, 60, '100.00',20,0,'C');
+        $pdf->Cell(140, 60, '100.00',20,0,'C');
+        $pdf->Cell(140, 60, '100.00',20,0,'C');
+
         $pdf->Image("$codigo",115,170, 70, 70);
         $pdf->Cell(190, 215, $d,15,15,'C');
         
@@ -77,6 +83,7 @@ require '../correo/lib/PHPMailer-master/src/SMTP.php';
         $archivo="../codigo_QR/$cedula.pdf";
 
 
+        
 //Envio de correo con PHPMAILER
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
