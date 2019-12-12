@@ -35,14 +35,18 @@ $consulta->bindParam(':asi', $asistencia);
 
 $pdf= new FPDF('L','mm','A4');
 $pdf->Addpage();
-$pdf->SetFont('times','B','20');
-$pdf->Image('../img/certificado.png',15,10,-190);
+$pdf->SetFont('times','B','50');
+$pdf->Image('../img/certificado.png',0,0,297,215);
 
-$pdf->SetXY(55,60);
-$pdf->Cell(140, 60, $row['Nombre'],20,0,'C');
 
-$pdf->SetXY(80,60);
-$pdf->Cell(-50, 60, $row['Apellido'],20,20,'C');
+$pdf->SetXY(115,80);
+$pdf->Cell(20, 10, $row['Nombre'],0,'C',0);
+
+$pdf->SetXY(205,80);
+$pdf->Cell(20, 10, $row['Apellido'],0,'C',0);
+
+$pdf->SetXY(160,100);
+$pdf->Cell(20, 10, "$cedula",0,'C',0);
 
 
 $pdf->output("F","../certificados/$cedula.pdf");
@@ -77,8 +81,7 @@ $archivo = "../certificados/$cedula.pdf";
   } catch (Exception $e) {
       echo 'EL mensaje no ha podido ser enviado. Error: ', $mail->ErrorInfo;
   }
-  header('Location: ../php/RegistroExitoso.php');
-  
+  header('Location: ../php/EnvioExitoso.php');
 }
 
 
