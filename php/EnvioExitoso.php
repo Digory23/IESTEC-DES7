@@ -22,7 +22,7 @@
 			<form action="../controllers/salir.php" class="login100-form validate-form" method="POST" class="register-form" id="register-form">
 				<span class="login100-form-title p-b-37">
                 <img class="img-responsive animation slideDown" src="../img/correct.png" alt="" width="150" height="150"><br>
-					¡Envió Exitoso!
+					¡Envío Exitoso!
 				</span>
                     <p class="login100-form-parraf">Los certificados de asistencia del VIII Congreso Internacional de Ingeniería, Ciencias y Tecnología se han enviado de manera satisfactoria.
                         <br><br>Los participantes recibirán un correo electrónico con su certificado que valida su asistencia al congreso.
