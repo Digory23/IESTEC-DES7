@@ -26,7 +26,7 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                     <!--<img src="../img/form-img.jpg" alt="">-->
+                     
                      <img class="form-img" src="../img/logo.png" alt="">
                     
                     <div class="signup-img-content">
@@ -141,18 +141,7 @@
                                     <label for="departamento">Unidad/Departamento/Facultad</label>
                                     <input type="text" name="departamento" id="departamento" />
                                 </div>
-                                
-                                <!--<div class="form-select">
-                                    <div class="label-flex">
-                                        <label for="Segundo paper">Segundo paper aprobado</label>
-                                    </div>
-                                    <div class="select-list">
-                                        <select name="opcion3" id="opcion3">
-                                            <option value="opcion"></option>
-                                            
-                                        </select>
-                                    </div>
-                                </div>-->
+                    
 
                             </div>
                         </div>

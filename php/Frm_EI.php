@@ -121,10 +121,7 @@
                                     <label for="departamento">Unidad/Departamento/Facultad</label>
                                     <input type="text" name="departamento" id="departamento" />
                                 </div>
-                                <!--<div class="form-input">
-                                    <label for="idest" >Número de Identificación del estudiante</label>
-                                    <input type="text" name="IDest" id="IDest" />
-                                </div>-->
+                               
                             </div>
                         </div>
                        

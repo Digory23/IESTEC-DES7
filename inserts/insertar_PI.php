@@ -40,12 +40,10 @@ else {
         if($stmt->rowCount() > 0)
             {
                 echo "Registro exitoso";
-                header("Location: ../controllers/Qr.php?cedula=$cedula&email=$email");
+                echo "<script>location.href='../controllers/Qr.php?cedula=$cedula&email=$email'; </script>";
             }
             else{
                 echo "Error";
-                //echo "$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $ciudad, $provincia";
-                
             }
 
             //sql de insercion a participante

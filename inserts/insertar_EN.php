@@ -30,13 +30,11 @@ $sql = "INSERT INTO usuario (Nombre, Apellido, Sexo, Email, Telefono, Miembro_IE
        if($stmt->rowCount() > 0)
         {
             echo "Registro exitoso";
-            //header('Location: ../php/RegistroExitoso.php');
-            //header("Location: ../controllers/certificado.php?cedula=$cedula");
-            header("Location: ../controllers/Qr.php?cedula=$cedula&email=$email");
+            echo "<script>location.href='../controllers/Qr.php?cedula=$cedula&email=$email'; </script>";
         }
         else{
             echo "Error";
-            //echo "$nombre, $apellido, $sexo, $email, $telefono, $ieee, $tipo_user, $cedula, $institucion, $departamento, $ciudad, $provincia";
+           
             
         }
 
