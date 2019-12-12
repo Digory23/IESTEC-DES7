@@ -227,5 +227,5 @@
     <script src="../js/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../js/vendor/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../js/main-form.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

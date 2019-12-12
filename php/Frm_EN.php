@@ -33,7 +33,7 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                <!--<img class="form-img2" src="../img/prueba.png" alt="">--> 
+                
                 <img class="form-img" src="../img/logo.png" alt="">
                 
                     <div class="signup-img-content">
@@ -42,7 +42,7 @@
                 </div>
             
                 <div class="signup-form">
-               <!--<img class="form-img" src="../img/purple.png" alt="">--> 
+               
                     <h1>Inscripción y pago</h1>
                     <hr>
                     <h2> <?php echo $titulo ?></h2>
@@ -213,5 +213,5 @@
     <script src="../js/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../js/vendor/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../js/main-form.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

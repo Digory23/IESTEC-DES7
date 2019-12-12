@@ -29,7 +29,7 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                     <!--<img src="../img/form-img.jpg" alt="">-->
+                     
                      <img class="form-img" src="../img/logo.png" alt="">
 
                     <div class="signup-img-content">
@@ -243,5 +243,5 @@
     <script src="../js/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../js/vendor/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../js/main-form.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>
